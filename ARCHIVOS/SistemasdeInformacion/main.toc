@@ -1,0 +1,18 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Sistemas de Información}{2}{section.1}%
+\contentsline {section}{\numberline {2}Pirámide de Anthony}{4}{section.2}%
+\contentsline {section}{\numberline {3}Características de la Información}{4}{section.3}%
+\contentsline {section}{\numberline {4}Curva de Nolan}{6}{section.4}%
+\contentsline {section}{\numberline {5}Fuentes de solicitudes de proyectos de sistemas de información}{8}{section.5}%
+\contentsline {section}{\numberline {6}Proceso de desarrollo de sistemas de información}{9}{section.6}%
+\contentsline {section}{\numberline {7}Gestión empresarial (Presentaciones)}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Paradoja de la productividad}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Reingeniería de procesos}{11}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Industria 4.0}{11}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Transformación digital}{11}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}\texthl {Internet de las cosas}}{12}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Estrategias de desarrollo de sistemas de información}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Ciclo de vida tradicional/lineal/Cascada}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Prototipos}{18}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Alternativa de desarrollo del sistema de información}{19}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Diagramas de flujo de datos (\textbf {DFD})}{21}{section.9}%
