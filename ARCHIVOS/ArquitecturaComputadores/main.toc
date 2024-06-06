@@ -1,0 +1,23 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Conceptos a tener en cuenta}{2}{section.1}%
+\contentsline {section}{\numberline {2}Principios Técnicos}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Bytes}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Arquitectura de una computadora}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Conexiones y buses}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Dispositivos y controladores}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Unidad central del sistema}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Placa principal}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Procesador}{7}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Unidad de control}{8}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Unidad aritmético-lógica}{8}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Registros}{8}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Disco Duro}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Memoria principal}{8}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}RAM (Volatil)}{9}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}ROM (No volatil)}{10}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Memoria caché}{10}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Tarjetas de expansion interna}{10}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Fuentes de alimentación}{10}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Valores de Voltaje}{10}{subsubsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.7}Reloj}{11}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Lenguaje Maquina}{12}{section.5}%

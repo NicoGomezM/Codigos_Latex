@@ -17,11 +17,13 @@
     Nicolás {Gómez Morgado}
 }
 
-% \vDoc{1.0.0}
+
 \portada
 \margenes 
+\tableofcontents
+\newpage
 
-\section*{Conceptos a tener en cuenta:}
+\section{Conceptos a tener en cuenta}
 \begin{itemize}
     \item \textbf{Informática:} Ciencia de la computación. Conjunto de conocimientos científicos y técnicos que hacen posible el tratamiento automático de la información por medio de computadoras.
     \item \textbf{Computadora:} Maquina electronica, analógica o digital, que recibe, procesa y almacena información.
@@ -37,8 +39,8 @@
 \end{itemize}
 \newpage
 
-\section*{Principios Técnicos}
-\noindent Von Neumann no definió la arquitectura de computadores, sino que agregó un concepto básico que transformó la computación: la memoria y la CPU se encuentran en el mismo lugar, lo que permite que la CPU pueda acceder a la memoria de manera directa. 
+\section{Principios Técnicos}
+\noindent Von Neumann \textbf{no definió} la arquitectura de computadores, sino que agregó un concepto básico que transformó la computación: \underline{la memoria y la CPU se encuentran en el mismo lugar}, lo que permite que la CPU pueda acceder a la memoria de manera directa. 
 \\\\
 Turing demostró que se pueden crear máquinas decodificadoras. Esto dio paso a la computación de hoy en día y a la transferencia de datos a través de la red.
 \\\\
@@ -49,43 +51,8 @@ En 1965, Gordon Moore gráfico los datos sobre el crecimiento en el rendimiento 
 \end{tcolorbox}
 
 \noindent El procesador trabaja todo en lo que se llama registro. Este es como un vector de bits y su tamaño (32 o 64) determinará cuántas operaciones complejas puede realizar.
-\subsection*{\textbf{Componentes de una computadora:}} 
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=7cm]{img/compubasica.png}
-\end{figure}
 
-\begin{itemize}
-    \item \textbf{Bus de direcciones:} Permite que el CPU y los periféricos accedan a direcciones de memoria.
-    \item \textbf{Bus de datos:} Canal de comunicación entre el CPU, periféricos y la memoria.
-    \item \textbf{Bus de control:} Ordena las operaciones de lectura y escritura de la memoria.
-\end{itemize}
-\newpage
-
-\subsection*{\textbf{RAM}} 
-\begin{figure}[H]
-    \centering
-    \rotatebox{270}{\includegraphics[height=5cm]{img/ram.png}}
-\end{figure}
-
-\noindent La imagen anterior representa a un modulo RAM, la cual en \hl{termino estricto} es homogénea, pero viene subdividido en sectores:
-\begin{itemize}
-    \item \textbf{Segmento de datos (S.D):} Se encarga del almacenamiento de datos, su tamaño es proporcional al tamaño de la memoria RAM.
-    \item \textbf{Segmento de código (S.C):} Encargado de almacenar el programa (instrucciones), que vienen del disco de almacenamiento (disco duro).
-    \item \textbf{Extra segmento de datos:} Un espacio extra en caso de que el tamaño en la S.D no sea el suficiente.
-    \item \textbf{Pila:} Determina el orden de ejecución de transferencias de control. Almacena direcciones de memoria de donde ir al terminar cada instrucción 
-    (transferencia de control en ciclos anidados) y datos de los parámetros de la instrucción (parámetros de ejecución).
-    \item \textbf{Vector de interrupciones:} Vector dado por circuitos dentro de la RAM. Este se encarga de almacenar todos los microprogramas que manejan los 
-    dispositivos internos de la computadora. En el vector de interrupciones se manejan todos los periféricos. Trabaja en conjunto con el \textbf{Runtime} 
-    para saber que esta usando.
-    \item \textbf{Sistema operativo S.O:} Es el encargado de manejar los recursos de la computadora.
-\end{itemize}
-
-\noindent Las variables pueden ser dinámicas o estáticas. Se tiende a usar dinámicas en la RAM para ahorrar espacio economizar recursos. Todos los datos se trabajan en 
-SD y ExtraSD se pueden pedir estáticos o dinámicas(punteros). Los punteros pueden apuntar a una celda establecida o darle una celda propia con maloc.
-\newpage
-
-\subsection*{\textbf{Bytes}}
+\subsection{Bytes}
 \begin{table*} [h]
     \centering
         \renewcommand{\arraystretch}{1.5} % Aumenta la altura de las filas
@@ -134,7 +101,6 @@ esta fragmentación.
 \noindent \textit{\textbf{¿Cuántos bytes ocupa un número entero en C?}}\\
 En C, un número entero (int) generalmente ocupa 4 bytes (anteriormente ocupaba 2 bytes). Esto permite un total de $2^{32}$ combinaciones de números, con la mitad 
 menos 1 para los valores positivos y el mismo valor para los valores negativos, con un cero tanto positivo como negativo.
-\newpage
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Ejercicio]
     \textbf{Ejercicio 1:} \\
@@ -169,9 +135,54 @@ Lo que más consumiría serían los \textbf{byte de dirección} puesto que al pa
 \noindent \textbf{\textit{Si un disco duro o respaldo indica que tiene 128 GB de almacenamiento, ¿se refiere esa cifra a bytes de datos y direcciones?}} \\
 Normalmente, cuando se menciona una capacidad de almacenamiento, no se incluyen explícitamente las capacidades de direccionamiento. Por lo tanto, se puede concluir 
 que la cifra de 128 GB se refiere únicamente a la capacidad de almacenamiento de datos, sin tener en cuenta la capacidad de direccionamiento.
+
+
 \newpage
 
-\subsection*{Procesador}
+\section{Arquitectura de una computadora} 
+\noindent Arquitectura de una computadora según Von Neumann:
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=7cm]{img/compubasica.png}
+\end{figure}
+
+\subsection{Conexiones y buses}
+\begin{itemize}
+    \item \textbf{Bus de direcciones:} Permite que el CPU y los periféricos accedan a direcciones de memoria.
+    \item \textbf{Bus de datos:} Canal de comunicación entre el CPU, periféricos y la memoria.
+    \item \textbf{Bus de control:} Ordena las operaciones de lectura y escritura de la memoria.
+\end{itemize}
+\textbf{Rutas de Conexión:} Caminos entre los circuitos integrados que permiten la comunicación entre los componentes de la computadora.
+
+\subsection{Dispositivos y controladores}
+\begin{itemize}
+    \item \textbf{Adaptador Gráfico:} Permite la conexión de la computadora con un monitor. Presenta textos y gráficos en la pantalla.
+    \item \textbf{Controlador de disco:} Permite la conexión de la computadora con un disco duro. Administra el disco duro.
+    \item \textbf{Interconexión de Módulos Digitales:} Permite la conexión de la computadora con otros dispositivos. Conexiones entre componentes digitales.
+\end{itemize}
+\newpage
+
+\section{Unidad central del sistema}
+
+\subsection{Placa principal}
+\noindent Tiene como principal función conectar todos los componentes de la computadora.\\\\
+\textbf{Componentes clave} (\textit{Tarjeta Madre Tipo Pentium ATX})\textbf{:}
+\begin{itemize}
+    \item \textbf{ROM-BIOS:} Programas de arranque y chequeo de dispositivos.
+    \item \textbf{Ranuras ISA, PCI:} Para tarjetas controladoras.
+    \item \textbf{Puertos Seriales (COM 1, COM 2):} Para periféricos seriales.
+    \item \textbf{Puerto Paralelo (LPT1):} Para impresoras y otros periféricos.
+    \item \textbf{Puertos USB:} Para dispositivos modernos.
+    \item \textbf{Conectores de Energía (PWR AT, PWR ATX)}
+    \item \textbf{Conectores IDE 1, IDE 2:} Para discos duros y CD-ROMs.
+    \item \textbf{Conector FDC:} Para unidad de disquete.
+    \item \textbf{SLOT o Socket del Microprocesador:} Instalación del CPU.
+    \item \textbf{Ranuras para Módulos de Memoria RAM}
+    \item \textbf{Conectores para HD LED, Speaker y Reset Button}
+    
+\end{itemize}
+
+\subsection{Procesador}
 \noindent \textbf{El procesador tiene 4 módulos funcionales:}
 \begin{itemize}
     \item \textbf{CPU:} Ejecuta ordenes. Con FPU poseen propia unidad de control.
@@ -181,7 +192,97 @@ que la cifra de 128 GB se refiere únicamente a la capacidad de almacenamiento d
     \item \textbf{Cache interna:} Cache propia del procesa. Permite acceder a los datos mas eficientemente que la RAM.
 \end{itemize}
 
-\subsection*{\textbf{Valores de Voltaje}} 
+\noindent Ademas de estos módulos, el procesador se compone de otros elementos, los cuales son:
+\begin{itemize}
+    \item \textbf{Unidad de control (CU)}
+    \item \textbf{Unidad aritmético-lógica (ALU)}
+    \item \textbf{Registros}
+\end{itemize}
+
+\subsubsection{Unidad de control}
+\noindent La unidad de control es la encargada de coordinar las operaciones del sistema informático. Se encarga de:
+\begin{itemize}
+    \item Acceso
+    \item Lectura
+    \item Escritura de memoria
+    \item Interpretación de instrucciones
+    \item Ejecución de tareas
+\end{itemize}
+\subsubsection{Unidad aritmético-lógica}
+\noindent Encargada de realizar cálculos matemáticos y lógicas.
+\subsubsection{Registros}
+\noindent La unidad de control es la base para la máquina. Los registros son un \textbf{medio de ayuda a la unidad de control y la aritmética}, 
+permiten \textbf{almacenar información temporalmente} para la manipulación de los datos por parte de la CPU. Existe un registro en particular 
+que se llama \textbf{acumulador}, que almacena todos los resultados de operaciones matemáticas. Los registros son \textbf{lo más importante} 
+que tiene la máquina después del procesador.
+
+\begin{tcolorbox}[colback=orange!10!white,colframe=orange!75!black,title=Observaciones]
+    \begin{itemize}
+        \item La computadora promedio tiene 64 registros.%, de los cuales 32 son de uso general y 32 son de uso especial.
+        \item \textit{"Todo esta y se manipula en registros" \space.- Juan Carlos Parra Márquez.}
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection{Disco Duro}
+\noindent El disco duro es el encargado de almacenar la información de la computadora. Se compone de un conjunto de discos magnéticos que giran a gran velocidad.
+\begin{itemize}
+    \item \textbf{Tipos de Interfaces:} IDE, SCSI.
+    \item \textbf{Funciones:} Almacenamiento no volátil, formateo y particionado.
+\end{itemize}
+
+\subsection{Memoria principal} 
+\noindent Es la zona de trabajo donde la computadora va a almacenar temporalmente las órdenes a ejecutar y los datos que deberán manipular esas órdenes. Ademas de esta memoria existen otros tipos de memorias:
+
+\subsubsection{RAM (Volatil)}
+\begin{figure}[H]
+    \centering
+    \rotatebox{270}{\includegraphics[height=5cm]{img/ram.png}}
+\end{figure}
+
+\noindent La imagen anterior representa a un modulo RAM, la cual en \hl{termino estricto} es homogénea, pero viene subdividido en sectores:
+\begin{itemize}
+    \item \textbf{Segmento de datos (S.D):} Se encarga del almacenamiento de datos, su tamaño es proporcional al tamaño de la memoria RAM.
+    \item \textbf{Segmento de código (S.C):} Encargado de almacenar el programa (instrucciones), que vienen del disco de almacenamiento (disco duro).
+    \item \textbf{Extra segmento de datos:} Un espacio extra en caso de que el tamaño en la S.D no sea el suficiente.
+    \item \textbf{Pila:} Determina el orden de ejecución de transferencias de control. Almacena direcciones de memoria de donde ir al terminar cada instrucción 
+    (transferencia de control en ciclos anidados) y datos de los parámetros de la instrucción (parámetros de ejecución).
+    \item \textbf{Vector de interrupciones:} Vector dado por circuitos dentro de la RAM. Este se encarga de almacenar todos los microprogramas que manejan los 
+    dispositivos internos de la computadora. En el vector de interrupciones se manejan todos los periféricos. Trabaja en conjunto con el \textbf{Runtime} 
+    para saber que esta usando.
+    \item \textbf{Sistema operativo S.O:} Es el encargado de manejar los recursos de la computadora.
+\end{itemize}
+\noindent Las variables pueden ser dinámicas o estáticas. Se tiende a usar dinámicas en la RAM para ahorrar espacio economizar recursos. Todos los datos se trabajan en 
+SD y ExtraSD se pueden pedir estáticos o dinámicas(punteros). Los punteros pueden apuntar a una celda establecida o darle una celda propia con maloc.
+
+\subsubsection{ROM (No volatil)}
+\noindent La memoria ROM es una memoria de solo lectura, es decir, no se puede escribir en ella. Se utiliza para almacenar el programa de arranque de la computadora,
+
+\subsubsection{Memoria caché}
+\noindent La memoria caché es una memoria de acceso rápido que se encuentra entre la CPU y la memoria principal. Su función es almacenar los datos que se utilizan con mayor frecuencia,
+\begin{itemize}
+    \item \textbf{Ubicación:} Parte de la tarjeta madre y del procesador.
+    \item \textbf{Uso:} Acceso rápido a la información por el procesador.
+\end{itemize}
+
+\subsection{Tarjetas de expansion interna}
+\noindent Las tarjetas de expansión están diseñadas para actividades específicas como controlar la salida de video, gráficos y comunicaciones. Las principales tarjetas de expansión son:
+\begin{itemize}
+    \item \textbf{Tarjetas de video:} Controlan la salida de video.
+    \item \textbf{Tarjetas de entrada y salida de datos:} Controlan la entrada y salida de datos.
+    \item \textbf{Tarjetas de comunicaciones:} Controlan la comunicación entre la computadora y otros dispositivos.
+\end{itemize}
+\textbf{Tarjetas Controladoras de Comunicaciones} \\
+Estas tarjetas permiten la conexión de una computadora con otras formando una red informática.\\
+Tipos de redes y tarjetas:
+\begin{itemize}
+    \item Red de area local: Tarjeta de red \textbf{LAN} (NIC: Network Interface Card).
+    \item Red de area extensa: Tarjeta de red \textbf{WAN}. Modem.
+\end{itemize}
+
+\subsection{Fuentes de alimentación}
+\noindent Las fuentes de alimentación proporcionan la energía eléctrica que necesita la computadora para funcionar. Esa energía se estabiliza para impedir que la computadora se vea afectada por oscilaciones bruscas en el suministro de las compañías eléctricas.
+
+\subsubsection{Valores de Voltaje} 
 \noindent Típicamente se representan los 2 valores discretos de voltaje utilizados con las letras L y H, donde L es \textbf{LOW} y H es \textbf{HIGH}. 
 \begin{table*} [h]
     \centering
@@ -200,21 +301,7 @@ que la cifra de 128 GB se refiere únicamente a la capacidad de almacenamiento d
 
 \noindent El procesador ejecuta el programa almacenado en el segmento de código, el cual se encuentra en la RAM utilizando los registros.
 
-\subsection*{\textbf{Registros}}
-\noindent La unidad de control es la base para la máquina. Los registros son un \textbf{medio de ayuda a la unidad de control y la aritmética}, 
-permiten \textbf{almacenar información temporalmente} para la manipulación de los datos por parte de la CPU. Existe un registro en particular 
-que se llama \textbf{acumulador}, que almacena todos los resultados de operaciones matemáticas. Los registros son \textbf{lo más importante} 
-que tiene la máquina después del procesador.
-
-\begin{tcolorbox}[colback=orange!10!white,colframe=orange!75!black,title=Observaciones]
-    \begin{itemize}
-        \item La computadora promedio tiene 64 registros.%, de los cuales 32 son de uso general y 32 son de uso especial.
-        \item \textit{"Todo esta y se manipula en registros" \space - Juan Carlos Parra Márquez.}
-    \end{itemize}
-\end{tcolorbox}
-\newpage
-
-\subsection*{\textbf{Reloj}}
+\subsection{Reloj}
 \noindent El reloj de una computadora desempeña \textbf{dos funciones principales}. En primer lugar, \textbf{sincroniza diversas operaciones} que se realizan en diferentes componentes del sistema. 
 En segundo lugar, sirve para \textbf{mostrar la hora actual}. La función principal es la primera, ya que ayuda a obtener el tiempo de ejecución (runtime) de las operaciones. \\\\
 \textbf{Reloj del sistema:} Un pulso electrónico se utiliza para sincronizar el procesamiento en orden de nanosegundos, lo que permite medir el tiempo de ejecución (runtime) en MHz. 
@@ -224,9 +311,14 @@ Un megahercio (1 MHz) equivale a un millón de ciclos por segundo.
     \begin{itemize}
         \item La frecuencia se refiere a cuantos instantes de atención a eventos/instrucciones se pueden realizar en un segundo.
         \item ROM es lo que sirve para arrancar y contiene el set-up.
-        \item El lenguaje ensamblador le saca la máxima velocidad a la maquina
+        \item El lenguaje ensamblador le saca la máxima velocidad a la maquina.
+        \item A lo que se refieren cuando dicen la maquina es de 2.4GHz es a la velocidad de su reloj, la cual es de 2.4 mil millones de ciclos por segundo.
     \end{itemize}
 \end{tcolorbox}
+\newpage
+
+\section{Lenguaje Maquina}
+\newpage
 
 \end{document}
  

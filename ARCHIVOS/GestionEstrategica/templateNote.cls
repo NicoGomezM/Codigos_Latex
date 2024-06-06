@@ -106,6 +106,6 @@
             \end{flushleft}
         \end{minipage}
         \\[0.1 cm]
-        {\large \bf Versión: \vDoc}
+        % {\large \bf Versión: \vDoc}
     \end{center}
 }
