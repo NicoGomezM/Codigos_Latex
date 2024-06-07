@@ -5,7 +5,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[section]{placeins}
 \RequirePackage[T1]{fontenc}
-% \RequirePackage{mlmodern}
+\RequirePackage{mlmodern}
 \RequirePackage{mathtools}
 \RequirePackage{siunitx}
 \RequirePackage{float}
@@ -22,7 +22,7 @@
 \RequirePackage{listings}
 \RequirePackage{qrcode}
 \RequirePackage{tikz}
-% \RequirePackage{microtype}
+\RequirePackage{microtype}
 % \RequirePackage[none]{hyphenat} % No cortar palabras
 
 % define the codebox environments

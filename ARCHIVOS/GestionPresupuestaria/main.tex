@@ -8,7 +8,7 @@
 \begin{document}
 
 \imagenlogoU{img/logoNGMFormal_sinF.png}
-\linklogoU{https://github.com/NicoxlkboUni} 
+\linklogoU{https://github.com/NicoGomezM} 
 % \imagenlogoD{img/logo-ubb-txt-face.png} 
 \titulo{Unidad 1}
 \asignatura{Gestión Presupuestaria y Financiera}
@@ -49,8 +49,6 @@
     \item \textbf{Riesgo:} Es la probabilidad de que un proyecto no se desarrolle como se espera.
     \item \textbf{Rentabilidad del proyecto:} Lo que el proyecto puede o va a generar con mi inversion inicial.
 \end{itemize}
-
-\newpage
 
 \section{Tipos de intereses}
 \subsection{Interés simple}
@@ -321,8 +319,170 @@
         VAN &= -2000 + \frac{800}{(1 + 0.13)^1} + \frac{600}{(1 + 0.13)^2} + \frac{400}{(1 + 0.13)^3} + \frac{900}{(1 + 0.13)^4} \\
         VAN &= -2000 + 707 + 468 + 276 + 549\\
     \end{align*}
-    
+
+\end{tcolorbox}
+\newpage
+
+\section{\hl{Amortización}}
+\noindent Pago gradual de deuda en un periodo de tiempo determinado por medio de una deuda a través de una cuota con interés fijo. La cuota se puede calcular mediante la siguiente formula:
+\begin{align*}
+    \textnormal{Cuota} &= \textnormal{Crédito} \cdot \frac{i\%}{1-((1+i\%)^{-n})}
+\end{align*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5.5cm]{img/amortiz.png}
+\end{figure}
+
+\begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
+    En un momento determinado yo debo la deuda original menos lo amortizado.
+\end{tcolorbox}
+\newpage
+
+\section{Tasa de interés equivalente}
+\noindent Si se tiene una tasa de interés anual $ia$; la tasa de interés mensual se puede calcular mediante la siguiente formula:
+\begin{align*}
+    \textnormal{Con interés compuesto: }im &= ((1 + ia)^{\frac{1}{12}} - 1) \cdot 100\%\\
+\end{align*}
+
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Ejecicios]
+    \begin{itemize}
+        \item Interés anual = 15\% $\Rightarrow$ Interés mensual = 1.17\%
+        \item Interés anual = 9\% $\Rightarrow$ Interés mensual = 0.72\%
+    \end{itemize}
 \end{tcolorbox}
 
+\begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
+    Recordar que interés compuesto es aquel que se calcula sobre el capital inicial y los intereses generados en periodos anteriores.
+\end{tcolorbox}
+
+\section{Carga anual equivalente (CAE)}
+\begin{itemize}
+    \item El CAE es un indicador \textbf{porcentual}, que incluye los intereses, gastos y seguros asociados al crédito, expresados en forma anual que 
+        permiten hacer una comparación objetiva del costo del crédito entre las entidades.
+    \item Mediante el CAE, las personas pueden comparar diferentes alternativas de crédito, sin importar las variables establecidas por cada entidad.
+    \item Un CAE bajo indica que el crédito es más barato, ya que considera todos los elementos del crédito.
+\end{itemize}
+\noindent El CAE por ley debe ser entregado por todas las entidades financieras que otorgan créditos de consumo. Se puede calcular mediante la siguiente formula:
+\begin{align*}
+    CAE &= (1+i_f)^n - 1
+\end{align*}
+\textit{Donde:}
+\begin{align*}
+    i_f &= \textnormal{Tasa de interés efectiva}\\
+    n &= \textnormal{Número de periodos}
+\end{align*}
+\newpage
+
+\section{Análisis financiero}
+\noindent \textbf{Objetivos:} Determinar el diagnóstico a corto plazo de una organización, determinando fortalezas y debilidades (como en un FODA) 
+    financieras, para una oportuna y eficaz toma de decisiones.\\ 
+\begin{itemize}
+    \item Elementos de diagnostico a corto plazo
+    \item Administración empresa privada (\textit{enfoque de la carrera})
+    \item Análisis financiero se compara al análisis de muestra de sangre.
+\end{itemize}
+
+\subsection{Objetivos de un buen gerente de finanzas}
+\begin{itemize}
+    \item Maximizar rentabilidad (\textit{acorde al marco valórico}) a los dueños (\textit{personas/acciones}) del capital.
+    \item Crecimiento estable de la empresa a largo plazo. (\textit{Tasa de crecimiento nulo, no estable; Tasa de crecimiento inestable, mal gerente})
+    \item Cumplimiento con valores estratégicos de la empresa.
+    \item Mercado sensible y castiga ante cualquier daño de imagen de una empresa.
+\end{itemize}
+
+\subsection{Estructura del balance}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=7.5cm]{img/estrucBalance.png}
+\end{figure}
+\newpage
+
+\section{Capital neto del trabajo (CNT)}
+\noindent El capital neto de trabajo es un indicador financiero que mide la capacidad de una empresa para cumplir con sus obligaciones a corto plazo. Se define como la \textbf{diferencia entre los activos circulantes y los pasivos de corto plazo} por lo tanto se calcula de la siguiente forma:
+\begin{align*}
+    CNT &= AC - PCP
+\end{align*}
+\textit{Donde:}
+\begin{align*}
+    CNT &= \textnormal{Capital neto de trabajo}\\
+    AC &= \textnormal{Activos circulantes}\\
+    PCP &= \textnormal{Pasivos corto plazo}
+\end{align*}
+
+\subsection{Activos circundantes}
+\noindent Algunos tipos de activos circulantes son:
+\begin{itemize}
+    \item Efectivo en cajas y bancos.
+    \item Inversiones temporales en instrumentos financieros.
+    \item Cuentas por cobrar.
+    \item Inventarios (materia prima, proceso y terminado).
+\end{itemize}
+\textbf{Característica:} Fácil conversión en efectivo en un plazo máximo de un año. 
+
+\subsection{Pasivos de corto plazo}
+\noindent Algunos tipos de pasivos de corto plazo son:
+\begin{itemize}
+    \item Proveedores.
+    \item Cuentas por pagar.
+    \item Impuestos por pagar. 
+    \item Créditos menores o iguales a un año.
+\end{itemize}
+\textbf{Característica:} Deben ser cancelados en un plazo máximo de un año.
+
+\subsection{Políticas del capital del trabajo}
+\noindent Decisiones básicas enfocadas en el manejo eficiente de los recursos, nivel de inversion deseado (AC) y forma de financiamiento (PCP). Existen 3 tipos de políticas para \textbf{gestionar el capital de trabajo}:
+\begin{itemize}
+    \item \textbf{Política relajada:} A mayor capital de trabajo, menor riesgo de ser técnicamente insolvente.
+    \item \textbf{Política restringida:} A menor capital de trabajo, mayor riesgo de ser técnicamente insolvente.
+    \item \textbf{Política moderada:} Equilibrio entre riesgo y rentabilidad.
+\end{itemize}
+
+\subsubsection{Politica relajada}
+\begin{itemize}
+    \item Mantenimiento de saldos elevados en efectivo e inversiones temporales.
+    \item Créditos flexibles, lo que resulta en un alto nivel de cuentas por cobrar.
+    \item Grandes inversiones en inventarios.
+    \item Mas financiamiento en el largo plazo, menor rendimiento (mayor gasto financiero en la manutención de la política) y menor riesgo (decisiones mas pensadas en un mayor plazo). 
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=3.5cm]{img/polirelajada.png}
+\end{figure}
+
+\subsubsection{Politica restringida}
+\begin{itemize}
+    \item Manejar poco efectivo y no invertir en valores temporales.
+    \item Otorgar créditos solo a individuos selectos, provocando una disminución en cuentas por cobrar.
+    \item Inversiones pequeñas en inventario, trabajar con mínimos.
+    \item Mas financiamiento en el corto plazo, mayor rendimiento (menor gasto financiero en la manutención de la política) y mayor riesgo (decisiones mas rápidas en un menor plazo).
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=3.5cm]{img/polirestrict.png}
+\end{figure}
+\newpage
+
+\section{Análisis de indicadores}
+\subsection{Análisis vertical}
+\noindent El análisis vertical es una técnica que permite comparar los componentes de un estado financiero con un total, el cual se representa en porcentajes.
+\textbf{Tipos de indicadores:}
+\begin{enumerate}
+    \item Índices de liquidez.
+    \item Índices de actividad y rotación.
+    \item Índices de endeudamiento.
+    \item Índices de rentabilidad.
+\end{enumerate}
+
+\subsubsection{Índices de liquidez}
+\noindent Capacidad de una empresa de convertir sus activos en caja o de obtener caja para satisfacer su pasivo circulante. Es decir, miden la solvencia de una empresa en el corto plazo.
+
+\begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
+    \textit{\textbf{Mientras mayores sean los índices de liquidez, mayor será la solvencia de la empresa en el corto plazo.-}}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \textbf{Índice de liquidez corriente:} 
+\end{itemize}
 
 \end{document}
