@@ -137,7 +137,7 @@
 
 \section{Costos de oportunidad}
 \noindent El costo de oportunidad es el valor de la mejor opción que se deja de lado al tomar una decisión.
-\subsection{Criterios de decision}
+\subsection{Criterios de decisión}
 \begin{center}
     \begin{itemize}
         \item Rentabilidad del proyecto > Costo de oportunidad $\Rightarrow$ \textbf{Proyecto Rentable}.
@@ -147,7 +147,7 @@
 \end{center}
 \begin{figure}[H]
     \centering
-    \includegraphics[height=8cm]{img/costosOport.png}
+    \includegraphics[height=6.5cm]{img/costosOport.png}
     \caption{Figura representativa criterios}
 \end{figure}
 \newpage
@@ -245,8 +245,8 @@
 \end{itemize}
 
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Ejemplo]
-    \noindent Calcular el valor actual neto de un proyecto que tiene una inversión inicial de \$2.000 y los siguientes flujos de efectivo:
-    \begin{minipage}{0.5\textwidth}
+    \noindent Calcular el valor actual neto de un proyecto que tiene una inversión inicial de \$2.000 y los siguientes flujos de efectivo: \\\\
+    \begin{minipage}{0.4\textwidth}
         \centering
         \begin{tabular}{|c|c|}
             \hline
@@ -330,7 +330,7 @@
 \end{align*}
 \begin{figure}[H]
     \centering
-    \includegraphics[height=5.5cm]{img/amortiz.png}
+    \includegraphics[height=6cm]{img/amortiz.png}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
@@ -393,11 +393,11 @@
 \subsection{Estructura del balance}
 \begin{figure}[H]
     \centering
-    \includegraphics[height=7.5cm]{img/estrucBalance.png}
+    \includegraphics[height=6cm]{img/estrucBalance.png}
 \end{figure}
 \newpage
 
-\section{Capital neto del trabajo (CNT)}
+\section{Capital neto del trabajo (CNT)}\label{sec:Capital neto del trabajo (CNT)}
 \noindent El capital neto de trabajo es un indicador financiero que mide la capacidad de una empresa para cumplir con sus obligaciones a corto plazo. Se define como la \textbf{diferencia entre los activos circulantes y los pasivos de corto plazo} por lo tanto se calcula de la siguiente forma:
 \begin{align*}
     CNT &= AC - PCP
@@ -463,8 +463,8 @@
 \end{figure}
 \newpage
 
-\section{Análisis de indicadores}
-\subsection{Análisis vertical}
+\subsection{Análisis de indicadores}
+\subsubsection{Análisis vertical}
 \noindent El análisis vertical es una técnica que permite comparar los componentes de un estado financiero con un total, el cual se representa en porcentajes.
 \textbf{Tipos de indicadores:}
 \begin{enumerate}
@@ -482,7 +482,143 @@
 \end{tcolorbox}
 
 \begin{itemize}
-    \item \textbf{Índice de liquidez corriente:} 
+    \item \textbf{Índice de liquidez corriente:} Correlación entre los recursos circulantes de la empresa para hacer frente a sus obligaciones de corto plazo. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{ILC} &= \frac{\textnormal{AC}}{\textnormal{PCP}} = \textnormal{Nº de veces}
+    \end{align*}
+    
+    - Representa cuantas unidades monetarias de recursos circulantes se tienen por cada
+    unidad monetaria de obligaciones de corto plazo.
+
+    - Por cada \$1 que se debe en el corto plazo, se tienen \$X en recursos circulantes para respaldar dicha
+    obligación.
+
+    - En un escenario perfecto el \textbf{$1.0 < \textnormal{ILC} < 1.5$}, ya que si el índice es menor a 1, la empresa
+    se encuentra en una situación de \textbf{riesgo} y si es mayor a 1.5 la empresa se encuentra en una situación donde existen \textbf{recursos ociosos}.
+
+    \item \textbf{Coeficiente ácido:} Correlación entre los recursos circulantes sin tomar en cuenta los inventarios para hacer frente a sus obligaciones de corto plazo. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{CA} &= \frac{\textnormal{AC} - \textnormal{Existencias}}{\textnormal{PCP}} = \textnormal{Nº de veces}
+    \end{align*} 
+
+    - Representa cuantas unidades monetarias de recursos circulantes menos los inventarios se tienen por cada unidad monetaria de obligaciones de corto plazo.
+
+    - Por cada \$1 que se tiene en el corto plazo, se tienen \$X en recursos circulantes menos los inventarios para respaldar dicha obligación.
+
+    - Un \textbf{CA > 1} es bueno ya que solo tomamos en cuenta los activos de rápida realización.
+
+    \item\textbf{Capital de trabajo operativo (CTO):}
+    \noindent Concepto más profundo que el concepto contable del \hyperref[sec:Capital neto del trabajo (CNT)]{capital del trabajo}, y en este se consideran solo los activos que intervienen directamente
+    en la generación de productos de la empresa, menos las cuentas por pagar a proveedores. Para esto se excluyen las partidas de efectivo en inversiones a corto plazo. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        CTO &= \textnormal{Cuentas por cobrar} + \textnormal{Existencias} - \textnormal{Cuentas por pagar}
+    \end{align*}
+
+    \noindent Lo optimo es un valor \textbf{siempre positivo} en esta variable, ya que indica que la empresa tiene una buena capacidad de financiamiento de sus operaciones.
+
 \end{itemize}
+
+\subsubsection{Indicadores de actividad y rotación}
+\noindent Miden la eficiencia con la que la empresa utiliza sus activos para generar ventas. Mientras mejores sean estos indicadores, mejor uso de recursos se esta haciendo. Algunos de los indicadores son:
+
+\begin{itemize}
+    \item \textbf{Plazo promedio de cuentas por cobrar: }Relaciona las cuentas por cobrar con las ventas anuales. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{PPCC} &= \frac{\textnormal{Cuentas por cobrar} \cdot 365}{\textnormal{Ventas anuales}} = \textnormal{Nº días}
+    \end{align*}
+    - Corresponde a los Dias en que laa ventas (efectivo/crédito), permanecen como cuentas por cobrar, osea, el tiempo promedio de crédito que la empresa le da a sus clientes.
+    \item \textbf{Plazo promedio de cuentas por pagar: }Relaciona las cuentas por pagar con el costo de ventas. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{PPCP} &= \frac{\textnormal{Cuentas por pagar} \cdot 365}{\textnormal{Costo de ventas anuales}} = \textnormal{Nº días}
+    \end{align*}
+    - Es el plazo en el que las compras de existencias se quedan como cuentas por pagar, o también se puede ver como el tiempo promedio de crédito que los proveedores le dan a la empresa.
+    \item \textbf{Rotación de inventarios: }Determina que tan rápido es el movimiento de fondos a través del inventario, y que tan circulante es el inventario. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{RI} &= \frac{\textnormal{Costo anual mercaderia vendida}}{\textnormal{Existencias promedio}} = \textnormal{Nº veces} \\
+        \textnormal{En días} &= \frac{365}{RI}
+    \end{align*}
+    - Indica lo rápido que los inventarios se transforman en efectivo o en cuentas por cobrar a través de las ventas.
+    \item \textbf{Rotación de activos totales:} Indicador que le dice a la empresa que tan eficiente esta administrando y gestionando sus activos. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{RAT} &= \frac{\textnormal{Ventas anuales}}{\textnormal{Total activos}} = \textnormal{Nº veces} \\
+        \textnormal{En días} &= \frac{365}{\textnormal{RAT}}
+    \end{align*} 
+    - Interesa que el indicador RAT sea lo mas alto posible pues indica mayores ventas a una menor inversion. \\
+    - La rotación de activos se da en días, por lo que el indicador RAT me esta diciendo cada cuantos días los activos de la empresa se convierten en efectivo.
+\end{itemize}
+
+\subsubsection{Indicadores de endeudamiento}
+\noindent Proporción de financiamiento hecha por terceros respecto a los dueños de la empresa. De igual manera dan a conocer la capacidad de la empresa para responder por 
+sus obligaciones con los acreedores.
+
+\begin{itemize}
+    \item \textbf{Razón de endeudamiento:} Proporción de los activos que han sido financiados con deudas de terceros. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{RE} &= \frac{\textnormal{Total pasivos}}{\textnormal{Total activos}} = \%
+    \end{align*}
+    - Desde el punto de vista acreedor, equivale a la porción de los activos comprometidos con los acreedores externos a la empresa.
+    \item \textbf{Endeudamiento de leverage:} Indica cuanto del patrimonio esta comprometido con los acreedores. Se calcula mediante la siguiente formula: 
+    \begin{align*}
+        \textnormal{EL} &= \frac{\textnormal{Total pasivos}}{\textnormal{Patrimonio}} = \%
+    \end{align*}
+    - Nos da a conocer que por cada peso de patrimonio, existe una deuda X en pasivos. \\
+    - Mientras mas alto sea el indicador, menor el patrimonio frente a los pasivos y viceversa. \\
+    - Si tomamos en cuenta un EL con un menor nivel de patrimonio que pasivos, se puede decir que el riesgo que corren los socios es menor, y caso contrario desde un punto de vista de acreedor. El caso
+    contrario se puede justificar debido a que si el patrimonio es mayor a los pasivos, los activos estarán financiados en mayor parte por pasivos. \\
+    - Tener un nivel alto de este indicador supone un menor riesgo, si  n embargo, esto es conveniente siempre que el costo financiero de los
+    altos pasivos sea compensado por una alta rentabilidad de activos.
+\end{itemize}
+
+\subsubsection{Indicadores de rentabilidad}
+\noindent Permiten analizar la rentabilidad de la empresa en el contexto de las inversiones que realiza para obtenerlas o del nivel de ventas que posee. Algunos de los indicadores son:
+
+\begin{itemize}
+    \item \textbf{Relación margen sobre las ventas (Margen Bruto):} Indica el beneficio de la empresa en relación con el volumen de ventas y el margen que deja la mercadería vendida. Se calcula mediante la siguiente formula:
+    \begin{align*}
+        \textnormal{RMSV} &= \frac{\textnormal{(\textnormal{Ventas} - \textnormal{Costo de ventas})}}{\textnormal{Ventas}} \cdot 100 = \% \\
+        &= \frac{\textnormal{Utilidad}}{\textnormal{Ventas}} \cdot 100 = \%
+    \end{align*}
+    \item \textbf{Relación sobre las ventas (Margen neto):} Corresponde al porcentaje de utilidad o pérdida obtenido por cada peso de venta. Se calcula mediante la siguiente formula: 
+    \begin{align*}
+        \textnormal{MSV} &= \frac{\textnormal{Resultado del ejercicio}}{\textnormal{Ventas}} \cdot 100 = \%
+    \end{align*}
+    - Por \$1 de venta, tengo una ganancia o perdida del X\%.
+\end{itemize}
+\newpage
+
+\section{Estados financieros y Planeación estratégica}
+\subsection{Rendimientos de los activos (ROA)}
+\noindent Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido en activos. Se calcula mediante la siguiente formula:
+\begin{align*}
+    ROA &= \frac{\textnormal{Ventas netas}}{\textnormal{Total activos}} \cdot \frac{\textnormal{Utilidad neta}}{\textnormal{Ventas netas}} 
+\end{align*}
+
+\noindent - Con un $ROA \leq 0$, los inversionistas pierden dinero. 
+
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black,title=Observación]
+    \textit{\textbf{Mientras mas alto sea el $ROA$, mas eficiente es la empresa al usar el capital en generar utilidades.-}}
+\end{tcolorbox}
+
+% \subsection{Capital de trabajo operativo (CTO)}
+% \noindent Concepto más profundo que el concepto contable del \hyperref[sec:Capital neto del trabajo (CNT)]{capital del trabajo}, y en este se consideran solo los activos que intervienen directamente
+% en la generación de productos de la empresa, menos las cuentas por pagar a proveedores. Para esto se excluyen las partidas de efectivo en inversiones a corto plazo. Se calcula mediante la siguiente formula:
+% \begin{align*}
+%     CTO &= \textnormal{Cuentas por cobrar} + \textnormal{Existencias} - \textnormal{Cuentas por pagar}
+% \end{align*}
+
+% \noindent Lo optimo es un valor \textbf{siempre positivo} en esta variable, ya que indica que la empresa tiene una buena capacidad de financiamiento de sus operaciones.
+
+\subsection{Rendimiento del capital (ROE)}
+\noindent Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido por los dueños en la empresa, incluyendo utilidades retenidas. Se calcula mediante la siguiente formula:
+\begin{align*}
+    ROE &= \frac{\textnormal{Utilidad neta}}{\textnormal{Patrimonio}} \cdot 100 = \%
+\end{align*}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black,title=Recordatorio]
+    \begin{align*}
+        \textnormal{Capital} &= \textnormal{Patrimonio} - \textnormal{Utilidad Neta} \\
+        &= \textnormal{Patrimonio} + \textnormal{Pasivos}
+    \end{align*}
+\end{tcolorbox}
 
 \end{document}
