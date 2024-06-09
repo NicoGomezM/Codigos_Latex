@@ -83,7 +83,7 @@
     \pagestyle{fancy}
     \fancyheadoffset{1cm}
     \setlength{\headheight}{2.5cm}
-    \lhead{\href{\linklogoU}{\includegraphics[scale=0.08]{\imagenlogoU}} \includegraphics[scale=0.15]{\imagenlogoD}} % Logo
+    \lhead{\href{\linklogoU}{\includegraphics[scale=0.08]{\imagenlogoU}} \href{\linklogoD}{\includegraphics[scale=0.15]{\imagenlogoD}}} % Logo
     % \lhead{\href{\linklogoU}{\includegraphics[scale=0.08]{\imagenlogoU}}}
     \rhead{\nouppercase{\leftmark}}
     \rfoot{\thepage}
