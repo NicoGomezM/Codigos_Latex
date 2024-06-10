@@ -16,4 +16,4 @@ El repositorio contiene una variedad de archivos escritos en LaTeX, que incluyen
 Si deseas utilizar alguno de los archivos disponibles en este repositorio, puedes clonarlo a tu equipo local utilizando el siguiente comando:
 
 ```bash
-git clone (https://github.com/NicoxlkboUni/Codigos_Latex.git)
+git clone (https://github.com/NicoGomezM/Codigos_Latex.git)
