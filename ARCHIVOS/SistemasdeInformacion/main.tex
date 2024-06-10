@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{pdflscape}
+\usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{soul}
 \usepackage{media9}
@@ -29,10 +30,9 @@
 \vDoc{1.0.0}
 \portada
 \margenes
-
 \tableofcontents
-
 \newpage
+
 \section{Sistemas de Información}
 \begin{itemize}
     \item \textbf{Sistema:} Conjunto de partes que interactúan entre sí, para lograr un objetivo en común.
@@ -161,76 +161,46 @@ Siempre encontramos 3 niveles:
     \item \textbf{Madurez:} No hay miedo a las tecnologías o sistemas.
 \end{itemize}
 \begin{center}
-    \textit{Implementación $\rightarrow$ Organización $\rightarrow$ Dirección $\rightarrow$ Control}
-    \section*{Actualización de Curva de Nolan}
+    \textit{Planificación $\rightarrow$ Organización $\rightarrow$ Dirección $\rightarrow$ Control}
     \begin{figure}[H]
         \centering
         \vspace*{\fill}
-        \includegraphics[width=1\textwidth,height=0.5\textheight,keepaspectratio]{img/CurvaDeNolanActualizada.png}
+        \includegraphics[width=1\textwidth,height=0.30\textheight,keepaspectratio]{img/CurvaDeNolanActualizada.png}
         \vspace*{\fill}
     \end{figure}
 \end{center}
-
 % \includepdf[pages={8,9}]{pdfs/Resumen.pdf}
 
-\section{Fuentes de solicitudes de proyectos de sistemas de información}
-\begin{itemize}
-    \item \textbf{Internas:}
-    \begin{itemize}
-        \item Jefes de departamento.
-        \item Altos ejecutivos.
-        \item Especialistas
-        \item Usuarios
-    \end{itemize}
-    \item \textbf{Externas} 
-\end{itemize}
-
-
-\section{Proceso de desarrollo de sistemas de información}
-\begin{itemize}
-    \item Conceptos
-    \item Fuentes
-    \item Orígenes de proyectos de sistemas de información \\\\
-    \begin{minipage}{0.5\textwidth}
-        \begin{itemize}
-            \item \textbf{Integración.}
-            \item \textbf{Velocidad de procesamiento.}
-            \item \textbf{Seguridad/Confidencialidad.}
-        \end{itemize}
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
-        \begin{itemize}
-            \item \textbf{Exactitud y consistencia.}
-            \item \textbf{Confiabilidad.}
-            \item \textbf{Imagen.}
-        \end{itemize}
-    \end{minipage}
-\end{itemize}
-\newpage
-
-\section{Gestión empresarial (Presentaciones)}
+\section{\textcolor{orange}{Gestión empresarial (\textit{Presentaciones})}}
 \subsection{Paradoja de la productividad}
-Reducción de la productividad a pesar del crecimiento tecnológico, esta se puede dar por alguna de las siguientes razones:
-\begin{itemize}
-    \item Exceso de optimismo.
-    \item Medición incorrecta de la productividad.
-    \item Inclusion tecnológica sin estrategia.
-    \item Redistribución de la productividad.
-    \item Lapsos de tiempo cortos.
-    \item Inseguridad tecnológica.
-    \item Incertidumbre tecnológica.
-    \item Inversión en tecnología sin capacitación.
-    \item Estrés tecnológico.
-    \item Complejidad tecnológica.
-\end{itemize}
+\noindent Reducción de la productividad a pesar del crecimiento tecnológico, esta se puede dar por alguna de las siguientes razones: \\\\
+\begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+        \item Exceso de optimismo.
+        \item Medición incorrecta de la productividad.
+        \item Inclusion tecnológica sin estrategia.
+        \item Redistribución productividad.
+        \item Lapsos de tiempo cortos. 
+    \end{itemize}
+\end{minipage}
+\hspace{0.1\textwidth}
+\begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+        \item Inseguridad tecnológica.
+        \item Incertidumbre tecnológica.
+        \item Inversión en tecnología sin capacitación.
+        \item Estrés tecnológico.
+        \item Complejidad tecnológica.
+    \end{itemize}
+\end{minipage}
 \begin{center}
-    \begin{figure}[H]
+    \begin{figure}[H]   
         \centering
         \includegraphics[width=1\textwidth]{img/paradoja.png}
+        \vspace{-1.5cm}
     \end{figure}
 \end{center}
-Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\textbf{B}} tengan el menor valor posible y que el punto \textcolor{violet}{\textbf{C}} tenga el mayor valor posible, esto se puede lograr con:
-\begin{itemize}
+Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\textbf{B}} tengan el menor valor posible y que el punto \textcolor{violet}{\textbf{C}} tenga el mayor valor posible, esto se puede lograr con:\begin{itemize}
     \item Facilitación de participación.
     \item Facilitación de aprendizaje.
     \item Asistencia de usuario.
@@ -264,42 +234,126 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
 \end{itemize}
 \subsection{Industria 4.0}
 \noindent Es la cuarta revolución industrial, se caracteriza por la digitalización de la industria. Se basa en la interconexión de sistemas ciber-físicos, la inteligencia artificial, la robótica, el big data, la computación en la nube, la realidad aumentada, la impresión 3D, la ciberseguridad, la internet de las cosas, la simulación y la integración de sistemas.
+\begin{itemize}
+    \item \textbf{Características:}
+    \begin{itemize}
+        \item Productor tiene conciencia del cambio en su forma de trabajar y el cliente mejora el producto final.
+        \item Aumento en la seguridad de los trabajadores.
+        \item Mejora toma decisiones (Bases digitales).
+        \item Aumento de competitividad.
+    \end{itemize}
+    \item \textbf{Riesgos:}
+    \begin{itemize}
+        \item Dependencia tecnológica (Brecha digital).
+        \item Posibilidad de ataques cibernéticos.
+        \item Aumento despidos y contrataciones selectivas.
+        \item Resistencia al cambio.
+    \end{itemize}
+\end{itemize}
+
 \subsection{Transformación digital}
-\noindent Implementación de las tecnologías digitales en las empresas para cambiar la forma en que se hacen las cosas.
-\textbf{Características:}
+\noindent Implementación de las tecnologías digitales en las empresas para cambiar la forma en que se hacen las cosas. \\
+\begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+        \item \textbf{Características:}
+        \begin{itemize}
+            \item Mejora la productividad.
+            \item Mejora la experiencia del cliente.
+            \item Reduce los costos operativos.
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{0.45\textwidth}
+    \begin{itemize}
+        \item \textbf{Desventajas:}
+        \begin{itemize}
+            \item Alto nivel de competitividad.
+            \item Necesidad de una evolución constante en la industria.
+            \item Impacto en el ámbito cultural de las personas.
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+
+
+\subsection{Internet de las cosas (IOT)}
+\noindent El IOT es una herramienta que permite la interconexión de objetos cotidianos a la red, permitiendo la comunicación entre ellos y la recolección de datos. Esta herramienta se aplica a la vida cotidiana y a la industria.
+
 \begin{itemize}
-    \item Mejora la productividad.
-    \item Mejora la experiencia del cliente.
-    \item Reduce los costos operativos.
-\end{itemize}
-\textbf{Desventajas:}
-\begin{itemize}
-    \item Alto nivel de competitividad.
-    \item Necesidad de una evolución constante en la industria.
-    \item Impacto en el ámbito cultural de las personas.
+    \item \textbf{Características:}
+    \begin{itemize}
+        \item Conectividad con la red.
+        \item Sensibilidad en parámetros analizables.
+        \item Interacción entre elementos a través de interfaces para el usuario.
+        \item Nivel de seguridad.
+        \item Automatización de tareas y optimización de procesos industriales.
+    \end{itemize}
+    \item \textbf{Ventajas:}
+    \begin{itemize}
+        \item Mejora la eficiencia.
+        \item Mejora la calidad de vida.
+        \item Mayor facilidad en el seguimiento de procesos para las empresas.
+        \item Optimización de tiempos.
+    \end{itemize}
+    \item \textbf{Desventajas:}
+    \begin{itemize}
+        \item Vulnerabilidad en la seguridad.
+        \item Costos de implementación.
+        \item Dependencia de la tecnología (Brecha digital).
+        \item Resistencia cultural por parte del usuario.
+    \end{itemize}
 \end{itemize}
 
-% \subsection{\hl{Internet de las cosas}} TODO:
-% \newpage
+\newpage
 
-\section{Estrategias de desarrollo de sistemas de información}
-\subsection{Ciclo de vida tradicional/lineal/Cascada}
+
+\section{\textcolor{green}{Proceso de desarrollo de S.I}}
+
+\subsection{Conceptos}
+\noindent Todos los sistemas en su procesos de desarrollo pasan por estos 4 puntos:
+\begin{enumerate}
+    \item \textbf{Concepción:} Alguien pide o desarrolla la idea de un sistema.
+    \item \textbf{Diseño:} Se diseña el sistema tomando en cuenta todos los aspectos y variables.
+    \item \textbf{Construcción:} Se construye el sistema siguiendo el diseño.
+    \item \textbf{Implementación:} Se implementa en el entorno para el que se creo.
+\end{enumerate}
+\subsection{Fuentes de solicitudes de proyectos de sistemas de información}
+    \begin{itemize}
+        \item \textbf{Internas:}
+        \begin{itemize}
+            \item Jefes de departamento.
+            \item Altos ejecutivos.
+            \item Especialistas
+            \item Usuarios
+        \end{itemize}
+        \item \textbf{Externas} 
+    \end{itemize}
+\subsection{Orígenes de proyectos de sistemas de información}
+% \vspace{1cm}
+\begin{itemize}
+    \item \textbf{Integración.} Integrar sistemas nuevos en sistemas aislados de la empresa; \underline{Tecnico}.
+    \item \textbf{Velocidad de procesamiento.} Aumentar la velocidad de procesamiento de la información; \underline{Tecnico}.
+    \item \textbf{Seguridad/Confidencialidad.} Información accesible y confidencial para algunas personas; \underline{Tecnico}.
+    \item \textbf{Exactitud y consistencia.} Para sistemas de información que manejan datos numéricos el sistema debe ser exacto y consistente; \underline{Tecnico}.
+    \item \textbf{Confiabilidad.} Manejo y almacenamiento de información en caso de imprevistos; \underline{Tecnico}.
+    \item \textbf{Imagen.} Imitar competencia; \underline{Subjetivo}
+\end{itemize}
+\newpage
+\subsection{Estrategias de desarrollo de sistemas de información}
+\subsubsection{Ciclo de vida tradicional/lineal/Cascada}
 \noindent Conjunto de actividades que tienen que completarse para llevar a cabo un sistema de información. \linebreak
 \textbf{Actividades:}
 \begin{center}
     \begin{tikzpicture}
-        \textbf{
-        \node (A) at (0,0) {Definición del problema};
-        \node (B) at (0,-1) {Estudio de factibilidad};
-        \node (C) at (0,-2) {Análisis del sistema};
-        \node (D) at (0,-3) {Diseño lógico};
-        \node (E) at (0,-4) {Diseño físico};
-        \node (F) at (0,-5) {Construcción};
-        \node (G) at (0,-6) {Implementación};
-        \node (H) at (0,-7) {Revisión post-implementación};
-        \node (I) at (0,-8) {Mantenimiento};
-        }
-        
+        \node[font=\bfseries] (A) at (0,0)  {\hyperlink{def_probl}{Definición del problema}};
+        \node[font=\bfseries] (B) at (0,-1) {\hyperlink{est_fac}{Estudio de factibilidad}};
+        \node[font=\bfseries] (C) at (0,-2) {\hyperlink{ana_sis}{Análisis del sistema}};
+        \node[font=\bfseries] (D) at (0,-3) {\hyperlink{dis_log}{Diseño lógico}};
+        \node[font=\bfseries] (E) at (0,-4) {\hyperlink{dis_fis}{Diseño físico}};
+        \node[font=\bfseries] (F) at (0,-5) {\hyperlink{con}{Construcción}};
+        \node[font=\bfseries] (G) at (0,-6) {\hyperlink{imp}{Implementación}};
+        \node[font=\bfseries] (H) at (0,-7) {\hyperlink{rev_pos}{Revisión post-implementación}};
+        \node[font=\bfseries] (I) at (0,-8) {\hyperlink{man}{Mantenimiento}};
 
         \draw[->] (A) -- (B);
         \draw[->] (B) -- (C);
@@ -309,19 +363,18 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
         \draw[->] (F) -- (G);
         \draw[->] (G) -- (H);
         \draw[->] (H) -- (I);
-
     \end{tikzpicture}
 \end{center}
 
-\begin{itemize}
-    \item \textbf{Definición del problema:} Se define el problema a resolver.
+\begin{enumerate}
+    \item \hypertarget{def_probl}{\textbf{Definición del problema:}} Se define el problema a resolver.
         \begin{itemize}
             \item Estudio de la situación actual.
             \item Identificación del problema.
-            \item Objetivos del sistema.
+            \item Objetivos del sistema (Han de resolver la problemática; Generalmente están acompañados por un verbo).
             \item Limites del sistema (Se definen para evitar que el proyecto se salga de control).
             \item Ámbito del sistema (A que zona de la pirámide apoya).
-            \item Bases del sistema (Aspectos legales).
+            \item Bases del sistema (Aspectos legales; No todos los problemas tienen).
             \item Requerimientos del sistema (Que se espera del sistema).
                 \begin{itemize}
                     \item Requerimientos de información (Que información maneja el sistema).
@@ -330,14 +383,14 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
                     \item Requerimientos de seguridad (Claves y niveles de acceso).
                 \end{itemize}
         \end{itemize}
-    \item \textbf{Estudio de factibilidad:} Se estudia si es factible realizar el proyecto.
+    \item \hypertarget{est_fac}{\textbf{Estudio de factibilidad:}} Se estudia si es factible realizar el proyecto.
         \begin{itemize}
-            \item Estudio de factibilidad operativo.
-            \item Estudio de factibilidad técnico.
-            \item Estudio de factibilidad económico (Establecimiento de costos y beneficios donde Costos < Beneficios).
+            \item Estudio de factibilidad operativo. (Estudio de las areas que afectaría el SI e interesados en el mismo)
+            \item Estudio de factibilidad técnico. (Si se tiene la capacidad de obtener HW, SW y/o RRHH necesarios)
+            \item Estudio de factibilidad económico (Calculo y establecimiento de costos y beneficios donde: $Costos < Beneficios$).
         \end{itemize}
-    \item \textbf{Análisis del sistema:} Una vez se confirma la factibilidad del proyecto se proceden a analizar las entradas, procesos y salidas que conformaran el sistema para su funcionamiento.
-    \item \textbf{Diseño lógico:} Se diseña el sistema en base a los requerimientos del sistema. Este diseño puede ser de 4 tipos:
+    \item \hypertarget{ana_sis}{\textbf{Análisis del sistema:}} Una vez se confirma la factibilidad del proyecto se proceden a analizar las entradas, procesos y salidas que conformaran el sistema para su funcionamiento.
+    \item \hypertarget{dis_log}{\textbf{Diseño lógico:}} Se diseña el sistema en base a los requerimientos del sistema. Este diseño puede ser de 4 tipos:
         \begin{itemize}
             \item Diagrama de flujo de datos (DFD): Sirven para modelar procesos y muestra como se mueve la información.
             \item Diseño de procedimientos administrativos: Elementos necesarios para llevar a cabo una función administrativa resumido en un documento.
@@ -395,16 +448,15 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
                 \includegraphics[width=0.5\textwidth]{img/DConceptual.png}
             \end{figure}
         \end{itemize}
-    \item \textbf{Diseño físico:} Se diseña el sistema en base a la información que se tiene como objetivo manejar.
+    \item \hypertarget{dis_fis}{\textbf{Diseño físico:}} Se diseña el sistema en base a la información que se tiene como objetivo manejar.
     \begin{itemize}
-        \item Diseño físico E/S.
+        \item Diseño físico E/S. (Exacto lo que se ve en el computador)
         \item Diseño de base de datos (MER/Modelo de datos).
-        \item Diseño jerarquía de menus.
+        \item Diseño jerarquía de menus (Que acción esta por sobre otra y cual lleva a otra).
     \end{itemize}
-    \item \textbf{Construcción:} Punto en el cual se procede en la selección del lenguaje sobre el cual trabajaremos, el que utilizaremos para crear un programa y someterlo a pruebas de funcionamiento.
-                                 El objetivo de probar el programa es lograr un programa fiable y que cumpla con los requerimientos del sistema (que no se caiga) y asi poder entregar un sistema completamente funcional.
-    \\\\
-    \item \textbf{Implementación:}
+    \item \hypertarget{con}{\textbf{Construcción:}} Punto en el cual se procede en la selección del lenguaje sobre el cual trabajaremos, el que utilizaremos para crear un programa y someterlo a pruebas de funcionamiento. 
+        El objetivo de probar el programa es lograr un programa fiable y que cumpla con los requerimientos del sistema (que no se caiga) y asi poder entregar un sistema completamente funcional.
+    \item \hypertarget{imp}{\textbf{Implementación:}}
         \begin{itemize}
             \item Poblado de base de datos: Ingreso de datos necesarios para el funcionamiento del sistema, siendo estos datos requerimientos de información.
             \item Entrenamiento/capacitación de usuarios: Enseñar al usuario a usar los datos del sistema.
@@ -438,17 +490,17 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
                 \end{figure}
             \end{itemize}
         \end{itemize}
-    \item \textbf{Revisión post-implementación:} Revision del funcionamiento correcto del sistema instalado.
-    \item \textbf{Mantenimiento:} Proceso de corrección de errores y mejoras del sistema. Existen 4 tipos de mantenimiento:
+    \item \hypertarget{rev_pos}{\textbf{Revisión post-implementación:}} Revision del funcionamiento correcto del sistema instalado.
+    \item \hypertarget{man}{\textbf{Mantenimiento:}} Proceso de corrección de errores y mejoras del sistema. Existen 4 tipos de mantenimiento:
     \begin{itemize}
         \item Preventiva: Se realiza antes de que ocurra un error.
         \item Correctiva: Se realiza después de que ocurra un error.
         \item Perfectiva: Se realiza para mejorar el sistema.
         \item Adaptativa: Se realiza para adaptar el sistema a cambios en el entorno y sus nuevas tecnologías.
     \end{itemize}
-\end{itemize} 
+\end{enumerate} 
 % \newpage
-\subsection{Prototipos}
+\subsubsection{Prototipos}
 \noindent Alternativa al ciclo de vida tradicional, se basa en la creación de un prototipo para que el cliente pueda ver como se verá el sistema final.
 \begin{itemize}
     \item \textbf{Ventajas:}
@@ -468,9 +520,9 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
     \end{itemize}
 \end{itemize}
 \noindent En la creación de un prototipo se deben seguir los siguientes pasos:
-\begin{itemize}
+\begin{enumerate}
     \item \textbf{Definición de requerimientos:} Se definen los requerimientos del sistema.
-    \item \textbf{Diseño del prototipo:} Se diseña el prototipo.
+    \item \textbf{Análisis y diseño del prototipo:} Se diseña el prototipo.
     \item \textbf{Construcción del prototipo:} Se construye el prototipo.
     En este punto del proceso se pueden dar 4 situaciones:
     \begin{itemize}
@@ -479,16 +531,15 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
         \item El proyecto resulta ser mas grande de lo esperado por lo tanto se descarta el proyecto.
         \item El prototipo es el esperado por lo que se pasa a la etapa de construcción tomando el prototipo como base.
     \end{itemize}
-\end{itemize}
+\end{enumerate}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{img/Prototipo.png}
+    \includegraphics[width=0.45\textwidth]{img/Prototipo.png}
 \end{figure}
 % \newpage
-
 \subsection{Alternativa de desarrollo del sistema de información}
 \noindent Basándose en la identificación de fuentes internas o externas existen otras alternativas para el desarrollo de sistemas de información
-\begin{itemize}
+\begin{enumerate}
     \item Internas: Fuentes de desarrollo provenientes del mismo entorno empresarial. Pueden ser:
     \begin{itemize}
         \item Agentes internos: Personal perteneciente a la empresa que desarrolla el sistema. Ventajas de recurrir a agentes internos:
@@ -538,27 +589,84 @@ Se busca que el punto \textcolor{red}{\textbf{A}} y el punto \textcolor{red}{\te
     \end{itemize}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth]{img/Alt_des_SI.png}
+        \includegraphics[width=0.72\textwidth]{img/Alt_des_SI.png}
     \end{figure}
+\end{enumerate}
+\subsection{Restricciones de desarrollo de sistemas de información}
+\begin{itemize}
+    \item Falta de recursos.
+    \begin{itemize}
+        \item Humanos
+        \item Técnicos (HW, SW)
+        \item Económicos
+    \end{itemize}
+    \item Falta personal calificado.
+    \item Falta claridad de necesidad del S.I
+    \item Falta de apoyo de dirección.
+    \item Falta relevancia para el S.I
+    \item Falta cultura informática
 \end{itemize}
 \newpage
-
 \section{Diagramas de flujo de datos (\textbf{DFD})} 
-\noindent Los diagramas de flujo de datos son una herramienta que nos permite modelar procesos y mostrar como se mueve la información. Dentro de los DFD existen 3 tipos:
+\noindent Los diagramas de flujo de datos son una herramienta que nos permite modelar procesos y mostrar como se mueve la información. Dentro de los DFD existen 3 niveles:
 \begin{itemize}
-    \item Diagrama de contexto: Muestra el sistema como una caja negra y las interacciones que tiene con el entorno.
-    \item Diagrama de nivel superior: Muestra a detalle los procesos y elementos pertenecientes al diagrama de contexto, incluyendo archivos y bases de datos.
-    \item Diagrama de detalle o expansion: Muestra a detalle los procesos y elementos pertenecientes al diagrama de nivel superior.
+    \item Diagrama de contexto: Muestra el sistema como una caja negra y las interacciones que tiene con el entorno (No muestra archivos).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/contexto.png}
+    \end{figure}
+    \item Diagrama de nivel superior: Muestra a detalle los procesos y elementos pertenecientes al diagrama de contexto, incluyendo archivos y bases de datos (Muestra archivos).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{img/Superior.png}
+    \end{figure}
+    \item Diagrama de detalle o expansion: Muestra a detalle los procesos y elementos pertenecientes al diagrama de nivel superior (Conserva archivos y entidades; Procesos superiores se representan de otra forma).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/Detallado.png}
+    \end{figure}
 \end{itemize}
 Las figuras que utilizaremos para la construcción de nuestros DFD son:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.17\textwidth]{img/procesos.png}\hspace{1cm}
-    \includegraphics[width=0.20\textwidth]{img/entidad.png}\hspace{1cm}
-    \includegraphics[width=0.27\textwidth]{img/flujo.png}\hspace{1cm}
+    \includegraphics[width=0.17\textwidth]{img/procesos.png}\hspace{2.5cm}
+    \includegraphics[width=0.20\textwidth]{img/entidad.png}\hspace{2cm}
+    \includegraphics[width=0.27\textwidth]{img/flujo.png}\hspace{2.5cm}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.30\textwidth]{img/archivos.png}
 \end{figure}
+
+\subsection{Características generales de los elementos de un DFD}
+\noindent\textbf{Entidades:} Son los elementos que generan o consumen información.
+\begin{itemize}
+    \item No existen relaciones (flujos) entre entidades.
+    \item Se pueden repetir entidades colocando una linea diagonal en la esquina superior derecha por cada copia.
+\end{itemize}
+\textbf{Procesos:} Son las actividades que se realizan sobre la información.
+\begin{itemize}
+    \item Nombres de los procesos terminan en verbo o en -ción.
+\end{itemize}
+\textbf{Flujos:} Son las flechas que indican el movimiento de la información.
+\begin{itemize}
+    \item Nombre de los flujos \textbf{NO} comienzan por verbo \\(Ej.: Devolución libro $\rightarrow$ Libro devuelto).
+    \item Nombres de flujos de archivos en formato: ``información.requerida-nombre.archivo''.
+    \item Nombre de flujos no se pueden repetir.
+    \item Elementos son flujos de datos.
+    \item Lineas de flujo no se cruzan.
+    \item No son acciones.
+    \item Evitar redundancias.
+\end{itemize}
+\textbf{Archivos:} Son los almacenes de información.
+\begin{itemize}
+    \item Archivos se relacionan con procesos y no con entidades
+    \item Archivos no se relacionan entre si.
+\end{itemize}
+\subsubsection{Identificación de entidades}
+\begin{enumerate}
+    \item Todo aquel que aporte algún dato al proceso y que no forme parte del proceso es entidad.
+    \item Todo aquel que reciba información del proceso y que no forme parte del proceso es entidad.
+    \item Todo aquel que lleve a cabo el proceso, que este a cargo del proceso y/o forma parte del proceso, no es entidad.
+\end{enumerate}
 \end{document}
