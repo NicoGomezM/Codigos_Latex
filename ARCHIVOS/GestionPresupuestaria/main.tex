@@ -219,7 +219,7 @@
 
 \subsection{Valuación de flujos de efectivo en varios periodos}
 \subsubsection{Flujo de efectivo descontado(FED)} 
-\noindent Calculo del valor presente tomando en cuenta varias cantidades de dinero en diferentes periodos. Se calcula mediante la siguiente formula:
+\noindent Cálculo del valor presente de los flujos de efectivo futuros esperados de una inversión, descontados a una tasa que refleja su riesgo y costo de capital.
 \begin{align*}
     FED &= \sum_{t=1}^{n} \frac{{\textnormal{VF}}_t}{(1 + i)^t}
 \end{align*}
@@ -287,7 +287,7 @@
 \end{itemize}
 
 \subsection{Tasa interna de retorno}
-\noindent Tasa de descuento en la cual el VAN el igual a cero. Se calcula mediante la siguiente formula:
+\noindent Tasa de descuento en la cual el VAN el igual a cero. Este calculo se representa mediante la siguiente formula:
 \begin{align*}
     VAN &= \sum_{t=1}^{n} \frac{{\textnormal{VF}}_t}{(1 + \textnormal{\hl{TIR}})^t} - \textnormal{Inversion} = 0\\
     \textnormal{\hl{TIR}} &= \% 
@@ -318,13 +318,14 @@
         VAN &= \sum_{t=1}^{n} \frac{{\textnormal{VF}}_t}{(1 + \textnormal{{TIR}})^t} - \textnormal{Inversion} \\
         VAN &= -2000 + \frac{800}{(1 + 0.13)^1} + \frac{600}{(1 + 0.13)^2} + \frac{400}{(1 + 0.13)^3} + \frac{900}{(1 + 0.13)^4} \\
         VAN &= -2000 + 707 + 468 + 276 + 549\\
+        VAN &= 0\\
     \end{align*}
 
 \end{tcolorbox}
 \newpage
 
-\section{\hl{Amortización}}
-\noindent Pago gradual de deuda en un periodo de tiempo determinado por medio de una deuda a través de una cuota con interés fijo. La cuota se puede calcular mediante la siguiente formula:
+\section{Amortización}
+\noindent La amortización es el pago gradual de una deuda en un período de tiempo determinado mediante cuotas fijas, que incluyen tanto el monto original de la deuda como los intereses. La cuota se puede calcular mediante la siguiente fórmula:
 \begin{align*}
     \textnormal{Cuota} &= \textnormal{Crédito} \cdot \frac{i\%}{1-((1+i\%)^{-n})}
 \end{align*}
@@ -334,7 +335,7 @@
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
-    En un momento determinado yo debo la deuda original menos lo amortizado.
+    En un momento determinado yo debo la deuda original menos lo amortizado, en otras palabras, es lo que queda por pagar de la deuda inicial después de restar los pagos ya efectuados.
 \end{tcolorbox}
 \newpage
 
@@ -447,7 +448,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[height=3.5cm]{img/polirelajada.png}
+    \includegraphics[height=4.5cm]{img/polirelajada.png}
 \end{figure}
 
 \subsubsection{Politica restringida}
@@ -459,7 +460,7 @@
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[height=3.5cm]{img/polirestrict.png}
+    \includegraphics[height=4.5cm]{img/polirestrict.png}
 \end{figure}
 \newpage
 
@@ -526,7 +527,7 @@
     \begin{align*}
         \textnormal{PPCC} &= \frac{\textnormal{Cuentas por cobrar} \cdot 365}{\textnormal{Ventas anuales}} = \textnormal{Nº días}
     \end{align*}
-    - Corresponde a los Dias en que laa ventas (efectivo/crédito), permanecen como cuentas por cobrar, osea, el tiempo promedio de crédito que la empresa le da a sus clientes.
+    - Corresponde a los Dias en que las ventas (efectivo/crédito), permanecen como cuentas por cobrar, osea, el tiempo promedio de crédito que la empresa le da a sus clientes.
     \item \textbf{Plazo promedio de cuentas por pagar: }Relaciona las cuentas por pagar con el costo de ventas. Se calcula mediante la siguiente formula:
     \begin{align*}
         \textnormal{PPCP} &= \frac{\textnormal{Cuentas por pagar} \cdot 365}{\textnormal{Costo de ventas anuales}} = \textnormal{Nº días}
@@ -580,7 +581,7 @@ sus obligaciones con los acreedores.
     \end{align*}
     \item \textbf{Relación sobre las ventas (Margen neto):} Corresponde al porcentaje de utilidad o pérdida obtenido por cada peso de venta. Se calcula mediante la siguiente formula: 
     \begin{align*}
-        \textnormal{MSV} &= \frac{\textnormal{Resultado del ejercicio}}{\textnormal{Ventas}} \cdot 100 = \%
+        \textnormal{RSV} &= \frac{\textnormal{Resultado del ejercicio}}{\textnormal{Ventas}} \cdot 100 = \%
     \end{align*}
     - Por \$1 de venta, tengo una ganancia o perdida del X\%.
 \end{itemize}
@@ -590,7 +591,8 @@ sus obligaciones con los acreedores.
 \subsection{Rendimientos de los activos (ROA)}
 \noindent Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido en activos. Se calcula mediante la siguiente formula:
 \begin{align*}
-    ROA &= \frac{\textnormal{Ventas netas}}{\textnormal{Total activos}} \cdot \frac{\textnormal{Utilidad neta}}{\textnormal{Ventas netas}} 
+    ROA &= \frac{\textnormal{Ventas netas}}{\textnormal{Total activos}} \cdot \frac{\textnormal{Utilidad neta}}{\textnormal{Ventas netas}}\\ 
+    &= \frac{\textnormal{Utilidad neta}}{\textnormal{Total activos}} = \%
 \end{align*}
 
 \noindent - Con un $ROA \leq 0$, los inversionistas pierden dinero. 
@@ -599,25 +601,15 @@ sus obligaciones con los acreedores.
     \textit{\textbf{Mientras mas alto sea el $ROA$, mas eficiente es la empresa al usar el capital en generar utilidades.-}}
 \end{tcolorbox}
 
-% \subsection{Capital de trabajo operativo (CTO)}
-% \noindent Concepto más profundo que el concepto contable del \hyperref[sec:Capital neto del trabajo (CNT)]{capital del trabajo}, y en este se consideran solo los activos que intervienen directamente
-% en la generación de productos de la empresa, menos las cuentas por pagar a proveedores. Para esto se excluyen las partidas de efectivo en inversiones a corto plazo. Se calcula mediante la siguiente formula:
-% \begin{align*}
-%     CTO &= \textnormal{Cuentas por cobrar} + \textnormal{Existencias} - \textnormal{Cuentas por pagar}
-% \end{align*}
-
-% \noindent Lo optimo es un valor \textbf{siempre positivo} en esta variable, ya que indica que la empresa tiene una buena capacidad de financiamiento de sus operaciones.
-
 \subsection{Rendimiento del capital (ROE)}
 \noindent Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido por los dueños en la empresa, incluyendo utilidades retenidas. Se calcula mediante la siguiente formula:
 \begin{align*}
-    ROE &= \frac{\textnormal{Utilidad neta}}{\textnormal{Patrimonio}} \cdot 100 = \%
+    ROE &= \frac{\textnormal{Utilidad neta}}{\textnormal{Capital}} \cdot 100 = \%
 \end{align*}
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black,title=Recordatorio]
     \begin{align*}
-        \textnormal{Capital} &= \textnormal{Patrimonio} - \textnormal{Utilidad Neta} \\
-        &= \textnormal{Patrimonio} + \textnormal{Pasivos}
+        \textnormal{Capital} &= \textnormal{Patrimonio} - \textnormal{Utilidad Neta}
     \end{align*}
 \end{tcolorbox}
 
