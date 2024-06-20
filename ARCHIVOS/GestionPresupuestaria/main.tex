@@ -52,7 +52,7 @@
 
 \section{Tipos de intereses}
 \subsection{Interés simple}
-\noindent El interés simple es aquel que se calcula sobre el capital inicial, sin importar si se reinvierte o no. Algunas de las características del interés simple son:
+\noindent El interés simple es aquel que se cálcula sobre el capital inicial, sin importar si se reinvierte o no. Algunas de las características del interés simple son:
 \begin{itemize}
     \item El capital inicial se mantiene constante durante toda la operación.
     \item El interés siempre es el mismo para cualquier periodo de la operación.
@@ -63,7 +63,7 @@
     \begin{enumerate}
         \item Si invierto \$10.000.000 a una tasa de interés simple del 15\% anual, ¿cuánto dinero tendré al cabo de 3 años?
     \end{enumerate}
-    \textbf{Formula:}
+    \textbf{fórmula:}
     \begin{align*}
         VF &= VP(1 + i \cdot n)
     \end{align*}
@@ -94,7 +94,7 @@
 
 
 \subsection{Interés compuesto}
-\noindent El interés compuesto es aquel que se calcula sobre el capital inicial y los intereses generados en periodos anteriores. Algunas de las características del interés compuesto son:
+\noindent El interés compuesto es aquel que se cálcula sobre el capital inicial y los intereses generados en periodos anteriores. Algunas de las características del interés compuesto son:
 \begin{itemize}
     \item El capital inicial aumenta en cada periodo de la operación debido a que se suman los intereses.
     \item La tasa de interés se aplica sobre un capital que va variando.
@@ -105,7 +105,7 @@
     \begin{enumerate}
         \item Si invierto \$10.000.000 a una tasa de interés compuesto del 15\% anual, ¿cuánto dinero tendré al cabo de 3 años?
     \end{enumerate}
-    \textbf{Formula:}
+    \textbf{fórmula:}
     \begin{align*}
         VF &= VP(1 + i)^n
     \end{align*}
@@ -154,13 +154,13 @@
 
 \section{Valor del dinero y Tasas de rendimiento}
 \subsection{Tasa de rendimiento}
-\noindent La tasa de rendimiento es la rentabilidad que se obtiene de una inversión. Se puede calcular mediante la siguiente formula:
+\noindent La tasa de rendimiento es la rentabilidad que se obtiene de una inversión. Se puede calcular mediante la siguiente fórmula:
 \begin{align*}
     \textnormal{Rendimiento} &= \frac{\textnormal{Ganancia}}{\textnormal{Inversion}} \cdot 100\%
 \end{align*}
 
 \subsection{Valor futuro (VF)}
-\noindent Valor que tendrá una inversión en el futuro tomando en cuenta un capital inicial (VP), una tasa de interés (i) y un número de periodos (n). Se puede calcular mediante la siguiente formula:
+\noindent Valor que tendrá una inversión en el futuro tomando en cuenta un capital inicial (VP), una tasa de interés (i) y un número de periodos (n). Se puede calcular mediante la siguiente fórmula:
 \begin{align*}
     VF &= VP(1 + i)^n
 \end{align*}
@@ -173,7 +173,7 @@
 \end{align*} 
 
 \subsection{Valor presente (VP)}
-\noindent Valor que tiene una inversión en el presente tomando en cuenta un capital futuro (VF), una tasa de interés (i) y un número de periodos (n). Se puede calcular mediante la siguiente formula:
+\noindent Valor que tiene una inversión en el presente tomando en cuenta un capital futuro (VF), una tasa de interés (i) y un número de periodos (n). Se puede calcular mediante la siguiente fórmula:
 \begin{align*}
     VP &= \frac{VF}{(1 + i)^n}
 \end{align*}
@@ -232,7 +232,7 @@
 \end{align*}
 
 \subsubsection{Valor actual Neto (VAN/VNA/VPN)}
-\noindent Son los flujos de efectivo descontados menos la inversión inicial, el cual si posee un valor positivo, el proyecto es rentable. Se calcula mediante la siguiente formula:
+\noindent Son los flujos de efectivo descontados menos la inversión inicial, el cual si posee un valor positivo, el proyecto es rentable. Se cálcula mediante la siguiente fórmula:
 \begin{align*}
     VAN &= {\sum_{t=1}^{n} \frac{{\textnormal{VF}}_t}{(1 + i)^t}} - \textnormal{Inversion} \\
     VAN &= FED - \textnormal{Inversion}
@@ -245,7 +245,7 @@
 \end{itemize}
 
 \begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Ejemplo]
-    \noindent Calcular el valor actual neto de un proyecto que tiene una inversión inicial de \$2.000 y los siguientes flujos de efectivo: \\\\
+    \noindent calcular el valor actual neto de un proyecto que tiene una inversión inicial de \$2.000 y los siguientes flujos de efectivo: \\\\
     \begin{minipage}{0.4\textwidth}
         \centering
         \begin{tabular}{|c|c|}
@@ -283,11 +283,11 @@
     \item No toma en cuenta el cambio del valor del dinero en el tiempo causado por la inflación y tipos de interés.
     \item No toma en cuenta los ingresos después del plazo de recuperación, lo que puede llevar a decisiones erróneas como priorizar inversiones de corto plazo o con altos flujos de caja iniciales.
     \item Necesita de una prevision de flujos de caja futuros (estimar los gastos o ingresos en caja), lo que puede llevar a errores en la estimación.
-    \item Prioriza los proyectos que permiten recuperar la inversion inicial en corto plazo antes que los que pueden generan mayor rentabilidad a largo plazo.
+    \item Prioriza los proyectos que permiten recuperar la inversion inicial en corto plazo antes que los que pueden generar mayor rentabilidad a largo plazo.
 \end{itemize}
 
 \subsection{Tasa interna de retorno}
-\noindent Tasa de descuento en la cual el VAN el igual a cero. Este calculo se representa mediante la siguiente formula:
+\noindent Tasa de descuento en la cual el VAN es igual a cero. Este calculo se representa mediante la siguiente fórmula:
 \begin{align*}
     VAN &= \sum_{t=1}^{n} \frac{{\textnormal{VF}}_t}{(1 + \textnormal{\hl{TIR}})^t} - \textnormal{Inversion} = 0\\
     \textnormal{\hl{TIR}} &= \% 
@@ -340,12 +340,12 @@
 \newpage
 
 \section{Tasa de interés equivalente}
-\noindent Si se tiene una tasa de interés anual $ia$; la tasa de interés mensual se puede calcular mediante la siguiente formula:
+\noindent Si se tiene una tasa de interés anual $ia$; la tasa de interés mensual se puede calcular mediante la siguiente fórmula:
 \begin{align*}
     \textnormal{Con interés compuesto: }im &= ((1 + ia)^{\frac{1}{12}} - 1) \cdot 100\%\\
 \end{align*}
 
-\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Ejecicios]
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!60!black,title=Ejercicios]
     \begin{itemize}
         \item Interés anual = 15\% $\Rightarrow$ Interés mensual = 1.17\%
         \item Interés anual = 9\% $\Rightarrow$ Interés mensual = 0.72\%
@@ -353,7 +353,7 @@
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
-    Recordar que interés compuesto es aquel que se calcula sobre el capital inicial y los intereses generados en periodos anteriores.
+    Recordar que interés compuesto es aquel que se cálcula sobre el capital inicial y los intereses generados en periodos anteriores.
 \end{tcolorbox}
 
 \section{Carga anual equivalente (CAE)}
@@ -363,7 +363,7 @@
     \item Mediante el CAE, las personas pueden comparar diferentes alternativas de crédito, sin importar las variables establecidas por cada entidad.
     \item Un CAE bajo indica que el crédito es más barato, ya que considera todos los elementos del crédito.
 \end{itemize}
-\noindent El CAE por ley debe ser entregado por todas las entidades financieras que otorgan créditos de consumo. Se puede calcular mediante la siguiente formula:
+\noindent El CAE por ley debe ser entregado por todas las entidades financieras que otorgan créditos de consumo. Se puede calcular mediante la siguiente fórmula:
 \begin{align*}
     CAE &= (1+i_f)^n - 1
 \end{align*}
@@ -399,7 +399,7 @@
 \newpage
 
 \section{Capital neto del trabajo (CNT)}\label{sec:Capital neto del trabajo (CNT)}
-\noindent El capital neto de trabajo es un indicador financiero que mide la capacidad de una empresa para cumplir con sus obligaciones a corto plazo. Se define como la \textbf{diferencia entre los activos circulantes y los pasivos de corto plazo} por lo tanto se calcula de la siguiente forma:
+\noindent El capital neto de trabajo es un indicador financiero que mide la capacidad de una empresa para cumplir con sus obligaciones a corto plazo. Se define como la \textbf{diferencia entre los activos circulantes y los pasivos de corto plazo} por lo tanto se cálcula de la siguiente forma:
 \begin{align*}
     CNT &= AC - PCP
 \end{align*}
@@ -473,7 +473,7 @@
     \item Índices de rentabilidad.
 \end{enumerate}
 
-\subsection{Índices de liquidez}
+\subsubsection{Índices de liquidez}
 \noindent Capacidad de una empresa de convertir sus activos en caja o de obtener caja para satisfacer su pasivo circulante. Es decir, miden la solvencia de una empresa en el corto plazo.
 
 \begin{tcolorbox}[colback=orange!10!white,colframe=orange!60!black,title=Observación]
@@ -481,7 +481,7 @@
 \end{tcolorbox}
 
 \begin{itemize}
-    \item \textbf{Índice de liquidez corriente:} Correlación entre los recursos circulantes de la empresa para hacer frente a sus obligaciones de corto plazo. Se calcula mediante la siguiente formula:
+    \item \textbf{Índice de liquidez corriente:} Correlación entre los recursos circulantes de la empresa para hacer frente a sus obligaciones de corto plazo. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{ILC} &= \frac{\textnormal{AC}}{\textnormal{PCP}} = \textnormal{Nº de veces}
     \end{align*}
@@ -492,7 +492,7 @@
         \item En un escenario perfecto el \textbf{$1.0 < \textnormal{ILC} < 1.5$}, ya que si el índice es menor a 1, la empresa se encuentra en una situación de \textbf{riesgo} y si es mayor a 1.5 la empresa se encuentra en una situación donde existen \textbf{recursos ociosos}.
     \end{itemize}
 
-    \item \textbf{Coeficiente ácido:} Correlación entre los recursos circulantes sin tomar en cuenta los inventarios para hacer frente a sus obligaciones de corto plazo. Se calcula mediante la siguiente formula:
+    \item \textbf{Coeficiente ácido:} Correlación entre los recursos circulantes sin tomar en cuenta los inventarios para hacer frente a sus obligaciones de corto plazo. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{CA} &= \frac{\textnormal{AC} - \textnormal{Existencias}}{\textnormal{PCP}} = \textnormal{Nº de veces}
     \end{align*} 
@@ -505,7 +505,7 @@
 
     \item\textbf{Capital de trabajo operativo (CTO):}
     \noindent Concepto más profundo que el concepto contable del \hyperref[sec:Capital neto del trabajo (CNT)]{capital del trabajo}, y en este se consideran solo los activos que intervienen directamente
-    en la generación de productos de la empresa, menos las cuentas por pagar a proveedores. Para esto se excluyen las partidas de efectivo en inversiones a corto plazo. Se calcula mediante la siguiente formula:
+    en la generación de productos de la empresa, menos las cuentas por pagar a proveedores. Para esto se excluyen las partidas de efectivo en inversiones a corto plazo. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         CTO &= \textnormal{Cuentas por cobrar} + \textnormal{Existencias} - \textnormal{Cuentas por pagar}
     \end{align*}
@@ -515,25 +515,25 @@
     \end{itemize}
 \end{itemize}
 
-\subsection{Indicadores de actividad y rotación}
+\subsubsection{Indicadores de actividad y rotación}
 \noindent Miden la eficiencia con la que la empresa utiliza sus activos para generar ventas. Mientras mejores sean estos indicadores, mejor uso de recursos se esta haciendo. Algunos de los indicadores son:
 
 \begin{itemize}
-    \item \textbf{Plazo promedio de cuentas por cobrar: }Relaciona las cuentas por cobrar con las ventas anuales. Se calcula mediante la siguiente formula:
+    \item \textbf{Plazo promedio de cuentas por cobrar: }Relaciona las cuentas por cobrar con las ventas anuales. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{PPCC} &= \frac{\textnormal{Cuentas por cobrar} \cdot 365}{\textnormal{Ventas anuales}} = \textnormal{Nº días}
     \end{align*}
     \begin{itemize}
         \item Corresponde a los Días en que las ventas (efectivo/crédito), permanecen como cuentas por cobrar, osea, el tiempo promedio de crédito que la empresa le da a sus clientes.
     \end{itemize}
-    \item \textbf{Plazo promedio de cuentas por pagar: }Relaciona las cuentas por pagar con el costo de ventas. Se calcula mediante la siguiente formula:
+    \item \textbf{Plazo promedio de cuentas por pagar: }Relaciona las cuentas por pagar con el costo de ventas. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{PPCP} &= \frac{\textnormal{Cuentas por pagar} \cdot 365}{\textnormal{Costo de ventas anuales}} = \textnormal{Nº días}
     \end{align*}
     \begin{itemize}
         \item Es el plazo en el que las compras de existencias se quedan como cuentas por pagar, o también se puede ver como el tiempo promedio de crédito que los proveedores le dan a la empresa.
     \end{itemize}
-    \item \textbf{Rotación de inventarios: }Determina que tan rápido es el movimiento de fondos a través del inventario, y que tan circulante es el inventario. Se calcula mediante la siguiente formula:
+    \item \textbf{Rotación de inventarios: }Determina que tan rápido es el movimiento de fondos a través del inventario, y que tan circulante es el inventario. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{RI} &= \frac{\textnormal{Costo anual mercaderia vendida}}{\textnormal{Existencias promedio}} = \textnormal{Nº veces} \\
         \textnormal{En días} &= \frac{365}{RI}
@@ -541,7 +541,7 @@
     \begin{itemize}
         \item Indica lo rápido que los inventarios se transforman en efectivo o en cuentas por cobrar a través de las ventas.
     \end{itemize}
-    \item \textbf{Rotación de activos totales:} Indicador que le dice a la empresa que tan eficiente esta administrando y gestionando sus activos. Se calcula mediante la siguiente formula:
+    \item \textbf{Rotación de activos totales:} Indicador que le dice a la empresa que tan eficiente esta administrando y gestionando sus activos. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{RAT} &= \frac{\textnormal{Ventas anuales}}{\textnormal{Total activos}} = \textnormal{Nº veces} \\
         \textnormal{En días} &= \frac{365}{\textnormal{RAT}}
@@ -551,19 +551,19 @@
         \item La rotación de activos se da en días, por lo que el indicador RAT me está diciendo cada cuántos días los activos de la empresa se convierten en efectivo.
     \end{itemize}\end{itemize}
 
-\subsection{Indicadores de endeudamiento}
+\subsubsection{Indicadores de endeudamiento}
 \noindent Proporción de financiamiento hecha por terceros respecto a los dueños de la empresa. De igual manera dan a conocer la capacidad de la empresa para responder por 
 sus obligaciones con los acreedores.
 
 \begin{itemize}
-    \item \textbf{Razón de endeudamiento:} Proporción de los activos que han sido financiados con deudas de terceros. Se calcula mediante la siguiente formula:
+    \item \textbf{Razón de endeudamiento:} Proporción de los activos que han sido financiados con deudas de terceros. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{RE} &= \frac{\textnormal{Total pasivos}}{\textnormal{Total activos}} = \%
     \end{align*}
     \begin{itemize}
         \item Desde el punto de vista acreedor, equivale a la porción de los activos comprometidos con los acreedores externos a la empresa.
     \end{itemize}
-    \item \textbf{Endeudamiento de leverage:} Indica cuanto del patrimonio esta comprometido con los acreedores. Se calcula mediante la siguiente formula: 
+    \item \textbf{Endeudamiento de leverage:} Indica cuanto del patrimonio esta comprometido con los acreedores. Se cálcula mediante la siguiente fórmula: 
     \begin{align*}
         \textnormal{EL} &= \frac{\textnormal{Total pasivos}}{\textnormal{Patrimonio}} = \%
     \end{align*}
@@ -575,23 +575,23 @@ sus obligaciones con los acreedores.
     \end{itemize}
 \end{itemize}
 
-\subsection{Indicadores de rentabilidad}
+\subsubsection{Indicadores de rentabilidad}
 \noindent Permiten analizar la rentabilidad de la empresa en el contexto de las inversiones que realiza para obtenerlas o del nivel de ventas que posee. Algunos de los indicadores son:
 
 \begin{itemize}
-    \item \textbf{Relación margen sobre las ventas (Margen Bruto):} Indica el beneficio de la empresa en relación con el volumen de ventas y el margen que deja la mercadería vendida. Se calcula mediante la siguiente formula:
+    \item \textbf{Relación margen sobre las ventas (Margen Bruto):} Indica el beneficio de la empresa en relación con el volumen de ventas y el margen que deja la mercadería vendida. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         \textnormal{RMSV} &= \frac{\textnormal{(\textnormal{Ventas} - \textnormal{Costo de ventas})}}{\textnormal{Ventas}} \cdot 100 = \% \\
         &= \frac{\textnormal{Utilidad}}{\textnormal{Ventas}} \cdot 100 = \%
     \end{align*}
-    \item \textbf{Relación sobre las ventas (Margen neto):} Corresponde al porcentaje de utilidad o pérdida obtenido por cada peso de venta. Se calcula mediante la siguiente formula: 
+    \item \textbf{Relación sobre las ventas (Margen neto):} Corresponde al porcentaje de utilidad o pérdida obtenido por cada peso de venta. Se cálcula mediante la siguiente fórmula: 
     \begin{align*}
         \textnormal{RSV} &= \frac{\textnormal{Resultado del ejercicio}}{\textnormal{Ventas}} \cdot 100 = \%
     \end{align*}
     \begin{itemize}
         \item Por \$1 de venta, tengo una ganancia o perdida del X\%.
     \end{itemize}
-    \item \textbf{Rendimientos de los activos (ROA):} Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido en activos. Se calcula mediante la siguiente formula:
+    \item \textbf{Rendimientos de los activos (ROA):} Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido en activos. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         ROA &= \frac{\textnormal{Ventas netas}}{\textnormal{Total activos}} \cdot \frac{\textnormal{Utilidad neta}}{\textnormal{Ventas netas}}\\ 
         &= \frac{\textnormal{Utilidad neta}}{\textnormal{Total activos}} = \%
@@ -599,7 +599,7 @@ sus obligaciones con los acreedores.
     \begin{itemize}
         \item Con un $ROA \leq 0$, los inversionistas pierden dinero.
     \end{itemize}
-    \item \textbf{Rendimiento del capital (ROE):} Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido por los dueños en la empresa, incluyendo utilidades retenidas. Se calcula mediante la siguiente formula:
+    \item \textbf{Rendimiento del capital (ROE):} Corresponde al porcentaje de utilidad o perdida obtenido por cada peso invertido por los dueños en la empresa, incluyendo utilidades retenidas. Se cálcula mediante la siguiente fórmula:
     \begin{align*}
         ROE &= \frac{\textnormal{Utilidad neta}}{\textnormal{Capital}} \cdot 100 = \%
     \end{align*}
