@@ -4,9 +4,18 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{soul}
+\usepackage{circuitikz}
+\usepackage{float}
+\usepackage[inline]{enumitem}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[table]{xcolor}
+
+
 
 \begin{document}
-
 \imagenlogoU{img/logoNGMFormal_sinF.png}
 \linklogoU{https://github.com/NicoGomezM} 
 % \imagenlogoD{img/logo-ubb-txt-face.png} 
@@ -53,7 +62,7 @@ En 1965, Gordon Moore gráfico los datos sobre el crecimiento en el rendimiento 
 \noindent El procesador trabaja todo en lo que se llama registro. Este es como un vector de bits y su tamaño (32 o 64) determinará cuántas operaciones complejas puede realizar.
 
 \subsection{Bytes}
-\begin{table*} [h]
+\begin{table*} [H]
     \centering
         \renewcommand{\arraystretch}{1.5} % Aumenta la altura de las filas
         \begin{tabular}{|c|c|c|}
@@ -179,7 +188,12 @@ que la cifra de 128 GB se refiere únicamente a la capacidad de almacenamiento d
     \item \textbf{SLOT o Socket del Microprocesador:} Instalación del CPU.
     \item \textbf{Ranuras para Módulos de Memoria RAM}
     \item \textbf{Conectores para HD LED, Speaker y Reset Button}
-    
+    \begin{itemize}
+        \item HD LED: Indicador color rojo de actividad del disco duro ubicado en 
+        la parte delantera de la case.
+        \item Speaker (SPK): Conexión del cable del speaker el cual emite los bips.
+        \item Reset button (RST): Cable del botón del reset que se encuentra en la parte delantera de la case y sirve para reiniciar la máquina
+    \end{itemize}
 \end{itemize}
 
 \subsection{Procesador}
@@ -284,7 +298,7 @@ Tipos de redes y tarjetas:
 
 \subsubsection{Valores de Voltaje} 
 \noindent Típicamente se representan los 2 valores discretos de voltaje utilizados con las letras L y H, donde L es \textbf{LOW} y H es \textbf{HIGH}. 
-\begin{table*} [h]
+\begin{table*} [H]
     \centering
     \colorbox{yellow!20}{%
         \begin{tabular}{|c|c|c|}
@@ -318,7 +332,542 @@ Un megahercio (1 MHz) equivale a un millón de ciclos por segundo.
 \newpage
 
 \section{Lenguaje Maquina}
+\noindent Los códigos hexadecimales pueden representar instrucciones, registros de la CPU, direcciones de memoria o datos.
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!75!black,title=Ejemplo]
+    \begin{table}[H]
+        \centering
+            \begin{tabular}{|c|c|c|}
+            \hline
+            Código & Operación & Descripción \\
+            \hline
+            A0 & 2F & Acceder a la celda de memoria 2F \\
+            3E & 01 & Copiar el registro 1 de la ALU \\
+            A0 & 30 & Acceder a la celda de memoria 30 \\
+            3E & 02 & Copiar en el registro 2 de la ALU \\
+            1D & - & Sumar \\
+            B3 & 31 & Guardar el resultado de la celda de memoria 31 \\
+            \hline
+            \end{tabular}
+    \end{table}
+\end{tcolorbox}
+\subsection{Lenguaje Ensamblador}
+\noindent El lenguaje ensamblador es un lenguaje de programación de bajo nivel que se utiliza para escribir programas que se ejecutan directamente en la CPU.
+Se utilizan codificación nemotécnica para facilitar la programación y tener una mayor legibilidad.\\\\
+\begin{minipage}[c]{0.5\textwidth}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    READ & 2F \\
+    REG & 01 \\
+    READ & 30 \\
+    REG & 02 \\
+    ADD & - \\
+    WRITE & 31 \\
+    \hline
+    \end{tabular}
+\end{table}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\centering
+\begin{tabular}{c}
+    Código fuente (lenguaje ensamblador)\\
+    $\downarrow$\\
+    Programa ensamblador\\
+    $\downarrow$\\
+    Código máquina (lenguaje máquina)\\
+\end{tabular}
+\end{minipage}
+
+\vspace{1cm} % Aumenta la separación vertical aquí
+
+\noindent Este tipo de lenguaje se considera un \textbf{lenguaje de nivel medio}.\\\\
+
+\subsection{Lenguajes de alto nivel}
+\noindent Algunos lenguajes de alto nivel son: \\\\
+\begin{minipage}{0.33\textwidth}
+\begin{itemize}
+    \item \textbf{Ada}
+    \item \textbf{ALGOL}
+    \item \textbf{BASIC}
+    \item \textbf{C}
+    \item \textbf{C++}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+\begin{itemize}
+    \item \textbf{C\#}
+    \item \textbf{COBOL}
+    \item \textbf{Fortran}
+    \item \textbf{Java}
+    \item \textbf{Pascal}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.33\textwidth}
+\begin{itemize}
+    \item \textbf{Python}
+    \item \textbf{Ruby}
+    \item \textbf{Modula}
+    \item \textbf{Simula}
+\end{itemize}
+\end{minipage}
 \newpage
+
+\section{Algebra de Boole}
+\noindent George Boole introdujo el álgebra de Boole en 1854. Este sistema matemático se basa en la lógica y la teoría de conjuntos, y utiliza variables binarias (0 y 1) junto con compuertas lógicas para representar y manipular proposiciones lógicas. El álgebra de Boole es fundamental en la teoría de circuitos digitales y la informática.
+\subsection{Compuertas lógicas}
+\noindent Las compuertas lógicas son dispositivos electrónicos que realizan operaciones lógicas sobre una o más entradas binarias y generan una salida binaria. Las compuertas lógicas básicas son: \\\\
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{center}
+    \begin{itemize}
+        \item \textbf{AND} 
+        \item \textbf{OR} 
+        \item \textbf{NOT}
+        \item \textbf{NAND}
+    \end{itemize}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{center}
+    \begin{itemize}
+        \item \textbf{NOR}
+        \item \textbf{XOR}
+        \item \textbf{XNOR}
+    \end{itemize}
+    \end{center}
+\end{minipage}
+\subsection{Compuertas lógicas básicas}
+\subsubsection{Compuerta AND}
+\noindent La compuerta AND produce una salida de 1 solo si todas sus entradas son 1. La tabla de verdad de una compuerta AND es: \\\\
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & A AND B = A $\cdot$ B = Z\\
+    \hline
+    0 & 0 & 0 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    1 & 1 & 1 \\
+    \hline
+    \end{tabular}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{circuitikz}[transform shape, scale=1.5]
+        % Ajusta la posición vertical aquí si es necesario
+        \draw (0,0.75) node[and port] (myand1) {};
+    \end{circuitikz}
+\end{minipage}
+
+\begin{tcolorbox}[colback=orange!10!white,colframe=orange!75!black,title=Observación]
+    \textit{\textbf{Recordar que en un circuito representativo de AND en serie el voltaje total es la suma de los voltajes de las compuertas.-}}
+\end{tcolorbox}
+
+\subsubsection{Compuerta OR}
+\noindent La compuerta OR produce una salida de 1 si al menos una de sus entradas es 1. La tabla de verdad de una compuerta OR es: \\\\
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & A OR B = A + B = Z\\
+        \hline
+        0 & 0 & 0 \\
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 1 & 1 \\
+        \hline
+        \end{tabular}
+    \end{table}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{circuitikz}[transform shape, scale=1.5]
+        % Ajusta la posición vertical aquí si es necesario
+        \draw (0,0.75) node[or port] (myand1) {};
+    \end{circuitikz}
+\end{minipage}
+
+\newpage
+
+
+\subsubsection{Compuerta NOT}
+\noindent La compuerta NOT produce una salida de 1 si su entrada es 0 y viceversa. La tabla de verdad de una compuerta NOT es:\\\\
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        A & NOT A = $\overline{A}$ = Z\\
+        \hline
+        0 & 1 \\
+        1 & 0 \\
+        \hline
+        \end{tabular}
+    \end{table}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{circuitikz}[transform shape, scale=1.5]
+        % Ajusta la posición vertical aquí si es necesario
+        \draw (0,0.75) node[not port] (myand1) {};
+    \end{circuitikz}
+\end{minipage}
+
+\subsection{Leyes del Algebra de Boole}
+\textbf{Identidades Básicas} \\
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{enumerate}
+        \item $X + 0 = X$
+        \item $X + 1 = 1$
+        \item $X + X = X$
+        \item $X + \overline{X} = 1$
+        \item $\overline{\overline{X}} = X$
+    \end{enumerate}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{enumerate}
+        \setcounter{enumi}{5} % Continúa la numeración desde 6
+        \item $X \cdot 0 = 0$
+        \item $X \cdot 1 = X$
+        \item $X \cdot X = X$
+        \item $X \cdot \overline{X} = 0$
+    \end{enumerate}
+\end{minipage}
+\vspace{0.5cm}
+
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[t]{0.375\textwidth}
+    \begin{enumerate}
+        \item $X + Y = Y + X$
+        \item $X + (Y + Z) = (X + Y) + Z$
+        \item $X(Y + Z) = XY + XZ$
+        \item $\overline{X + Y} = \overline{X} \cdot \overline{Y}$
+    \end{enumerate}
+\end{minipage}%
+\begin{minipage}[t]{0.375\textwidth}
+    \begin{enumerate}
+        \setcounter{enumi}{4} % Continúa la numeración desde 5
+        \item $XY = YX$
+        \item $X(YZ) = (XY)Z$
+        \item $X + YZ = (X + Y)(X + Z)$
+        \item $\overline{X \cdot Z} = \overline{X} + \overline{Z}$
+    \end{enumerate}
+\end{minipage}%
+\begin{minipage}[t]{0.25\textwidth}
+    \begin{enumerate}[label={}]
+        \item Conmutativa
+        \item Asociativa
+        \item Distributiva
+        \item De Morgan
+    \end{enumerate}
+\end{minipage}
+
+\subsection{Compuertas lógicas avanzadas}
+\subsubsection{Compuerta NAND}
+\noindent La compuerta NAND produce una salida de 0 si todas sus entradas son 1. La tabla de verdad de una compuerta NAND es: \\\\  
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & A NAND B = $\overline{A \cdot B}$ = Z\\
+        \hline
+        0 & 0 & 1 \\
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 1 & 0 \\
+        \hline
+        \end{tabular}
+    \end{table}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{circuitikz}[transform shape, scale=1.5]
+        % Ajusta la posición vertical aquí si es necesario
+        \draw (0,0.75) node[nand port] (myand1) {};
+    \end{circuitikz}
+\end{minipage}
+\subsubsection{Compuerta NOR}
+\noindent La compuerta NOR produce una salida de 1 si todas sus entradas son 0. La tabla de verdad de una compuerta NOR es: \\\\  
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & A NOR B = $\overline{A + B}$ = Z\\
+        \hline
+        0 & 0 & 1 \\
+        0 & 1 & 0 \\
+        1 & 0 & 0 \\
+        1 & 1 & 0 \\
+        \hline
+        \end{tabular}
+    \end{table}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{circuitikz}[transform shape, scale=1.5]
+        % Ajusta la posición vertical aquí si es necesario
+        \draw (0,0.75) node[nor port] (myand1) {};
+    \end{circuitikz}
+\end{minipage}
+
+\subsubsection{Compuerta XOR}
+\noindent La compuerta XOR produce una salida de 1 si sus entradas son diferentes. La tabla de verdad de una compuerta XOR es: \\\\  
+\noindent % Asegura que las minipages comiencen en el borde izquierdo de la página
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        A & B & A XOR B = Z\\
+        \hline
+        0 & 0 & 0 \\
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 1 & 0 \\
+        \hline
+        \end{tabular}
+    \end{table}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+    \centering
+    \begin{circuitikz}[transform shape, scale=1.5]
+        % Ajusta la posición vertical aquí si es necesario
+        \draw (0,0.75) node[xor port] (myand1) {};
+    \end{circuitikz}
+\end{minipage}
+
+\section{Simplificación de funciones lógicas (Mapas de Karnaugh)} 
+\noindent Los mapas de Karnaugh son una herramienta gráfica que se utiliza para simplificar funciones lógicas. Los mapas de Karnaugh son especialmente útiles para simplificar funciones lógicas con hasta 4 variables.\\\\
+\textbf{Pasos para simplificar funciones lógicas con mapas de Karnaugh:}
+\begin{enumerate}
+    \item \textbf{Identificar las variables:} Identificar las variables de la función lógica.
+    \item \textbf{Crear el mapa de Karnaugh:} Crear un mapa de Karnaugh con las variables identificadas.
+    \item \textbf{Completar el mapa de Karnaugh:} Completar el mapa de Karnaugh con los valores de la función lógica.
+    \item \textbf{Simplificar la función lógica:} Utilizar el mapa de Karnaugh para simplificar la función lógica.
+\end{enumerate}
+\begin{tcolorbox}[colback=blue!10!white,colframe=blue!75!black,title=Ejemplo]
+    Para la tabla de verdad de la función lógica $F(A,B,C)$:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        A & B & C & F\\
+        \hline
+        \rowcolor{purple!30} 0 & 0 & 0 & \cellcolor{purple}1\\
+        \rowcolor{purple!30} 0 & 0 & 1 & \cellcolor{purple}1\\
+        0 & 1 & 0 & 0\\
+        \rowcolor{purple!30} 0 & 1 & 1 & \cellcolor{purple}1\\
+        1 & 0 & 0 & 0\\
+        \rowcolor{purple!30} 1 & 0 & 1 & \cellcolor{purple}1\\
+        1 & 1 & 0 & 0\\
+        1 & 1 & 1 & 0\\
+        \hline
+        \end{tabular}
+    \end{table}
+Por lo que a simple vista podemos concluir la siguiente función lógica:
+\begin{itemize}
+    \item $F = \colorbox{blue!30}{$\overline{ABC}$} + \colorbox{yellow}{$\overline{AB}C$} +  \colorbox{green}{$\overline{A}BC$} + \colorbox{red}{$A\overline{B}C$}$
+\end{itemize}
+Por lo tanto la construcción de un mapa de Karnaugh para la función lógica $F(A,B,C)$ es:
+\begin{center}
+    \begin{tikzpicture}
+        % Dibuja las celdas del mapa de Karnaugh
+        \draw (0,0) grid (4,2);
+        
+        % Etiquetas de las columnas (combinaciones de B y C)
+        \node at (0.5, 2.5) {00};
+        \node at (1.5, 2.5) {01};
+        \node at (2.5, 2.5) {11};
+        \node at (3.5, 2.5) {10};
+        
+        % Etiquetas de las filas (valor de A)
+        \node at (-0.5, 1.5) {0};
+        \node at (-0.5, 0.5) {1};
+        
+        % Añadir etiqueta "A\BC" en el cruce entre filas y columnas
+        \node at (-0.5, 2.5) {$A\backslash BC$};
+        
+        % Rellenar las celdas según la función lógica F
+        \fill[blue!50] (0,1) rectangle (1,2); % ABC'
+        \fill[yellow!50] (1,1) rectangle (2,2); % AB'C
+        \fill[green!50] (2,1) rectangle (3,2); % A'BC
+        \fill[red!50] (1,0) rectangle (2,1); % A'B'C
+        
+        % Añadir etiquetas de minterminos
+        \node at (0.5, 1.5) {1};
+        \node at (1.5, 1.5) {1};
+        \node at (2.5, 1.5) {1};
+        \node at (1.5, 0.5) {1};
+        
+        % Añadir etiquetas de 0 en las celdas restantes
+        \node at (3.5, 1.5) {0}; % A'BC'
+        \node at (0.5, 0.5) {0}; % A'B'C'
+        \node at (2.5, 0.5) {0}; % A'BC'
+        \node at (3.5, 0.5) {0}; % A'BC'
+    \end{tikzpicture}
+\end{center}
+Lo cual al reducir los grupos de 1's obtenemos la función lógica simplificada tenemos que para:
+\begin{itemize}
+    \item El grupo azul-amarillo representa la combinación $\overline{A}B$
+    \item El grupo rojo-amarillo representa la combinación $B\overline{C}$
+    \item El grupo verde-amarillo representa la combinación $\overline{A}C$
+\end{itemize} 
+Por lo que la función lógica simplificada es:
+\begin{center}
+    \textbf{$F = \overline{A}B + B\overline{C} + \overline{A}C$}       
+\end{center}
+\end{tcolorbox}
+\newpage
+
+\section{Sistemas numéricos digitales}
+\subsection{Abstracción digital}
+\begin{itemize}
+    \item La mayoría de las variables son \textbf{continuas}.
+    \begin{itemize}
+        \item Voltaje de un cable.
+        \item Frecuencia de un oscilador.
+        \item Posición de un objeto.
+    \end{itemize}
+    \item La abstracción digital considera un \textbf{conjunto discreto} de valores (0,1,2,...).
+\end{itemize}
+
+\subsection{Disciplina digital}
+\begin{itemize}
+    \item Dos valores discretos:
+    \begin{itemize}
+        \item 1's y 0's.
+        \item 1 $\rightarrow$ Verdadero/True, Alto/High.   
+        \item 0 $\rightarrow$ Falso/False, Bajo/Low. 
+    \end{itemize}
+    \item \textbf{1 y 0}: Niveles de voltaje, engranajes giratorios, niveles de fluidos, etc.
+    \item Los circuitos de digitales usan niveles de \textbf{voltaje} para representar 1's y 0's.
+    \item \textbf{Bit:} Dígito binario, unidad más pequeña de información.
+\end{itemize}
+
+\subsection{Sistemas de numeración}
+\noindent El sistema numérico decimal es el más común, pero existen otros sistemas de numeración que se utilizan en la informática y la electrónica digital. Los sistemas de numeración más comunes son:
+\begin{itemize}
+    \item \textbf{Binario:} Base 2.
+    \item \textbf{Octal:} Base 8.
+    \item \textbf{Hexadecimal:} Base 16.
+    \item \textbf{Decimal:} Base 10.
+\end{itemize}
+
+\subsubsection{Rangos y valores}
+\noindent A través del sistema binario y decimal existen diferentes rangos de valores que se pueden representar, los cuales podemos calcular de la siguiente manera:
+\begin{itemize}
+    \item Números decimales de $n$ dígitos:
+    \begin{itemize}
+        \item Valores distintos con $n$ dígitos: $10^n$
+        \item Rango de valores con $n$ dígitos: $0$ a $10^n - 1$ 
+    \end{itemize}
+    \item Números binarios de $n$ bits:
+    \begin{itemize}
+        \item Valores distintos con $n$ bits: $2^n$
+        \item Rango de valores con $n$ bits: $0$ a $2^n - 1$
+    \end{itemize}   
+\end{itemize}
+
+\subsubsection{Conversión de sistemas de numeración}
+\textbf{Conversión binaria a decimal:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número binario 1011 a decimal.
+    \begin{itemize}
+        \item $1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 2 + 1 = 11$
+    \end{itemize}
+\end{itemize}
+\textbf{Conversión decimal a binario:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número decimal 13 a binario.
+        \begin{itemize}
+            \item $13 \div 2 = 6$ con residuo $1$
+            \item $6 \div 2 = 3$ con residuo $0$
+            \item $3 \div 2 = 1$ con residuo $1$
+            \item $1 \div 2 = 0$ con residuo $1$
+        \end{itemize}
+    Por lo tanto, el número decimal 13 en binario es $1101$.
+\end{itemize}
+\textbf{Conversión binaria a hexadecimal:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número binario 101101 a hexadecimal.
+    \begin{itemize}
+        \item $101101 = 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 32 + 0 + 8 + 4 + 0 + 1 = 45$
+        \item $45 = 2 \cdot 16^1 + 13 \cdot 16^0 = 2D$
+    \end{itemize}
+\end{itemize}
+\textbf{Conversión hexadecimal a binario:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número hexadecimal 2D a binario.
+    \begin{itemize}
+        \item $2D = 2 \cdot 16^1 + 13 \cdot 16^0 = 45$
+        \item $45 = 32 + 8 + 4 + 1 = 101101$
+    \end{itemize}
+\end{itemize}
+\textbf{Conversión decimal a hexadecimal:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número decimal 45 a hexadecimal.
+    \begin{itemize}
+        \item $45 = 2 \cdot 16^1 + 13 \cdot 16^0 = 2D$
+    \end{itemize}
+\end{itemize}
+\textbf{Conversión hexadecimal a decimal:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número hexadecimal 2D a decimal.
+    \begin{itemize}
+        \item $2D = 2 \cdot 16^1 + 13 \cdot 16^0 = 45$
+    \end{itemize}
+\end{itemize}
+\textbf{Conversión octal a decimal:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número octal 45 a decimal.
+    \begin{itemize}
+        \item $45 = 4 \cdot 8^1 + 5 \cdot 8^0 = 37$
+    \end{itemize}
+\end{itemize}
+\textbf{Conversión decimal a octal:}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número decimal 182 a octal.
+        \begin{itemize}
+            \item $182 \div 8 = 22$ con residuo $6$
+            \item $22 \div 8 = 2$ con residuo $6$
+            \item $2 \div 8 = 0$ con residuo $2$
+        \end{itemize}
+    Por lo tanto, el número decimal 182 en octal es $266$.
+\end{itemize}
+
+\subsection{Bits, Bytes, Nibbles,...}
+\noindent Los \textbf{bits} son la unidad mas pequeña de información, los cuales se agrupan, dando a conocer un rango de importancia dependiendo de la ubicación de los bits. Por ejemplo:
+\begin{center}
+    \textit{Most significant bit}[MSB]$\rightarrow$\colorbox{blue!30}{1}10101\colorbox{blue!30}{0}$\leftarrow$\textit{Least significant bit}[LSB]
+\end{center}
+
+\noindent A la agrupación de estos bits se les conoce como \textbf{Bytes}, los cuales son de 8 bits. A su vez, los bytes se pueden agrupar en \textbf{Nibbles}, los cuales son de 4 bits.Por lo tanto, un byte es igual a 2 nibbles.
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    Byte & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 \\
+    \hline
+    Nibble 1 & 1 & 0 & 1 & 0 & - & - & - & - \\
+    Nibble 2 & - & - & - & - & 1 & 0 & 1 & 0 \\
+    \hline
+    \end{tabular}
+\end{center}
+
 
 \end{document}
  
