@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-06-22T20:04:07.569Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.8.2 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="UzWFmgHRLov6rr2t6xlB" version="21.8.2" type="device" pages="12">
+<mxfile host="Electron" modified="2024-06-22T20:11:24.083Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.8.2 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="CQnwhF3YRnb5VwqFnG6A" version="21.8.2" type="device" pages="12">
   <diagram name="DConceptual" id="KUkpYyPkw1ne2TjdVMxQ">
     <mxGraphModel dx="864" dy="508" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1416,7 +1416,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="anFi5-Cvif-AjXPvEdm_" name="Página-12">
-    <mxGraphModel dx="880" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="880" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
