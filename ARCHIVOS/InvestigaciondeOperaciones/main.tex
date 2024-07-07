@@ -172,7 +172,7 @@
 \subsection{Costos en sistemas de espera}
 \noindent Costos atribuidos a la empresa teniendo en cuenta el tiempo de espera de los clientes en el sistema de colas y la cantidad de servidores disponibles. Se calcula a través de la siguiente fórmula:
 \[
-    C_t = C \cdot C_s + L \cdot C_w
+    C_t = S \cdot C_s + L \cdot C_w
 \]
 
 
@@ -189,7 +189,7 @@
     \end{itemize}
     \item ¿Cuál es la tasa de utilización del cajero?
     \begin{itemize}
-        \item $\rho = \frac{\lambda}{\mu} = \frac{10}{15} = 0.\overline{666}$
+        \item $\rho = \frac{\lambda}{\mu} = \frac{10}{15} = 0.\overline{666}$ $\rightarrow$ $\rho < 1$ Estable
     \end{itemize}
     \item \hl{Porcentaje del tiempo que está ocupado.}
     \begin{itemize}
@@ -200,8 +200,8 @@
         \item $L_q$ = $\frac{10^2}{15(15-10)}$ = $\frac{4}{3}$ = $1.\overline{3}$
     \end{itemize}
     \item ¿Cuánto tiempo utiliza un usuario en toda la operación, desde el instante inicial?
-    \begin{itemize}    
-        \item $W_t$ = $W_q + W $ = $\frac{10}{15(15-10)}$ + $ \frac{1}{15-10}$ = $\frac{1}{3} = 0.\overline{3} = \frac{60}{0.\overline{3}}$ = 20 minutos
+    \begin{itemize} 
+        \item $W$ = $\frac{1}{\mu - \lambda}$ = $\frac{1}{15-10}$ = $\frac{1}{5}$ = 0.2 horas = 12 minutos   
     \end{itemize}
 \end{enumerate}
 
@@ -228,32 +228,31 @@
         &= \frac{1}{\sum_{n=0}^{1} \frac{(\frac{80}{50})^n}{n!} + \frac{(\frac{80}{50})^2}{2!} \left(\frac{2\cdot50}{2\cdot50-80}\right)} \\
         &= \frac{1}{\frac{1}{0!} + \frac{(\frac{80}{50})^1}{1!} + \frac{(\frac{80}{50})^2}{2!} \left(\frac{2\cdot50}{2\cdot50-80}\right)} \\
         &= \frac{1}{1 + \frac{80}{50} + \frac{80^2}{50^2 \cdot 2} \left(\frac{100}{20}\right)} \\
-        &= \frac{1}{1 + 1.6 + \frac{64}{2} \cdot 5} \\
-        &= \frac{1}{1 + 1.6 + 160} \\
-        &= \frac{1}{162.6} \\
-        &= 0.0061 \\
-        &= 0.61\%
+        &= \frac{1}{9} \\
+        &= 0.\overline{1}
     \end{align*} 
-    Por lo tanto la probabilidad de que el sistema este vacío es de 0.61\%.
     \item \hl{El número esperado de clientes.}\\
     
     \begin{align*}
-        L &= L_q + \frac{\lambda}{\mu} = \frac{(\frac{80}{50})^2 \frac{80}{50} \cdot 50}{(2-1)! (2\cdot50-80)^2} \cdot 0.0061 + \frac{80}{50} \\
-        &= \frac{1}{2} \cdot \frac{64}{50} \cdot 0.0061 + 1.6 \\
-        &= \frac{0.0305}{2} + 1.6 \\
-        &= 0.01525 + 1.6 \\
-        &= 1.61525
+        L &= L_q + \frac{\lambda}{\mu} \\
+        &= \frac{1}{2!} (\frac{80}{50})^2 \frac{\frac{80}{100}}{(1-\frac{80}{100})^2} \cdot \frac{1}{9} + \frac{80}{50} \\
+        &= \frac{1}{2!}\frac{64}{25}\cdot20\cdot\frac{1}{9} + \frac{8}{5} \\
+        &= \frac{256}{45\cdot2} + \frac{8}{5} \\
+        &= \frac{128}{45} + \frac{8}{5} \\
+        &= \frac{40}{9}\\
+        &= 4.\overline{4}
     \end{align*}
-    Por lo tanto el número esperado de clientes es de 1.61525.
+    Por lo tanto el número esperado de clientes es de 4.4.
     \item La probabilidad que haya más de 4 clientes en el sistema.
-        \begin{align*}
-            P(n>4) &= P(n\leq4) = P_0 + P_1 + P_2 + P_3 + P_4 \\
-            &= 0.0061 + [\frac{(\frac{80}{50})^1}{1!}\cdot0.0061] + [\frac{(0.8)^2}{2!}\cdot0.0061] + [\frac{(0.8)^3}{2!}\cdot0.0061] + [\frac{(0.8)^4}{2!}\cdot0.0061]\\
-            &= 0.0061 + 0.0098 + 0.0062 + 0.0031 + 0.0012 \\
-            &= 0.0264 \\
-            &= 2.64\%
-        \end{align*}
-    Por lo tanto la probabilidad de que haya más de 4 clientes en el sistema es de 2.64\%.
+        \begin{flalign*}
+        & P(n>4) = 1 - P(n\leq4) = 1 - (P_0 + P_1 + P_2 + P_3 + P_4) &\\
+        &= 1 - (0.0061 + [\frac{(\frac{80}{50})^1}{1!}\cdot0.0061] + [\frac{(0.8)^2}{2!}\cdot0.0061] + [\frac{(0.8)^3}{2!}\cdot0.0061] + [\frac{(0.8)^4}{2!}\cdot0.0061])&\\
+        &= 1 - (0.0061 + 0.0098 + 0.0062 + 0.0031 + 0.0012) &\\
+        &= 1 - 0.0264 &\\
+        &= 0.9736 &\\
+        &= 97.36\% &
+        \end{flalign*}
+    Por lo tanto la probabilidad de que haya más de 4 clientes en el sistema es de 97.36\%.
 \end{enumerate}
 
 \newpage
@@ -263,10 +262,20 @@
 \textit{Datos:}
 \begin{itemize}
     \item $\lambda = 10 \frac{cl}{h}$
+    \item $\lambda_{ef} = 10(1-0.1006) = 8.994$
     \item $\mu = 12 \frac{cl}{h}$
     \item $K = 5$
     \item $\rho = \frac{10}{12} = 0.8333$
 \end{itemize}
+
+\begin{mdframed}
+    \begin{align*}
+        P_0 &= \frac{1-\rho}{1-\rho^6} = \frac{1-0.8333}{1-0.8333^6} = 0.1667 \\
+        P_n &= \frac{(1-\rho)\rho^n}{1-\rho^6} = \frac{(1-0.8333)0.8333^n}{1-0.8333^6} \\
+        P_k &= \frac{(1-0.8333)0.8333^5}{1-0.8333^6} \\
+        &= 0.1006
+    \end{align*}
+\end{mdframed}      
 
 \begin{mdframed}
     \begin{align*}
@@ -280,29 +289,82 @@
     \end{align*}
 \end{mdframed}
 
+\newpage
 \begin{mdframed}
 \begin{align*}
-    W &= \frac{1.97792}{10(1-\textcolor{red}{P_k})}\\
-        &\hspace{5mm} \textcolor{red}{P_k} = 0.8333^5 \cdot \textcolor{blue}{P_0}\\
-        &\hspace{10mm} \textcolor{blue}{P_0} = \frac{1-\rho}{1-\rho^6} = \frac{1-0.8333}{1-0.8333^6} = 0.1667\\
-        &\hspace{5mm} \textcolor{red}{P_k} = 0.8333^5 \cdot 0.1667 = 0.1667\\
-    W &= \frac{1.97792}{10(1-0.1667)} = \frac{1.97792}{8.3333} = 0.2373 \\
+    W &= \frac{1.97792}{8.994}\\
+    &= 0.2199 \\
     &\Downarrow \\
-    W_q &= 0.2373 - \frac{1}{12} = 0.2373 - 0.0833 = 0.154
+    W_q &= \frac{1.228528}{8.994} \\
+    &= 0.1366
 \end{align*}
 \end{mdframed}
 
 \newpage
-\begin{mdframed}
-\begin{align*}
-    P_0 &= \frac{1-\rho}{1-\rho^6} = \frac{1-0.8333}{1-0.8333^6} = 0.1667 \\
-    P_n &= \frac{(1-\rho)\rho^n}{1-\rho^6} = \frac{(1-0.8333)0.8333^n}{1-0.8333^6}
-\end{align*}
-\end{mdframed}
 
-
-\newpage
 \subsection{Ejercicio 4}
 \noindent Un banco trata de determinar cuántos cajeros debe emplear. El costo total de emplear un cajero es 90 dólares diarios y un cajero puede atender a un promedio de 60 clientes por día. Al banco llega un promedio de 50 clientes por día y los tiempos de servicio y los tiempos entre llegadas son exponenciales. Si el costo de demora por cliente y día [en el sistema] es de 20 dólares, ¿cuántos cajeros debe contratar el banco para minimizar los costos de operación?
+
+\textit{Datos:}
+\begin{itemize}
+    \item $\lambda$ = 50 $\frac{cl}{d}$
+    \item $\mu$ = 60 $\frac{cl}{d}$
+    \item $C_s$ = 90
+    \item $C_w$ = 20
+\end{itemize}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+    \hline
+    S & $\lambda$ & $\mu$ &$\rho$ & $P_0$ & $L_q$ & $L$ & $C_t$ \\ \hline
+    1  & 50 & 60 & $\frac{50}{1\cdot60} = 0.833$ Estable & 0.1667 & 4.1667 & 5 & $1(90)+5(20)$ = 190 \\
+    2  & 50 & 60 & $\frac{50}{2\cdot60} = 0.416$ Estable & 0.4117 & 0.1749 & 1.0082 & $2(90)+1.0082(20)$ = 200.16 \\
+    3  & 50 & 60 & $\frac{50}{3\cdot60} = 0.277$ Estable &  &  &  &  \\
+    4  & 50 & 60 & $\frac{50}{4\cdot60} = 0.208$ Estable &  &  &  &  \\
+    $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Por lo tanto es conveniente contratar 1 cajero para minimizar los costos de operación.
+
+Para un S = 1:
+    \begin{align*}
+        P_0 &= \frac{1}{\sum_{n=0}^{s-1} \frac{(\frac{50}{60})^n}{n!} + \frac{(\frac{50}{60})^1}{1!} (\frac{1\cdot60}{1\cdot60-50})} \\
+        &= \frac{1}{\sum_{n=0}^{0} \frac{(\frac{50}{60})^n}{n!} + \frac{(\frac{50}{60})^1}{1!} (\frac{1\cdot60}{1\cdot60-50})} \\
+        &= \frac{1}{\frac{1}{0!} + \frac{(\frac{50}{60})^1}{1!} (\frac{1\cdot60}{1\cdot60-50})} \\
+        &= \frac{1}{1 + \frac{50}{60} \cdot \frac{60}{10}} \\
+        &= \frac{1}{1 + \frac{50}{10}} \\
+        &= \frac{1}{6} \\
+        &= 0.1667 \\
+        &\Downarrow \\
+        L_q &= \frac{1}{1!} (\frac{50}{60})^1 \frac{\frac{50}{60}}{(1-\frac{50}{60})^2} \cdot \frac{1}{6} \\
+        &= \frac{1}{1} \cdot \frac{50}{60} \cdot 30 \cdot \frac{1}{6} \\
+        &= \frac{25}{6} \\
+        &= 4.1667 \\ 
+        &\Downarrow \\
+        L &= 4.1667 + \frac{50}{60}\\
+        &= 5
+    \end{align*}
+
+    Para un s = 2:
+    \begin{align*}
+        P_0 &= \frac{1}{\sum_{n=0}^{1} \frac{(\frac{50}{60})^n}{n!} + \frac{(\frac{50}{60})^2}{2!} (\frac{1\cdot60}{1\cdot60-50})} \\
+        &= \frac{1}{\frac{1}{0!} + \frac{(\frac{50}{60})^1}{1!} + \frac{(\frac{50}{60})^2}{2!} (\frac{2\cdot60}{2\cdot60-50})} \\
+        &= \frac{1}{\frac{1}{1}+\frac{\frac{50}{60}}{1}+\frac{(\frac{50}{60})^2}{2!}\cdot\frac{2\cdot60}{120-50}} \\
+        &= \frac{1}{\frac{17}{7}} \\
+        &= \frac{7}{17} \\
+        &= 0.4117 \\
+        &\Downarrow \\
+        L_q &= \frac{1}{2!} (\frac{50}{60})^2 \frac{\frac{50}{2\cdot60}}{(1-\frac{50}{2\cdot60})^2} \cdot \frac{7}{17} \\
+        &= \frac{1}{2!} \cdot \frac{25}{3} \cdot \frac{5}{7} \cdot \frac{1}{17} \\
+        &= \frac{125}{714} \\
+        &= 0.1749 \\
+        &\Downarrow \\
+        L &= 0.1749 + \frac{50}{60} \\
+        &= 0.1749 + 0.8333 \\
+        &= 1.0082
+    \end{align*}
 
 \end{document}
