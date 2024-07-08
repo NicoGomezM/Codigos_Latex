@@ -244,15 +244,14 @@
     \end{align*}
     Por lo tanto el número esperado de clientes es de 4.4.
     \item La probabilidad que haya más de 4 clientes en el sistema.
-        \begin{flalign*}
+    \begin{flalign*}
         & P(n>4) = 1 - P(n\leq4) = 1 - (P_0 + P_1 + P_2 + P_3 + P_4) &\\
-        &= 1 - (0.0061 + [\frac{(\frac{80}{50})^1}{1!}\cdot0.0061] + [\frac{(0.8)^2}{2!}\cdot0.0061] + [\frac{(0.8)^3}{2!}\cdot0.0061] + [\frac{(0.8)^4}{2!}\cdot0.0061])&\\
-        &= 1 - (0.0061 + 0.0098 + 0.0062 + 0.0031 + 0.0012) &\\
-        &= 1 - 0.0264 &\\
-        &= 0.9736 &\\
-        &= 97.36\% &
-        \end{flalign*}
-    Por lo tanto la probabilidad de que haya más de 4 clientes en el sistema es de 97.36\%.
+        &= 1 - (\frac{1}{9} + [\frac{(\frac{80}{50})^1}{1!}\cdot\frac{1}{9}] + [\frac{(\frac{80}{50})^2}{2!}\cdot\frac{1}{9}] + [\frac{(\frac{80}{50})^3}{2!\cdot 2^{3-2}}\cdot\frac{1}{9}] + [\frac{(\frac{80}{50})^4}{2!\cdot 2^{4-2}}\cdot\frac{1}{9}])\\
+        &= 1 - [\frac{1}{9} + \frac{8}{45} + \frac{32}{225} + \frac{128}{1125} + \frac{512}{5625}] \\
+        &= 1 - 0.6359 \\
+        &= 0.3641
+    \end{flalign*}
+    Por lo tanto la probabilidad de que haya más de 4 clientes en el sistema es de 36.41\%.
 \end{enumerate}
 
 \newpage
