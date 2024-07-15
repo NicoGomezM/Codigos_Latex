@@ -79,7 +79,7 @@
     \lhead{\href{\linklogoU}{\includegraphics[scale=0.08]{\imagenlogoU}}}
     \rhead{\nouppercase{\leftmark}}
     \rfoot{\thepage}
-    \cfoot{Apunte - \textbf{\titulo}}
+    \cfoot{Practica - \textbf{\titulo}}
 }
 
 

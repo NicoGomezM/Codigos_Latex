@@ -20,8 +20,8 @@
 \imagenlogoU{img/logoNGMFormal_sinF.png}
 \linklogoU{https://github.com/NicoGomezM} 
 % \imagenlogoD{img/logo-ubb-txt-face.png} 
-\titulo{Unidad 1}
-\asignatura{Arquitectura de Computadores}
+\titulo{Certamen 3}
+\asignatura{Administración y programación de base de datos}
 \autor{
     \indent
     Nicolás {Gómez Morgado}
@@ -37,25 +37,29 @@
 \section{Ejercicios}
 
 \begin{enumerate}
-    \item Suponer: \\
+    \item Supongamos que estamos utilizando un sistema de disco donde el tiempo para mover la cabeza de lectura/escritura a un bloque de 15ms, y el tiempo de transferencia de un bloque es de 0.4ms. Supongamos que queremos calcular el join de R con S, y tenemos que B(R)=1000, B(S)=500 y M=101. Para acelerar el join, queremos leer y escribir tantos bloques como podamos en posiciones consecutivas del disco, y usar buffers que puedan ser múltiplos de un bloque. Responda las siguientes preguntas. \\\\
     Tiempo en mover cabeza a un bloque: 15ms.\\
     Tiempo transferencia de un bloque: 0.4ms \\
     \underline{$R \Join S$}\\
     \hspace*{0.25cm} B(R) = 1000 \\
     \hspace*{0.25cm} B(S) = 500 \\
-    \hspace*{0.25cm} M = 101 \\
+    \hspace*{0.25cm} M = 101 $\rightarrow$ 100 (Se deja uno para la salida)\\
     \begin{enumerate}[label=\alph*)]
         \item ¿Cuantas E/S de disco se requieren para realizar esta operación join? \\
 
         \begin{tabular}{|m{2cm}|m{6cm}|m{4cm}|}
             \hline
-            $1^{er}$ pasada & Leer M bloques de R en MP (ordenar, escribir contenido ordenando) & 2B(R) crear sublistas ordenadas \\
+            $1^{er}$ pasada & Leer M bloques de R en MP[Memoria principal] (ordenar, escribir contenido ordenando) & 2B(R) crear sublistas ordenadas \\
             \hline
             $2^{da}$ pasada & El atributo de ordenación y unión & B(R) leer cada sublista \\
+            \hline
+            & Total & 3B(R) \\
             \hline
         \end{tabular}
         
         \vspace{0.5cm}
+        \noindent Que para R son 3B(R), por lo tanto para S, es lo mismo 3B(S). \\Se rquiere B(R) + B(S). \\
+
         \textbf{Total: }\\
         Lo mismo para S $\rightarrow$ 3B(S) App. requerimientos [$\sqrt[]{{B(R)+B(S)}}$]\\
         \begin{align*}
@@ -65,7 +69,8 @@
         \end{align*}
         Por lo tanto son necesarias 4500 E/S de disco para realizar la union.\\
 
-        \item Sublista de R = $\frac{B(R)}{100} = \frac{1000}{100}$ = 10 \\
+        \item ¿Cuanto tiempo toma un join basado en ordenamiento (sort-merge join), suponiendo que escribimos sublistas ordenadas en bloques consecutivos del disco? \\\\
+        Sublista de R = $\frac{B(R)}{100} = \frac{1000}{100}$ = 10 \\
         Sublista de S = $\frac{B(S)}{100} = \frac{500}{100}$ = 5 \\
 
         \begin{tabular}{|m{2cm}|m{10cm}|}
@@ -91,11 +96,13 @@
         \end{tabular}
         
         \begin{align*}
-            1 \textnormal{ buffer} - 1 \textnormal{ bloque} &= 1230 ms + 22500 ms = 23730 ms \approx 23.7 seg.\\
-            1 \textnormal{ buffer} - 6 \textnormal{ bloques} &= 1230 ms + 3825 ms = 5055 ms \approx 5.05 seg.\\
+            1 \textnormal{ buffer} - 1 \textnormal{ bloque} &= 1230 ms + 22500 ms = 23730 ms \approx 23.7 seg.\\ %TODO:Destacar de azul
+            1 \textnormal{ buffer} - 6 \textnormal{ bloques} &= 1230 ms + 3825 ms = 5055 ms \approx 5.05 seg.\\ %TODO:Destacar de rojo
         \end{align*}
+    \end{enumerate}
 
-        \item R(a,b) S(b,c) T(c,d) U(d,e)\\
+    \newpage
+    \item Supongamos que tenemos las relaciones $R(a,b) S(b,c) T(c,d) U(d,e)$ con las siguientes características:\\
         
         \begin{center}
             \begin{minipage}{0.3\textwidth}
@@ -114,8 +121,10 @@
             \end{minipage}
         \end{center}    
 
+        \noindent Computar un orden de Join de R sobre S Sobre T Sobre U [$R \Join S \Join T \Join U$], utilizando:
+
         \begin{enumerate}[label=\alph*)]
-            \item Dinámica \\
+            \item Dinámica (Dynamic Programming method) \\
             
                 \begin{center}
                     \begin{tabular}{|c|c|c|c|}
@@ -168,7 +177,6 @@
                     &= \frac{10000}{10} = 1000 
                 \end{align*}
                 
-                \newpage
                 2) (R,S,U) = \\
                 \hspace*{0.25cm}$R \Join S = 100 \leftarrow$ \\
                 \hspace*{0.25cm}$R \Join U = 10000$ \\
@@ -212,7 +220,7 @@
                     \hline
                 \end{tabular}
                 
-                \vspace{0.5cm}
+                \newpage
                 \noindent Tripletes. \\Considerar arboles. \\
 
                 \begin{figure}[H]
@@ -241,9 +249,9 @@
                 \end{math}
 
             \newpage
-            \item Greedy\\
+            \item Greedy method\\
             \noindent \textbf{Se toma una decision sin retroceder.} \\
-            \noindent \underline{Base:} Pares de relaciones cuyo tamaño estimado es el mas pequeño (árbol actual).\\
+            \noindent \underline{Base:} Pares de relaciones cuyo tamaño estimado es el mas pequeño (árbol actual).
 
             \noindent % Evita la indentación en la primera línea
             \begin{center}
@@ -264,7 +272,7 @@
             \end{center}
 
             \vspace{0.5cm}
-            \noindent Inducción: Encontrar todas las relaciones no includes para T y U.
+            \noindent Inducción: Encontrar todas las relaciones no includes, en este caso, T y U.
 
             \begin{align*}
                 R \Join S &- ((R \Join S) \Join U) = 10000 \\
@@ -283,8 +291,6 @@
 
         \end{enumerate}
 
-
-    \end{enumerate}
 \end{enumerate}
 
 
