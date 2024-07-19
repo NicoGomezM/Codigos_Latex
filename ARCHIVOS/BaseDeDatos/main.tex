@@ -34,7 +34,7 @@
 % \newpage
 
 
-\section{Ejercicios}
+\section{Ejercicios guía 1}
 
 \begin{enumerate}
     \item Supongamos que estamos utilizando un sistema de disco donde el tiempo para mover la cabeza de lectura/escritura a un bloque de 15ms, y el tiempo de transferencia de un bloque es de 0.4ms. Supongamos que queremos calcular el join de R con S, y tenemos que B(R)=1000, B(S)=500 y M=101. Para acelerar el join, queremos leer y escribir tantos bloques como podamos en posiciones consecutivas del disco, y usar buffers que puedan ser múltiplos de un bloque. Responda las siguientes preguntas. \\\\
@@ -219,12 +219,11 @@
                     \hline
                 \end{tabular}
                 
-                \newpage
                 \noindent Tripletes. \\Considerar arboles. \\
 
                 \begin{figure}[H]
                     \centering
-                    \includegraphics[width=\textwidth]{img/Imagen de WhatsApp 2024-07-08 a las 15.29.31_93439903.jpg}
+                    \includegraphics[width=\textwidth]{img/img1.png}
                 \end{figure}
                 
                 \noindent \textbf{Agrupando:} \\
@@ -237,7 +236,7 @@
 
                 \begin{figure}[H]
                     \centering
-                    \includegraphics[width=\textwidth]{img/Imagen de WhatsApp 2024-07-08 a las 15.29.32_c3dfc849.jpg}
+                    \includegraphics[width=\textwidth]{img/img2.png}
                 \end{figure}
 
                 \noindent \textbf{Agrupando:} \\
@@ -247,7 +246,7 @@
                     (R \Join T) \Join (S \Join U) = 10000 + 10000 = 20000 \\
                 \end{math}
 
-            \newpage
+            
             \item Greedy method\\
             \noindent \textbf{Se toma una decision sin retroceder.} \\
             \noindent \underline{Base:} Pares de relaciones cuyo tamaño estimado es el mas pequeño (árbol actual).
@@ -285,12 +284,100 @@
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=5cm]{img/Imagen de WhatsApp 2024-07-08 a las 15.29.34_080aad61.jpg}
+                \includegraphics[width=5cm]{img/img3.png}
             \end{figure}
 
         \end{enumerate}
 
 \end{enumerate}
 
+\newpage
+\section{Ejercicios guía 2}
+\begin{enumerate}
+    \item Traspasar la consulta SQL a un árbol de consulta. 
+    \begin{itemize}
+        \item SELECT apellido1
+        \item FROM Empleado E, trabajaEn T, proyecto P
+        \item WHERE nameProy=’aquarius’
+        \item AND T.idProy = P.idProy
+        \item AND E.idEmpleado = T.idEmpleado
+        \item AND E.FechaNacimiento>'1957-12-21'
+        \begin{itemize}
+            \item Obtener el árbol inicial (canónico) de la consulta
 
+            \begin{center}
+                \begin{tikzpicture}[level distance=1.5cm,
+                    level 1/.style={sibling distance=3.5cm},
+                    level 2/.style={sibling distance=2cm}]
+                    \node[align=center] {$\pi$apellido1 $\land$ $\sigma$.idProy = P.idProy $\land$ nameProy='aquarius' \\ $\land$ E.idEmpleado = T.idEmpleado $\land$ E.FechaNacimiento>'1957-12-21'}
+                        child {node {$\Join$}
+                            child{node {$\Join$}
+                                child{node{E}}
+                                child{node{T}}
+                            }
+                            child{node {P}}
+                        };
+                \end{tikzpicture}
+            \end{center}
+
+            \item Explique como se optimiza el árbol de consulta mediante la optimización vista en clases
+        \end{itemize}
+    \end{itemize}
+    
+    \item Considere las siguientes relaciones: \\
+    \hspace*{0.25cm} Variedades(IdVar, Nombre, Prog2, Prog1) \\
+    \hspace*{0.25cm} Predios(IdPredio, NombrePredio, Comuna, Superficie) \\
+    \hspace*{0.25cm} Siembra(IdPredio, IdVar, HaSem, Rdto, añoA) \\
+    
+    Sea la siguiente consulta: “Listar los nombres de las variedades sembradas en el predio idPredio = 10 y que el año 2015 tuvieron un rendimiento mayor a 60 qq/ha”.
+
+    \begin{enumerate}[label=\alph*)]
+        \item Escriba la consulta en SQL para la consulta anterior
+        \item Escriba la consulta en A.Relacional para la consulta anterior
+        \item Obtener el árbol inicial (canónico) de la consulta
+        \item Explique como se optimiza el árbol de consulta mediante el algoritmo de optimización algebraica (visto en clases)
+    \end{enumerate}
+
+
+    \item Suponer que tenemos las relacionesR(a, b), S(b, c), T (c, d), y U (d, e) con las siguientes características: \\
+    
+    \begin{minipage}{0.5\textwidth}
+        T (R) = 300 \\
+        V (R, b) = 100 \\
+        T (S) = 200 \\
+        V (S, b) = 100 \\
+        T (T ) = 150  
+        \end{minipage}%
+        \begin{minipage}{0.5\textwidth}
+        T (U ) = 500 \\
+        V (S, c) = 20 \\
+        V (T, c) = 20 \\
+        V (T, d) = 300 \\
+        V (U, d) = 300
+    \end{minipage}
+        
+    
+    \item . Suponer que tenemos las relacionesR(a, b), S(b, c), T (c, d), y U (d, e) con las siguientes características:
+    
+    \begin{minipage}{0.5\textwidth}
+        T (R) = 50 \\
+        V (R, b) = 250 \\
+        T (S) = 55 \\
+        V (S, b) = 500 \\
+        V (S, c) = 5 \\
+        V (U, d) = 50
+        \end{minipage}%
+        \begin{minipage}{0.5\textwidth}
+        T (T ) = 50 \\
+        T (U ) = 45 \\
+        V (T, c) = 15 \\
+        V (T, d) = 500
+    \end{minipage}
+
+\end{enumerate}
+
+\begin{tcolorbox}
+    \textbf{Para 3 y 4, calcular un orden/JOINS para R, S, T, U, usando Programación dinámica (como visto en clases). Mostrar tabla inicial de costos, los cálculos de cada etapa y árboles.}
+\end{tcolorbox}
+    
 \end{document}
