@@ -872,5 +872,38 @@ Por lo que la función lógica simplificada es:
 \end{center}
 
 
+
+\newpage
+\section{Assembler}
+\subsection{Fases de ejecución de una instrucción}
+
+\begin{enumerate}
+    \item \textbf{Ciclo fetch(lectura de la instrucción):} Desde que parte una instrucción hasta que comienza la siguiente.(\underline{UNA} sola instrucción).
+    La dirección de la instrucción  ejecutarse se encuentra en el segmento de código.
+    
+    Memory address register (MAR) $\rightarrow$ Lectura $\rightarrow$ (MBR) $\rightarrow$ Program counter (PC) $\rightarrow$ RI. 
+    
+    \begin{itemize}
+        \item \textbf{Memory address register (MAR)}: Lugar donde se guarda la dirección de memoria de la instrucción que se esta ejecutando, enviada por el PC.
+        \item \textbf{Memory buffer register (MBR)}: Lugar donde se guarda la instrucción efectiva que se esta ejecutando enviada por memoria.
+        \item \textbf{Registro de instrucciones (RI)}: Registro donde se ejecuta la instrucción efectiva enviada por el MBR.
+    \end{itemize}
+    
+    \begin{tcolorbox}[title=Recordar]
+        \begin{center}
+            \textbf{Runtime:} Subdividir tiempos de atención en el orden de los nanosegundos.\\
+            En una instrucción cíclica va a entrar la \textbf{pila}.
+        \end{center}
+    \end{tcolorbox}
+    \item \textbf{Decodificación}
+    \item \textbf{Ejecución de la instrucción}
+    \item \textbf{Volver al ciclo fetch
+    } 
+\end{enumerate}
+
+
+
+
+
 \end{document}
  
