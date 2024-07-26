@@ -14,6 +14,9 @@
 \usepackage{pdfpages}
 \usepackage{mdframed} 
 \usepackage{xcolor} 
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
 % \usepackage[spanish,es-noquoting]{babel}
 
 \begin{document}
@@ -602,7 +605,96 @@
         \item Calcular el tiempo medio de primer paso de 3 a 2 ($\mu_{32}$).
     \end{enumerate}
 
-    
+\end{enumerate}
+
+\textbf{Resolver sistema:} 
+
+$\pi = \pi \cdot P$
+
+\begin{equation*}
+    \pi = (\pi_1, \pi_2, \pi_3) 
+    \cdot
+    \begin{pmatrix}
+        \frac{1}{8}   &  \frac{1}{8}    & \frac{3}{4}  \\
+        \frac{1}{2}   &  \frac{1}{4}    & \frac{1}{4}  \\
+        \frac{3}{4}   &       0         & \frac{1}{4}\\
+    \end{pmatrix}
+\end{equation*}
+
+\begin{align*}
+    \pi_1 = \frac{1}{8} \pi_1 + \frac{1}{2} \pi_2 + \frac{3}{4} \pi_3\\
+    \pi_2 = \frac{1}{8} \pi_1 + \frac{1}{4} \pi_2 + 0 \pi_3\\
+    \pi_3 = \frac{3}{4} \pi_1 + \frac{1}{4} \pi_2 + \frac{1}{4} \pi_3
+\end{align*}
+Igualamos a 0:
+\begin{align*}
+    \pi_1 - \frac{1}{8} \pi_1 - \frac{1}{2} \pi_2 - \frac{3}{4} \pi_3 = 0\\
+    \pi_2 - \frac{1}{8} \pi_1 - \frac{1}{4} \pi_2 = 0\\
+    \pi_3 - \frac{3}{4} \pi_1 - \frac{1}{4} \pi_2 - \frac{1}{4} \pi_3 = 0
+\end{align*}
+Reemplazamos la segunda ecuación:
+\begin{align*}
+    \pi_1 - \frac{1}{8} \pi_1 - \frac{1}{2} \pi_2 - \frac{3}{4} \pi_3 &= 0\\
+    \pi_1 + \pi_2 + \pi_3 &= 1\\
+    \pi_3 - \frac{3}{4} \pi_1 - \frac{1}{4} \pi_2 - \frac{1}{4} \pi_3 &= 0\\
+    \phantom{\pi_1 + \pi_2 + \pi_3} &\downarrow\\
+    7\pi_1 - 4\pi_2 - 6\pi_3 &= 0\\
+    \pi_1 + \pi_2 + \pi_3 &= 1\\
+    3\pi_1 + \pi_2 - \pi_3 &= 0\\
+    \phantom{\pi_1 + \pi_2 + \pi_3} &\downarrow\\
+\end{align*}
+
+\begin{minipage}{0.45\textwidth}
+    \begin{align*}
+        7\pi_1 - 4\pi_2 - 6\pi_3 &= 0\\
+        \pi_1 + \pi_2 + \pi_3 &= 1\\
+        \phantom{\pi_1 + \pi_2 + \pi_3} &\downarrow\\
+        11\pi_1 - 2\pi_3 &= 0\\
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{align*}
+        \pi_1 + \pi_2 + \pi_3 &= 1\\
+        -3\pi_1 - \pi_2 + 3\pi_3 &= 0\\
+        \phantom{\pi_1 + \pi_2 + \pi_3} &\downarrow\\
+        2\pi_1 - 4\pi_3 &= 0\\
+    \end{align*}
+\end{minipage}
+Resolviendo:
+\begin{align*}
+    \pi_1 = \frac{9}{20}\\
+    \pi_2 = \frac{3}{40}\\
+    \pi_3 = \frac{19}{40}
+\end{align*}
+
+\textbf{Continuando con el calculo de tiempo:}
+
+$\mu_{32} = 1+ \sum_{k,k\neq2}^{} P_{3k} + \mu_{k2}$
+\begin{align*}
+    \mu_{32} &= 1+ P_{31} \cdot \mu_{12} + P_{33} \cdot \mu_{32}\\
+            &= 1+ \frac{3}{4} \cdot \mu_{12} + \frac{1}{4} \cdot \mu_{32}\\
+    \mu_{12} &= 1+ P_{11} \cdot \mu_{12} + P_{13} \cdot \mu_{32}\\
+            &= 1+ \frac{1}{8} \cdot \mu_{12} + \frac{3}{4} \cdot \mu_{32}\\
+\end{align*}
+Resolvemos el sistema:
+\begin{center}
+    \begin{align*}
+        \begin{array}{c}
+            \mu_{32} - \frac{1}{4} \mu_{32} - \frac{3}{4} \mu_{12} = 1 \\
+            \mu_{12} - \frac{1}{8} \mu_{12} - \frac{3}{4} \mu_{32} = 1 \\
+            \rule{0.5\linewidth}{0.4pt} \\
+            \frac{3}{4} \mu_{12} - \frac{5}{4} \mu_{32} = 1 \\
+            \frac{7}{8} \mu_{12} - \frac{3}{4} \mu_{32} = 1 \\
+            \rule{0.5\linewidth}{0.4pt} \\
+            \mu_{12} = \frac{8}{5} \\
+            \mu_{32} = \frac{7}{5} \\
+        \end{array}
+    \end{align*}
+\end{center}
+
+\begin{enumerate}[start = 2]
+
     \newpage
     \item Un taller de reparaciones puede efectuar el trabajo A o el trabajo B, pero no los dos
     simultáneamente; la tarea A requiere 2 días y la B 1 día. Los posibles estados del taller son
@@ -635,7 +727,79 @@
                 \end{array}
                 \right)\\
         \end{align*}
+        \begin{center}
+            \textbf{Siguiendo la política 1:}
+            \begin{itemize}
+                \item $P_{11}$ = Si no llega A ni B: $(1-a)(1-b)$
+                \item $P_{12}$ = Si llega A: $a$
+                \item $P_{13}$ = Si llega A en segundo dia: $0$ (No puede llegar A en segundo dia)
+                \item $P_{14}$ = Si llega B: $b(1-a)$ (Llega B pero no puede estar A)
+                \item $P_{21}$ = Si no llega nadie con A en primer dia: $0$ (No esta vació ya que esta A)
+                \item $P_{22}$ = Esta en 1er A y vuelve a 1er A: $0$ (No puede llegar A cuando ya esta en A)
+                \item $P_{23}$ = Esta en 1er A y pasa a 2do A: $1$ (Siempre pasa a 2do A según definición)
+                \item $P_{24}$ = Esta en 1er A y llega B: $0$ (No puede llegar B cuando ya esta en A por la política)
+                \item $P_{31}$ = Si no llega nadie con A en 2do dia: $(1-a)(1-b)$ (Probabilidad que no llegue nadie)
+                \item $P_{32}$ = Esta en 2do A y vuelve a 1er A: $a$ (Llega una nueva Tarea A)
+                \item $P_[33]$ = Esta en 2do A y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 2do A)
+                \item $P_{34}$ = Esta en 2do A y llega B: $b(1-a)$ (Llega B pero no puede haber A)
+                \item $P_{41}$ = Si no llega nadie con B en primer dia: $(1-a)(1-b)$ (Probabilidad que no llegue nadie)
+                \item $P_{42}$ = Esta en B y llega un 1er A: $a$ (Llega una nueva Tarea A y reemplaza a B por la política)
+                \item $P_{43}$ = Esta en B y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 1er B)
+                \item $P_{44}$ = Esta en B y llega un B: $b(1-a)$ (Llega B pero no puede haber A para poder trabajar según la política) 
+            \end{itemize}
+            \begin{table}[h]
+                \centering
+                \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+                    \hline
+                    \textbf{Estado} & \textbf{ninguna tarea} & \textbf{primer día de la tarea A} & \textbf{segundo día de la tarea A} & \textbf{tarea B} \\ \hline
+                    \textbf{ninguna tarea} & $(1-a)(1-b)$ & $a$ & $0$ & $b(1-a)$ \\ \hline
+                    \textbf{primer día de la tarea A} & $0$ & $0$ & $1$ & $0$ \\ \hline
+                    \textbf{segundo día de la tarea A} & $(1-a)(1-b)$ & $a$ & $0$ & $b(1-a)$ \\ \hline
+                    \textbf{tarea B} & $(1-a)(1-b)$ & $a$ & $0$ & $b(1-a)$ \\ \hline
+                \end{tabularx}
+            \end{table}
+        \end{center}
         \item Encontrar la matriz de probabilidades de transición para la política 2.
+        
+        \begin{center}
+            
+            \textbf{Siguiendo la política 2:}
+
+            \begin{itemize}
+                \item $P_{11}$ = Si no llega A ni B: $(1-a)(1-b)$
+                \item $P_{12}$ = Si llega A: $a(1-b)$
+                \item $P_{13}$ = Si llega A en segundo dia: $0$ (No puede llegar A en segundo dia)
+                \item $P_{14}$ = Si llega B: $b$ (Llega B y se prioriza B según la política) 
+                \item $P_{21}$ = Si no llega nadie con A en primer dia: $0$ (No esta vació ya que esta A)
+                \item $P_{22}$ = Esta en 1er A y vuelve a 1er A: $0$ (No puede llegar A cuando ya esta en A)
+                \item $P_{23}$ = Esta en 1er A y pasa a 2do A: $a(1-b)$ (Paso a 2do A siempre que no llegue B)
+                \item $P_{24}$ = Esta en 1er A y llega B: $b$ (Se prioriza B según la política) 
+                \item $P_{31}$ = Si no llega nadie con A en 2do dia: $(1-a)(1-b)$ (Probabilidad que no llegue nadie)
+                \item $P_{32}$ = Esta en 2do A y vuelve a 1er A: $a(1-b)$ (Llega una nueva Tarea A pero se prioriza B)
+                \item $P_{33}$ = Esta en 2do A y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 2do A)
+                \item $P_{34}$ = Esta en 2do A y llega B: $b$ (Llega B y se prioriza B)
+                \item $P_{41}$ = Si no llega nadie con B en primer dia: $(1-a)(1-b)$ (Probabilidad que no llegue nadie)
+                \item $P_{42}$ = Esta en B y llega un 1er A: $0$ (Llega una nueva Tarea A pero se prioriza B)
+                \item $P_{43}$ = Esta en B y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 1er B)
+                \item $P_{44}$ = Esta en B y llega un B: $b$ (Llega B y se prioriza B)
+            \end{itemize}
+
+            \begin{table}[h]
+                \centering
+                \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+                    \hline
+                    \textbf{Estado} & \textbf{ninguna tarea} & \textbf{primer día de la tarea A} & \textbf{segundo día de la tarea A} & \textbf{tarea B} \\ \hline
+                    \textbf{ninguna tarea} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
+                    \textbf{primer día de la tarea A} & $0$ & $0$ & $a(1-b)$ & $b$ \\ \hline
+                    \textbf{segundo día de la tarea A} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
+                    \textbf{tarea B} & $(1-a)(1-b)$ & $0$ & $0$ & $1$ \\ \hline
+                \end{tabularx}
+            \end{table}
+
+        \end{center}
+
+        
+    
     \end{enumerate}
 
     \newpage
@@ -650,11 +814,55 @@
     Encontrar las probabilidades de que:
     \begin{enumerate}[label=\alph*)]
         \item El proceso esté en el estado 3 después de tres transiciones.
-        \item Después de la tercera transición desde el estado 3 hasta el 2 las dos transiciones siguientes
-        sean ($2\rightarrow1\rightarrow3$) o ($2\rightarrow3\rightarrow3$).
+
+        $P_{13}^{(3)}$ = 
+        \[
+        \begin{pmatrix}
+            0   & 0.5 & 0.5 \\
+            0.4 & 0   & 0.6 \\
+            0   & 0.2 & 0.8 \\
+        \end{pmatrix}^3
+        =
+        \begin{pmatrix}
+            0.04 & 0.24 & \textcolor{blue}{0.72} \\
+            0.128 & 0.136 & 0.736 \\ 
+            0.064 & 0.192 & 0.744 \\
+        \end{pmatrix}
+        \]
+
+        Por lo tanto, $\textcolor{blue}{P_{13}} = \textcolor{blue}{0.72}$
+
+        \item Después de la tercera transición desde el estado 3 hasta el 2 las dos transiciones siguientes sean ($2\rightarrow1\rightarrow3$) o ($2\rightarrow3\rightarrow3$).
+        
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{img/ejer4_2.png}
+        \end{figure}
+
+        $P_{32}^{(3)}$ = $(0.128\cdot0.72) + (0.736\cdot0.744)$ = $0.09504 + 0.547584$ = $0.642624$
+        
         \item El proceso entre en el estado 2 exactamente una vez en las tres primeras transiciones.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{img/ejer42_2.png}
+        \end{figure}
+
+        $P_{2} = (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 3 \rightarrow 2 \rightarrow 1) $ \\
+        $P_{2} = (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.2 \cdot 0.4) \\$
+        $P_{2} = 0.44$
+
         \item El proceso realice la transición $1\rightarrow2$ exactamente una vez en las tres primeras
         transiciones.
+
+        \begin{align*}
+            P_{12} &= (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + (2 \rightarrow 1 \rightarrow 2 \rightarrow 3) + (2 \rightarrow 1 \rightarrow 2 \rightarrow 2) \\
+                   &+ (3 \rightarrow 2 \rightarrow 1 \rightarrow 2) + (2 \rightarrow 2 \rightarrow 1 \rightarrow 2)\\
+            P_{12} &= (0.5\cdot0.6\cdot0.8) + (0.4\cdot0.5\cdot0.6) + (0.4\cdot0.5\cdot0.5) + (0.2\cdot0.4\cdot0.5)\\
+                   &+ (0.5\cdot0.4\cdot0.5)\\
+            P_{12} &= 0.24 + 0.12 + 0.1 + 0.04 + 0.1\\
+            P_{12} &= 0.6
+        \end{align*}
+        
     \end{enumerate}
 
 
@@ -684,11 +892,22 @@
         \[
         P = \begin{pmatrix}
             1           & 0           & 0             & 0 \\
-            1           & \frac{1}{2} & \frac{1}{2}   & 0 \\
             0           & \frac{1}{2} & \frac{1}{2}   & 0 \\
-            \frac{1}{2} & 1           & 0             & \frac{1}{2}\\
+            0           & \frac{1}{2} & \frac{1}{2}   & 0 \\
+            \frac{1}{2} & 0           & 0             & \frac{1}{2}\\
         \end{pmatrix}
         \]
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{img/ejer6_2.png}
+        \end{figure}
+
+        \begin{align*}
+            C_1 &= \{2,3\} \quad \text{Recurrente} \\
+            C_2 &= \{1\} \quad \text{Absorbente} \\
+            C_3 &= \{4\} \quad \text{Transiente} \\
+        \end{align*}
+
     \end{enumerate}
 
 
@@ -708,10 +927,123 @@
         dentro de dos años?
         \item ¿Qué distribución de población es de prever en el futuro si las tendencias no cambian?
     \end{enumerate}
-    
+\end{enumerate}
 
+
+
+\begin{center}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & \rotatebox{90}{Urbana} & \rotatebox{90}{Rural} & \rotatebox{90}{Suburbana} \\  \hline
+            Urbana & 0.8 & 0.05 & 0.15 \\
+            Rural & 0.04 & 0.9 & 0.06 \\
+            Suburbana & 0.06 & 0.04 & 0.9 \\ \hline
+        \end{tabular}
+    \end{table}
+    \begin{equation*}
+        P =
+        \begin{pmatrix}
+            0.8 & 0.05 & 0.15 \\
+            0.04 & 0.9 & 0.06 \\
+            0.06 & 0.04 & 0.9 \\
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{enumerate}[label=\alph*)]
+        \item 
+        \begin{equation*}
+            P^{2} =
+            \begin{pmatrix}
+                0.8 & 0.05 & 0.15 \\
+                0.04 & 0.9 & 0.06 \\
+                0.06 & 0.04 & 0.9 \\
+            \end{pmatrix}^{2}
+        \end{equation*}
+        = 
+        \begin{equation*}
+            P^{2} =
+            \begin{pmatrix}
+                \textcolor{red}{0.651} & 0.091 & 0.258 \\
+                0.072 & \textcolor{blue}{0.814} & 0.114 \\
+                0.104 & 0.075 & \textcolor{green}{0.821} \\
+            \end{pmatrix}
+        \end{equation*}
+        Por lo tanto la probabilidad de que una familia que vive en un área urbana siga viviendo en un \textcolor{red}{área urbana} dentro de dos años es de 0.651, en una \textcolor{blue}{suburbana} es de 0.814 y en una \textcolor{green}{rural} es de 0.821.
+        
+        \item 
+        \begin{equation*}
+            \vec{\pi}_{(2)}= 
+            \begin{pmatrix}
+                0.4 & 0.25 & 0.35 
+            \end{pmatrix}
+            \cdot 
+            \begin{pmatrix}
+                0.651 & 0.091 & 0.258 \\
+                0.072 & 0.814 & 0.114 \\
+                0.104 & 0.075 & 0.821 \\
+            \end{pmatrix}
+        \end{equation*}
+
+        \begin{equation*}
+            \vec{\pi}_{(2)}= 
+            \begin{pmatrix}
+                0.315 & 0.266 & 0.419
+            \end{pmatrix} 
+        \end{equation*}
+
+        \item $\vec{\pi} = \pi \cdot P$
+
+        \begin{equation*}
+            \vec{\pi}= 
+            \begin{pmatrix}
+                \pi_1 & \pi_2 & \pi_3
+            \end{pmatrix} 
+            \cdot
+            \begin{pmatrix}
+                0.8 & 0.05 & 0.15 \\
+                0.04 & 0.9 & 0.06 \\
+                0.06 & 0.04 & 0.9 \\
+            \end{pmatrix} 
+        \end{equation*}
+        
+        \begin{align*}
+            \pi_1 &= 0.8\pi_1 + 0.04\pi_2 + 0.06\pi_3 \\
+            \pi_2 &= 0.05\pi_1 + 0.9\pi_2 + 0.04\pi_3 \\
+            \pi_3 &= 0.15\pi_1 + 0.06\pi_2 + 0.9\pi_3 \\
+        \end{align*}
+        
+        \text{Igualamos a 0:}
+        
+        \begin{align*}
+            0 &= 0.2\pi_1 - 0.04\pi_2 - 0.06\pi_3 \\
+            0 &= 0.05\pi_1 + 0.1\pi_2 - 0.04\pi_3 \\
+            0 &= 0.15\pi_1 - 0.06\pi_2 + 0.1\pi_3 \\
+        \end{align*}
+        
+        \text{Reemplazamos la tercera ecuación:}
+        
+        \begin{align*}
+            0 &= 0.2\pi_1 - 0.04\pi_2 - 0.06\pi_3 \\
+            0 &= 0.05\pi_1 + 0.1\pi_2 - 0.04\pi_3 \\
+            1 &= \pi_1 + \pi_2 + \pi_3 \\
+        \end{align*}
+        
+        \text{Resolviendo:}
+        
+        \begin{align*}
+            \pi_1 &= 0.315 \\
+            \pi_2 &= 0.266 \\
+            \pi_3 &= 0.419 \\
+        \end{align*}
+
+    \end{enumerate}
+\end{center}
+
+\begin{enumerate}[resume, start=8]
     \newpage
-    \item - Un bosque consta de dos tipos de árboles: jóvenes (entre 0 y 3 mts de altura) y adultos (más
+    \item Un bosque consta de dos tipos de árboles: jóvenes (entre 0 y 3 mts de altura) y adultos (más
     de 3 mts). Cada año, el 30\% de los árboles jóvenes muere, el 10\% se vende por \$20 cada uno,
     el 20\% se mantiene entre 0 y 3 mts y el 40\% crece superando los 3 mts. Cada año, el 40\% de
     los árboles adultos se vende por \$50, el 20\% se vende por \$20, el 30\% permanece en el bosque
@@ -740,6 +1072,59 @@
         \item Dibujar el gráfico de estados.
     \end{enumerate}
 
+
+\end{enumerate}
+
+\begin{enumerate}[label=\alph*)]
+    \item $\vec{\pi}_{(2)}= \pi_{(0)} \cdot P^2 $
+    \begin{equation*}
+        \vec{\pi}_{(2)}= 
+            \begin{pmatrix}
+                0.8 & 0.1 & 0.1
+            \end{pmatrix} 
+            \cdot
+            \begin{pmatrix}
+                0.5 & 0.3   & 0.2 \\
+                0.2 & 0.15  & 0.65 \\
+                0.1 & 0.1   & 0.8 \\
+            \end{pmatrix}^{2} 
+    \end{equation*}
+    \begin{equation*}
+        \vec{\pi}_{(2)}= 
+            \begin{pmatrix}
+                0.8 & 0.1 & 0.1
+            \end{pmatrix} 
+            \cdot
+            \begin{pmatrix}
+               0.33 & 0.215 & 0.455 \\
+               0.195 & 0.148 & 0.658 \\
+               0.15 & 0.125 & 0.725 \\
+            \end{pmatrix}
+    \end{equation*}
+    \begin{equation*}
+        \vec{\pi}_{(2)}= 
+            \begin{pmatrix}
+                0.299 & 0.199 & 0.502
+            \end{pmatrix}
+    \end{equation*}
+
+    \item $1\rightarrow3\rightarrow3\rightarrow2$
+    \begin{center}
+        $\vec{\pi}_{(0)} = (\textcolor{blue}{0.8},0.1,0.1)$
+    \end{center}
+    \[
+    P = \begin{pmatrix}
+        0.5 & 0.3   & \textcolor{green}{0.2} \\
+        0.2 & 0.15  & 0.65 \\
+        0.1 & \textcolor{purple}{0.1}  & \textcolor{red}{0.8}  \\
+    \end{pmatrix}
+    \]
+    \begin{equation*}
+        P= \textcolor{blue}{0.8} \cdot \textcolor{green}{0.2} \cdot \textcolor{red}{0.8} \cdot \textcolor{purple}{0.1} = 0.0128
+    \end{equation*}
+\end{enumerate}
+
+\begin{enumerate}[resume, start=10]
 
     \newpage
     \item En cierta ciudad los habitantes pueden tener alguna de las profesiones A, B, C. En cada
