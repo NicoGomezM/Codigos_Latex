@@ -220,53 +220,92 @@
         \end{center}
         \item Si entran 600 alumnos un año en primer curso, calcular cuántos habrá en cada curso (de esos 600) al principio de tercer año.
 
+        % \begin{itemize}
+        %     \item Primer año: 600 alumnos
+        %     \begin{itemize}
+        %         \item Primer curso: 
+        %         \begin{itemize}
+        %             \item Pasa: 600 * 0.5 = 300
+        %             \item Abandona: 600 * 0.2 = 120
+        %             \item Repite: 600 * 0.3 = 180
+        %         \end{itemize}
+        %     \end{itemize}
+        %     \item Segundo año
+        %     \begin{itemize}
+        %         \item Primer curso:
+        %         \begin{itemize}
+        %             \item Pasa: 180 * 0.5 = 90
+        %             \item Abandona: 180 * 0.1 = 18
+        %             \item Repite: 180 * 0.4 = 72
+        %         \end{itemize}
+        %         \item Segundo curso:
+        %         \begin{itemize}
+        %             \item Pasa: 300 * 0.5 = 150
+        %             \item Abandona: 300 * 0.1 = 30
+        %             \item Repite: 300 * 0.4 = 120
+        %         \end{itemize}
+        %     \end{itemize}
+        %     \item Tercer año
+        %     \begin{itemize}
+        %         \item Primer curso:
+        %         \begin{itemize}
+        %             \item Pasa: 72 * 0.5 = 36
+        %             \item Abandona: 72 * 0.1 = 7.2
+        %             \item Repite: 72 * 0.4 = 28.8
+        %         \end{itemize}
+        %         \item Segundo curso:
+        %         \begin{itemize}
+        %             \item Pasa: 120 * 0.5 = 60
+        %             \item Abandona: 120 * 0.1 = 12
+        %             \item Repite: 120 * 0.4 = 48
+        %         \end{itemize}
+        %         \item Tercer curso:
+        %         \begin{itemize}
+        %             \item Abandona: 150 * 0.6 = 90
+        %             \item Repite: 150 * 0.4 = 60
+        %         \end{itemize}
+        %     \end{itemize}
+        % \end{itemize}
+        % Por lo tanto al principio del tercer año tendremos 150 alumnos en tercer curso, 120 en segundo y 72 en primer curso.
+        
+        \begin{equation*}
+            \pi_0 = (1,0,0)\\
+        \end{equation*}
+
+        \begin{equation*}
+            \pi_3 = \pi_0 P^3
+        \end{equation*}
+
+        \begin{equation*}
+            \pi_3 = (1,0,0)
+            \cdot
+            \begin{pmatrix}
+                0.5 & 0.2 & 0.3\\
+                0.5 & 0.1 & 0.4\\
+                0   & 0.6 & 0.4\\
+            \end{pmatrix}^3
+        \end{equation*}
+        \begin{equation*}
+            \pi_3 = (1,0,0)
+            \cdot
+            \begin{pmatrix}
+                0.325 & 0.31 & 0.365\\
+                0.325 & 0.305 & 0.37\\
+                0.3  & 0.33 & 0.37\\
+            \end{pmatrix}
+        \end{equation*}
+
+        \begin{equation*}
+            \pi_3 = (0.325, 0.31, 0.365)
+        \end{equation*}
+
         \begin{itemize}
-            \item Primer año: 600 alumnos
-            \begin{itemize}
-                \item Primer curso: 
-                \begin{itemize}
-                    \item Pasa: 600 * 0.5 = 300
-                    \item Abandona: 600 * 0.2 = 120
-                    \item Repite: 600 * 0.3 = 180
-                \end{itemize}
-            \end{itemize}
-            \item Segundo año
-            \begin{itemize}
-                \item Primer curso:
-                \begin{itemize}
-                    \item Pasa: 180 * 0.5 = 90
-                    \item Abandona: 180 * 0.1 = 18
-                    \item Repite: 180 * 0.4 = 72
-                \end{itemize}
-                \item Segundo curso:
-                \begin{itemize}
-                    \item Pasa: 300 * 0.5 = 150
-                    \item Abandona: 300 * 0.1 = 30
-                    \item Repite: 300 * 0.4 = 120
-                \end{itemize}
-            \end{itemize}
-            \item Tercer año
-            \begin{itemize}
-                \item Primer curso:
-                \begin{itemize}
-                    \item Pasa: 72 * 0.5 = 36
-                    \item Abandona: 72 * 0.1 = 7.2
-                    \item Repite: 72 * 0.4 = 28.8
-                \end{itemize}
-                \item Segundo curso:
-                \begin{itemize}
-                    \item Pasa: 120 * 0.5 = 60
-                    \item Abandona: 120 * 0.1 = 12
-                    \item Repite: 120 * 0.4 = 48
-                \end{itemize}
-                \item Tercer curso:
-                \begin{itemize}
-                    \item Abandona: 150 * 0.6 = 90
-                    \item Repite: 150 * 0.4 = 60
-                \end{itemize}
-            \end{itemize}
+            \item Primer curso: 600 * 0.325 = 195
+            \item Segundo curso: 600 * 0.31 = 186
+            \item Tercer curso: 600 * 0.365 = 219
         \end{itemize}
-        Por lo tanto al principio del tercer año tendremos 150 alumnos en tercer curso, 120 en segundo y 72 en primer curso.
+        Por lo tanto al principio del tercer año tendremos 219 alumnos en tercer curso, 186 en segundo y 195 en primer curso.
+        
         \item ¿Qué estados comunican entre sí?, ¿Es irreducible la cadena?, Indicar razonadamente qué estados son recurrentes y cuáles son transitorios.
         
         Según lo detallado en el siguiente grafo:
@@ -448,7 +487,42 @@
                 \textbf{T} & 0.2 & 0.1 & 0.7 \\ \hline
             \end{tabular}
         \end{center}
-    
+        
+        $\pi = \pi P$
+
+        \begin{equation*}
+            \pi = (\pi_1, \pi_2, \pi_3)\\
+            \cdot 
+            \begin{pmatrix}
+                0.6 & 0.1 & 0.3\\
+                0.5 & 0.4 & 0.1\\
+                0.2 & 0.1 & 0.7\\
+            \end{pmatrix}
+        \end{equation*}
+
+        \begin{align*}
+            \pi_1 &= 0.6\pi_1 + 0.5\pi_2 + 0.2 \pi_3\\
+            \pi_2 &= 0.1\pi_1 + 0.4\pi_2 + 0.1 \pi_3\\
+            \pi_3 &= 0.3\pi_1 + 0.1\pi_2 + 0.7 \pi_3\\
+        \end{align*}
+        Igualando a 0:
+        \begin{align*}
+            0.4\pi_1 - 0.5\pi_2 - 0.2\pi_3 &= 0\\
+            - 0.1\pi_1 + 0.6\pi_2 - 0.1\pi_3 &= 0\\
+            - 0.3\pi_1 - 0.1\pi_2 + 0.3\pi_3 &= 0\\
+        \end{align*}
+        Reemplazamos la $3^{ra}$ ecuación:
+        \begin{align*}
+            0.4\pi_1 - 0.5\pi_2 - 0.2\pi_3 &= 0\\
+            - 0.1\pi_1 + 0.6\pi_2 - 0.1\pi_3 &= 0\\
+            \pi_1 + \pi_2 + \pi_3 &= 1\\
+        \end{align*}
+        Resolviendo:
+        \begin{align*}
+            \pi_1 &= 17/42\\
+            \pi_2 &= 1/7\\
+            \pi_3 &= 19/42\\
+        \end{align*}
     \newpage
     \item Considerar el grafo adjunto. En cada iteración nos desplazamos con igual probabilidad a cada uno de los vertices adyacentes.
     \begin{center}
@@ -474,6 +548,84 @@
         \item ¿Cuánto tiempo pasamos en A (a largo plazo)?
         \item Si comenzamos en A, ¿cuál es el número esperado de iteraciones hasta retornar a A?
         \item Si comenzamos en C, ¿cuál es el número esperado de pasos hasta llegar a A?
+    \end{enumerate}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} \\ \hline
+            \textbf{A} & 0 & 0.3 & 0.3 & 0.3 & 0 \\
+            \textbf{B} & 0.3 & 0 & 0.3 & 0 & 0.3 \\
+            \textbf{C} & 0.5 & 0.5 & 0 & 0 & 0 \\
+            \textbf{D} & 0.5 & 0 & 0 & 0 & 0.5 \\
+            \textbf{E} & 0 & 0.5 & 0 & 0.5 & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{equation*}
+        P =
+        \begin{pmatrix}
+            0 & 0.3 & 0.3 & 0.3 & 0 \\
+            0.3 & 0 & 0.3 & 0 & 0.3 \\
+            0.5 & 0.5 & 0 & 0 & 0 \\
+            0.5 & 0 & 0 & 0 & 0.5 \\
+            0 & 0.5 & 0 & 0.5 & 0 \\
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{enumerate}[label=\alph*)]
+        \item $\mu_{11}$
+        \begin{equation*}
+            \mu_{11} = \frac{1}{\pi_1}
+        \end{equation*}
+        \begin{equation*}
+            \pi = \pi P
+        \end{equation*}
+        \begin{equation*}
+            \pi = (\pi_1, \pi_2, \pi_3, \pi_4, \pi_5)
+            \cdot
+            \begin{pmatrix}
+                0 & 0.3 & 0.3 & 0.3 & 0 \\
+                0.3 & 0 & 0.3 & 0 & 0.3 \\
+                0.5 & 0.5 & 0 & 0 & 0 \\
+                0.5 & 0 & 0 & 0 & 0.5 \\
+                0 & 0.5 & 0 & 0.5 & 0 \\
+            \end{pmatrix}
+        \end{equation*}
+        \begin{align*}
+            \pi_1 = 0.3\pi_2 + 0.5\pi_3 + 0.5\pi_4 \\
+            \pi_2 = 0.3\pi_1 + 0.5\pi_3 + 0.5\pi_5 \\
+            \pi_3 = 0.3\pi_1 + 0.3\pi_2 \\
+            \pi_4 = 0.3\pi_1 + 0.5\pi_5 \\
+            \pi_5 = 0.3\pi_2 + 0.5\pi_4 \\
+        \end{align*}
+        Igualamos a 0:
+        \begin{align*}
+            0.7\pi_1 - 0.3\pi_2 - 0.5\pi_3 - 0.5\pi_4 &= 0\\
+            - 0.3\pi_1 + 0.7\pi_2 - 0.5\pi_3 - 0.5\pi_5 &= 0\\
+            - 0.3\pi_1 - 0.3\pi_2 + 0.7\pi_3 &= 0\\
+            - 0.3\pi_1 - 0.5\pi_4 + 0.7\pi_4 &= 0\\
+            - 0.3\pi_2 - 0.5\pi_5 + 0.7\pi_5 &= 0\\
+        \end{align*}
+        Reemplazamos la $5^{ta}$ ecuación:
+        \begin{align*}
+            0.7\pi_1 - 0.3\pi_2 - 0.5\pi_3 - 0.5\pi_4 &= 0\\
+            - 0.3\pi_1 + 0.7\pi_2 - 0.5\pi_3 - 0.5\pi_5 &= 0\\
+            - 0.3\pi_1 - 0.3\pi_2 + 0.7\pi_3 &= 0\\
+            - 0.3\pi_1 - 0.5\pi_4 + 0.7\pi_4 &= 0\\
+            \pi_1 + \pi_2 + \pi_3 + \pi_4 + \pi_5 &= 1\\
+        \end{align*}
+        Resolviendo:
+        \begin{align*}
+            \pi_1 &= 0.2\\
+            \pi_2 &= 0.2\\
+            \pi_3 &= 0.2\\
+            \pi_4 &= 0.2\\
+            \pi_5 &= 0.2\\
+        \end{align*}
+        
     \end{enumerate}
 
     \newpage
@@ -512,6 +664,57 @@
     \newpage
     \item En una población de 10,000 habitantes, 5000 no fuman, 2500 fuman uno o menos de un paquete diario y 2500 fuman más de un paquete diario. En un mes hay un 5\% de probabilidad de que un no fumador comience a fumar un paquete diario, o menos, y un 2\% de que un no fumador pase a fumar más de un paquete diario. Para los que fuman un paquete, o menos, hay un 10\% de probabilidad de que dejen el tabaco, y un 10\% de que pasen a fumar más de un paquete diario. Entre los que fuman más de un paquete, hay un 5\% de probabilidad de que dejen el tabaco y un 10\% de que pasen a fumar un paquete, o menos. ¿Cuántos individuos habrá de cada clase el próximo mes?
     
+    $\pi_0 = (0.5 \quad 0.25 \quad  0.25)$%No fumador - Uno o menos - Más de uno
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & \rotatebox{90}{\textbf{No fumadores}} & \rotatebox{90}{\textbf{+ 1 p}} & \rotatebox{90}{\textbf{- 1 p}} \\ \hline
+            \textbf{No fumadores} & 0.93 & 0.02 & 0.05\\
+            \textbf{+ 1 p} & 0.05 & 0.85 & 0.1\\
+            \textbf{- 1 p} & 0.1 & 0.1 & 0.8\\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{equation*}
+        P = 
+        \begin{pmatrix}
+            0.93 & 0.02 & 0.05\\
+            0.05 & 0.85 & 0.1\\
+            0.1 & 0.1 & 0.8\\
+        \end{pmatrix}    
+    \end{equation*}
+
+    $\pi_{2} = \pi_0 \cdot P^1$
+
+    \begin{equation*}
+        \pi_{2} = 
+        \begin{pmatrix}
+            0.5 & 0.25 & 0.25
+        \end{pmatrix} 
+        \cdot
+        \begin{pmatrix}
+            0.93 & 0.02 & 0.05\\
+            0.05 & 0.85 & 0.1\\
+            0.1 & 0.1 & 0.8\\
+        \end{pmatrix}^1
+    \end{equation*}
+
+    \begin{equation*}
+        \pi_{2} = 
+        \begin{pmatrix}
+            0.5025 & 0.2475 & 0.25
+        \end{pmatrix}
+    \end{equation*}
+
+    Si nuevamente tomamos en cuenta una población de 10,000 habitantes, tendremos que:
+    \begin{itemize}
+        \item No fumadores: 5025
+        \item Fuman uno o menos: 2500
+        \item Fuman más de uno: 2475
+    \end{itemize}
+
     \newpage
     \item Un agente comercial realiza su trabajo en tres ciudades A, B y C. Para evitar
     desplazamientos innecesarios está todo el día en la misma ciudad y allí
@@ -529,6 +732,95 @@
         \item Si hoy el viajante está en C, ¿cuál es la probabilidad de que también tenga que trabajar en C al cabo de cuatro días?
         \item ¿Cuáles son los porcentajes de días en los que el agente comercial está en cada una de las tres ciudades?
     \end{enumerate}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            & \textbf{A} & \textbf{B} & \textbf{C} \\ \hline
+            \textbf{A} & 0.1 & 0.3 & 0.6 \\
+            \textbf{B} & 0.2 & 0.2 & 0.6 \\
+            \textbf{C} & 0.2 & 0.4 & 0.4 \\\hline
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}[label=\alph*)]
+        \item $\pi_4 = \pi_0 \cdot P^4$
+        \begin{equation*}
+            \pi_0 = (0 \quad 0 \quad 1)
+        \end{equation*}
+        \begin{equation*}
+            \pi_4 = 
+            \begin{pmatrix}
+                0 & 0 & 1
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.1 & 0.3 & 0.6\\
+                0.2 & 0.2 & 0.6\\
+                0.2 & 0.4 & 0.4\\
+            \end{pmatrix}^4
+        \end{equation*}
+        \begin{equation*}
+            \pi_4 = 
+            \begin{pmatrix}
+                0 & 0 & 1
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.1819 & 0.3189 & 0.4992\\
+                0.1818 & 0.319 & 0.4992\\
+                0.1818 & 0.3174 & 0.5008\\
+            \end{pmatrix}
+        \end{equation*}
+        \begin{equation*}
+            \pi_4 = 
+            \begin{pmatrix}
+                0.1818 & 0.3174 & 0.5008
+            \end{pmatrix}
+        \end{equation*}
+        Por lo tanto la probabilidad de que también tenga que trabajar en C al cabo de cuatro días es de 50.08\%.
+        \item $\pi = \pi \cdot P$
+        \begin{equation*}
+            \pi = \pi 
+            \cdot 
+            \begin{pmatrix}
+                0.1 & 0.3 & 0.6\\
+                0.2 & 0.2 & 0.6\\
+                0.2 & 0.4 & 0.4\\
+            \end{pmatrix}
+        \end{equation*}
+        \begin{align*}
+            \pi_1 &= 0.1\pi_1 + 0.2\pi_2 + 0.2\pi_3\\
+            \pi_2 &= 0.3\pi_1 + 0.2\pi_2 + 0.4\pi_3\\
+            \pi_3 &= 0.6\pi_1 + 0.6\pi_2 + 0.4\pi_3\\
+        \end{align*}
+        Igualando a 0:
+        \begin{align*}
+            -0.9\pi_1 + 0.2\pi_2 + 0.2\pi_3 &= 0\\
+            0.3\pi_1 - 0.8\pi_2 + 0.4\pi_3 &= 0\\
+            0.6\pi_1 + 0.6\pi_2 - 0.6\pi_3 &= 0\\
+        \end{align*}
+        Reemplazando la $3^{ra}$ ecuación:
+        \begin{align*}
+            -0.9\pi_1 + 0.2\pi_2 + 0.2\pi_3 &= 0\\
+            0.3\pi_1 - 0.8\pi_2 + 0.4\pi_3 &= 0\\
+            \pi_1 + \pi_2 + \pi_3 &= 1\\
+        \end{align*}
+        Resolviendo:
+        \begin{align*}
+            \pi_1 &= 2/11\\
+            \pi_2 &= 7/22\\
+            \pi_3 &= 1/2\\
+        \end{align*}
+        Por lo tanto los porcentajes de días en los que el agente comercial está en cada una de las tres ciudades son:
+        \begin{itemize}
+            \item A: 18.18\%
+            \item B: 31.82\%
+            \item C: 50\%
+        \end{itemize}
+    \end{enumerate}
+
     
     \newpage
     \item Suponga que toda la industria de refresco produce dos colas: Coca Cola y Pepsi Cola. Cuando una persona ha comprado Coca Cola hay una probabilidad de 90\% de que siga comprándola la vez siguiente. Si una persona compró Pepsi, hay 80\% de que repita la vez siguiente. Se pide:
@@ -538,6 +830,119 @@
         \item Supongamos que el 60\% de toda la gente toma hoy Coca Cola y el 40\% Pepsi. A tres compras a partir de ahora, ¿Qué fracción de los compradores estará tomando Coca Cola?.
     \end{enumerate}
 
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            & \textbf{Coca Cola} & \textbf{Pepsi Cola} \\ \hline
+            \textbf{Coca Cola} & 0.9 & 0.1 \\
+            \textbf{Pepsi Cola} & 0.2 & 0.8 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{equation*}
+        P = 
+        \begin{pmatrix}
+            0.9 & 0.1\\
+            0.2 & 0.8\\
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{enumerate}[label=\alph*)]
+        \item $\pi_2 = \pi_0 \cdot P^2$
+        $\pi_0 = (0 \quad 1)$
+        \begin{equation*}
+            \pi_2 = 
+            \begin{pmatrix}
+                0 & 1
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.9 & 0.1\\
+                0.2 & 0.8\\
+            \end{pmatrix}^2
+        \end{equation*}
+        \begin{equation*}
+            \pi_2 = 
+            \begin{pmatrix}
+                0 & 1
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.83 & 0.17\\
+                0.34 & 0.66\\
+            \end{pmatrix}
+        \end{equation*}
+        \begin{equation*}
+            \pi_2 = 
+            \begin{pmatrix}
+                0.34 & 0.66
+            \end{pmatrix}
+        \end{equation*}
+        Por lo tanto la probabilidad de que compre Coca Cola pasadas dos compras a partir de hoy es de 34\%.
+        \item $\pi_3 = \pi_0 \cdot P^3$ \hl{La hizo copilot por falta de timepo y pq es lo mismo de arriba}
+        $\pi_0 = (1 \quad 0)$
+        \begin{equation*}
+            \pi_3 = 
+            \begin{pmatrix}
+                1 & 0
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.9 & 0.1\\
+                0.2 & 0.8\\
+            \end{pmatrix}^3
+        \end{equation*}
+        \begin{equation*}
+            \pi_3 = 
+            \begin{pmatrix}
+                1 & 0
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.781 & 0.219\\
+                0.438 & 0.562\\
+            \end{pmatrix}
+        \end{equation*}
+        \begin{equation*}
+            \pi_3 = 
+            \begin{pmatrix}
+                0.781 & 0.219
+            \end{pmatrix}
+        \end{equation*}
+        Por lo tanto la probabilidad de que compre Coca Cola pasadas tres compras a partir de ahora es de 78.1\%.
+        \item $\pi_3 = \pi_0 \cdot P^3$\\
+        $\pi_0 = (0.6 \quad 0.4)$
+        \begin{equation*}
+            \pi_3 = 
+            \begin{pmatrix}
+                0.6 & 0.4
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.9 & 0.1\\
+                0.2 & 0.8\\
+            \end{pmatrix}^3
+        \end{equation*}
+        \begin{equation*}
+            \pi_3 = 
+            \begin{pmatrix}
+                0.6 & 0.4
+            \end{pmatrix}
+            \cdot
+            \begin{pmatrix}
+                0.781 & 0.219\\
+                0.438 & 0.562\\
+            \end{pmatrix}
+        \end{equation*}
+        \begin{equation*}
+            \pi_3 = 
+            \begin{pmatrix}
+                0.6438 & 0.3562
+            \end{pmatrix}
+        \end{equation*}
+    \end{enumerate}
+    Por lo tanto la fracción de los compradores que estará tomando Coca Cola a tres compras a partir de ahora es de 64.38\%.
 \end{enumerate}
 
 \newpage
@@ -842,7 +1247,7 @@ Resolvemos el sistema:
                 \item $P_{32}$ = Esta en 2do A y vuelve a 1er A: $a(1-b)$ (Llega una nueva Tarea A pero se prioriza B)
                 \item $P_{33}$ = Esta en 2do A y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 2do A)
                 \item $P_{34}$ = Esta en 2do A y llega B: $b$ (Llega B y se prioriza B)
-                \item $P_{41}$ = Si no llega nadie con B en primer dia: $(1-a)(1-b)$ (Probabilidad que no llegue nadie)
+                \item $P_{41}$ = Si no llega nadie con B en primer dia: $0$ (No puede estar vació con B)
                 \item $P_{42}$ = Esta en B y llega un 1er A: $0$ (Llega una nueva Tarea A pero se prioriza B)
                 \item $P_{43}$ = Esta en B y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 1er B)
                 \item $P_{44}$ = Esta en B y llega un B: $0$ (No puede pasar a B cuando ya esta en B)
@@ -856,7 +1261,7 @@ Resolvemos el sistema:
                     \textbf{ninguna tarea} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
                     \textbf{primer día de la tarea A} & $0$ & $0$ & $a(1-b)$ & $b$ \\ \hline
                     \textbf{segundo día de la tarea A} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
-                    \textbf{tarea B} & $(1-a)(1-b)$ & $0$ & $0$ & \hl{$0$}\\ \hline
+                    \textbf{tarea B} & $0$ & $0$ & $0$ & \hl{$1$}\\ \hline
                 \end{tabularx}
             \end{table}
 
@@ -867,7 +1272,7 @@ Resolvemos el sistema:
     \end{enumerate}
 
     \newpage
-    \item El siguiente proceso de Markov empieza en el estado 1
+    \item El siguiente proceso de Markov \textbf{empieza en el estado 1}
     \[
     P = \begin{pmatrix}
         0   & 0.5 & 0.5 \\
@@ -905,25 +1310,34 @@ Resolvemos el sistema:
 
         $P_{32}^{(3)}$ = $(0.128\cdot0.72) + (0.736\cdot0.744)$ = $0.09504 + 0.547584$ = $0.642624$
         
-        \item El proceso entre en el estado 2 exactamente una vez en las tres primeras transiciones. \hl{Se refiere a con la matriz inicial o con la matriz desde la tercera transición?}
+        \item El proceso entre en el estado 2 exactamente una vez en las tres primeras transiciones.
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\textwidth]{img/ejer42_2.png}
         \end{figure}
 
-        $P_{2} = (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 3 \rightarrow 2 \rightarrow 1) $ \\
-        $P_{2} = (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.2 \cdot 0.4) \\$
-        $P_{2} = 0.44$
+        \newpage
+        Caminos en 3 transiciones con solo un 2:
+        \begin{itemize}
+            \item 1-3-3-2
+            \item 1-2-1-3
+            \item 1-2-3-3
+            \item 1-3-2-3
+            \item 1-3-2-1
+        \end{itemize}
 
-        \item El proceso realice la transición $1\rightarrow2$ exactamente una vez en las tres primeras transiciones. \hl{Se refiere a con la matriz inicial o con la matriz desde la tercera transición?}
+        $P_{2} = (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 2 \rightarrow 1 \rightarrow 3) + (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + 
+        \\(1 \rightarrow 3 \rightarrow 2 \rightarrow 3) + (1 \rightarrow 3 \rightarrow 2 \rightarrow 1)\\$
+        $P_{2} = (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.4 \cdot 0.5) + (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.2 \cdot 0.6) + (0.5 \cdot 0.2 \cdot 0.4)\\$
+        $P_{2} = 0.08 + 0.1 + 0.24 + 0.06 + 0.04\\$
+        $P_{2} = 0.52$
 
+        \item El proceso realice la transición $1\rightarrow2$ exactamente una vez en las tres primeras transiciones.
         \begin{align*}
-            P_{12} &= (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + (2 \rightarrow 1 \rightarrow 2 \rightarrow 3) + (2 \rightarrow 1 \rightarrow 2 \rightarrow 2) \\
-                   &+ (3 \rightarrow 2 \rightarrow 1 \rightarrow 2) + (2 \rightarrow 2 \rightarrow 1 \rightarrow 2)\\
-            P_{12} &= (0.5\cdot0.6\cdot0.8) + (0.4\cdot0.5\cdot0.6) + (0.4\cdot0.5\cdot0.5) + (0.2\cdot0.4\cdot0.5)\\
-                   &+ (0.5\cdot0.4\cdot0.5)\\
-            P_{12} &= 0.24 + 0.12 + 0.1 + 0.04 + 0.1\\
-            P_{12} &= 0.6
+            P_{12} &= (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + (1 \rightarrow 2 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 2 \rightarrow 1 \rightarrow 3)\\
+            P_{12} &= (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.6 \cdot 0.2) + (0.5 \cdot 0.4 \cdot 0.5)\\
+            P_{12} &= 0.24 + 0.06 + 0.1\\
+            P_{12} &= 0.4
         \end{align*}
         
     \end{enumerate}
@@ -1002,7 +1416,8 @@ Resolvemos el sistema:
         \end{figure}
 
         \begin{align*}
-            C_1 &= \{1,2,3,4\}: \text{Recurrente Periódico.}
+            C_1 &= \{1,2,3,4\}: \text{Recurrente Aperiódico.}\\
+            (2 \rightarrow 2 = 3 \quad 1 \rightarrow 1 = 3) &\neq (4 \rightarrow 4 = 6 \quad 3 \rightarrow 3 = 6)\\ 
         \end{align*}
         \item  
         \[
@@ -1015,7 +1430,7 @@ Resolvemos el sistema:
         \]
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\textwidth]{img/ejer6_2.png}
+            \includegraphics[width=0.4\textwidth]{img/ejer6_2.png}
         \end{figure}
 
         \begin{align*}
@@ -1077,7 +1492,6 @@ Resolvemos el sistema:
                 0.06 & 0.04 & 0.9 \\
             \end{pmatrix}^{2}
         \end{equation*}
-        = 
         \begin{equation*}
             P^{2} =
             \begin{pmatrix}
@@ -1173,25 +1587,23 @@ Resolvemos el sistema:
 
 Planteamos la tabla de probabilidades:
 \begin{table}[H]
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
         \hline
-        & \rotatebox{90}{Joven} & \rotatebox{90}{Adulto}  & \rotatebox{90}{Vendido} & \rotatebox{90}{Muerto} & \rotatebox{90}{Permanece}\\ \hline
-        Joven & 0.2 & 0.4 & 0.1 & 0.3 & 0\\ 
-        Adulto & 0 & 0 & 0.6 & 0.1 & 0.3 \\ 
-        Vendido & 0 & 0 & 0 & 0 & 0 \\
-        Muerto & 0 & 0 & 0 & 0 & 0 \\   
-        Permanece & 0 & 0 & 0 & 0 & 0 \\ \hline
+        & \rotatebox{90}{Joven} & \rotatebox{90}{Adulto}  & \rotatebox{90}{Vendido} & \rotatebox{90}{Muerto}\\ \hline
+        Joven & 0.2 & 0.4 & 0.1 & 0.3 \\ 
+        Adulto & 0 & 0.3 & 0.6 & 0.1 \\ 
+        Vendido & 0 & 0 & 1 & 0 \\
+        Muerto & 0 & 0 & 0 & 1 \\  \hline 
     \end{tabularx}
 \end{table}
 Por lo que la matriz de probabilidades de transición es:
 \begin{equation*}
     P = 
     \begin{pmatrix}
-        0.2 & 0.4 & 0.1 & 0.3 & 0\\
-        0 & 0 & 0.6 & 0.1 & 0.3 \\
-        0 & 0 & 0 & 0 & 0 \\
-        0 & 0 & 0 & 0 & 0 \\
-        0 & 0 & 0 & 0 & 0 \\
+        0.2 & 0.4 & 0.1 & 0.3 \\
+        0 & 0.3 & 0.6 & 0.1 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1 \\
     \end{pmatrix}
 \end{equation*}
 
@@ -1233,7 +1645,6 @@ Por lo que la matriz de probabilidades de transición es:
         \item El vector límite estacionario, si existe. 
         \item Dibujar el gráfico de estados.
     \end{enumerate}
-
 
 \end{enumerate}
 
@@ -1284,6 +1695,53 @@ Por lo que la matriz de probabilidades de transición es:
     \begin{equation*}
         P= \textcolor{blue}{0.8} \cdot \textcolor{green}{0.2} \cdot \textcolor{red}{0.8} \cdot \textcolor{purple}{0.1} = 0.0128
     \end{equation*}
+
+    \item $\pi = \pi \cdot P$
+    
+    \begin{equation*}
+        \pi = 
+        \begin{pmatrix}
+            \pi_1 & \pi_2 & \pi_3
+        \end{pmatrix}
+        \cdot
+        \begin{pmatrix}
+            0.5 & 0.3   & 0.2 \\
+            0.2 & 0.15  & 0.65 \\
+            0.1 & 0.1   & 0.8 \\
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{align*}
+        \pi_1 &= 0.5\pi_1 + 0.2\pi_2 + 0.1\pi_3\\
+        \pi_2 &= 0.3\pi_1 + 0.15\pi_2 + 0.1\pi_3\\
+        \pi_3 &= 0.2\pi_1 + 0.65\pi_2 + 0.8\pi_3\\
+    \end{align*}
+    Igualamos a 0:
+    \begin{align*}
+        0 &= - 0.5\pi_1 + 0.2\pi_2 + 0.1\pi_3 \\
+        0 &= 0.3\pi_1 - 0.85\pi_2 + 0.1\pi_3\\
+        0 &= 0.2\pi_1 + 0.65\pi_2 - 0.2\pi_3\\
+    \end{align*}
+    Reemplazamos la tercera ecuación:
+    \begin{align*}
+        0 &= - 0.5\pi_1 + 0.2\pi_2 + 0.1\pi_3 \\
+        0 &= 0.3\pi_1 - 0.85\pi_2 + 0.1\pi_3\\
+        1 &= \pi_1 + \pi_2 + \pi_3\\
+    \end{align*}
+    Resolviendo:
+    \begin{align*}
+        \pi_1 &= 21/110 \\
+        \pi_2 &= 8/55 \\
+        \pi_3 &= 73/100 \\
+    \end{align*}
+
+    \item El grafo de estados es:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/ejer9_2.png}
+    \end{figure}
+
+
 \end{enumerate}
 
 \begin{enumerate}[resume, start=10]
@@ -1328,9 +1786,10 @@ Por lo tanto la matriz de probabilidades esta dada por:
 \begin{enumerate}[label=\alph*)]
     \item $\vec{\pi}_{(0)} = (0.2 \quad 0.3 \quad 0.5)$
     
-    \begin{equation*}
-        \vec{\pi}_{(2)} = \vec{\pi}_{(0)} \cdot P^2
-    \end{equation*}
+    \begin{center}
+        $\vec{\pi}_{(2)} = \vec{\pi}_{(0)} \cdot$ \hl{$P^2$}    
+    \end{center}
+    
 
     % \begin{equation*}
     %     \vec{\pi}_{(1)} = 
