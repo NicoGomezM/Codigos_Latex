@@ -422,6 +422,21 @@
         \]
     \end{enumerate}
 
+    \begin{enumerate}[label=\alph*)]    
+        \item \textbf{Grafo de la matriz:}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{img/ejer4.png}
+        \end{figure}
+        \textbf{Clasificación de cadenas:}
+        \begin{itemize}
+            \item $C_1$\{1,2,3\}: Recurrente Periódico.
+            \item $C_2$\{4\}: Transiente.
+        \end{itemize}
+
+        \item \textbf{Grafo de la matriz:}
+    \end{enumerate}
+
     \newpage
     \item Calcula las participaciones en el mercado que a largo plazo alcanzarán las compañías R, S y T, si el comportamiento de los consumidores corresponde a una cadena de Markov con las probabilidades de cambio que se muestran en la tabla.
         \begin{center}
@@ -543,8 +558,15 @@
     \textbf{Grafo de la matriz $P_1$:}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\textwidth]{img/ejer1_2.png}
+        \includegraphics[width=0.3\textwidth]{img/ejer1_2.png}
     \end{figure}
+    \textbf{Clasificación de cadenas:}
+    \begin{itemize}
+        \item $C_1$\{1,2\}: Recurrente Aperiódico.
+        \item $C_2$\{3\}: Transiente.
+    \end{itemize}
+
+    \rule{0.8\textwidth}{0.4pt}
 
     \begin{align*}
         P_2 &= \left(
@@ -555,6 +577,17 @@
             \end{array}
             \right)\\
     \end{align*}
+    \textbf{Grafo de la matriz $P_2$:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{img/ejer12_2.png}
+    \end{figure}
+    \textbf{Clasificación de cadenas:}
+    \begin{itemize}
+        \item $C_1$\{1,2,3\}: Recurrente Aperiódico. 
+    \end{itemize}
+
+    \rule{0.8\textwidth}{0.4pt} 
 
     \begin{align*}
         P_3 &= \left(
@@ -566,6 +599,17 @@
             \end{array}
             \right)\\
     \end{align*}
+    \textbf{Grafo de la matriz $P_3$:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{img/ejer13_2.png}
+    \end{figure}
+    \textbf{Clasificación de cadenas:}
+    \begin{itemize}
+        \item $C_1$\{1,2,3,4\}: Recurrente Aperiódico. 
+    \end{itemize}
+
+    \rule{0.8\textwidth}{0.4pt}
 
     \begin{align*}
         P_4 &= \left(
@@ -577,7 +621,18 @@
             \end{array}
             \right)\\
     \end{align*}
-    
+    \textbf{Grafo de la matriz $P_4$:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{img/ejer14_2.png}
+    \end{figure}
+    \textbf{Clasificación de cadenas:}
+    \begin{itemize}
+        \item $C_1$\{1,2,3,4\}: Recurrente Aperiódico.
+    \end{itemize}
+
+    \rule{0.8\textwidth}{0.4pt}
+
     \begin{align*}
         P_5 &= \left(
             \begin{array}{ccc}    
@@ -587,7 +642,16 @@
             \end{array}
             \right)\\
     \end{align*}
-
+    \textbf{Grafo de la matriz $P_5$:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{img/ejer15_2.png}
+    \end{figure}
+    \textbf{Clasificación de cadenas:}
+    \begin{itemize}
+        \item $C_1$\{1,3\}: Recurrente Aperiódico.
+        \item $C_2$\{2\}: Transiente.
+    \end{itemize}
 
     \newpage
     \item Considerar un proceso de Markov con la siguiente matriz de probabilidades de transición:
@@ -693,7 +757,7 @@ Resolvemos el sistema:
     \end{align*}
 \end{center}
 
-\begin{enumerate}[start = 2]
+\begin{enumerate}[start = 3]
 
     \newpage
     \item Un taller de reparaciones puede efectuar el trabajo A o el trabajo B, pero no los dos
@@ -781,7 +845,7 @@ Resolvemos el sistema:
                 \item $P_{41}$ = Si no llega nadie con B en primer dia: $(1-a)(1-b)$ (Probabilidad que no llegue nadie)
                 \item $P_{42}$ = Esta en B y llega un 1er A: $0$ (Llega una nueva Tarea A pero se prioriza B)
                 \item $P_{43}$ = Esta en B y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 1er B)
-                \item $P_{44}$ = Esta en B y llega un B: $b$ (Llega B y se prioriza B)
+                \item $P_{44}$ = Esta en B y llega un B: $0$ (No puede pasar a B cuando ya esta en B)
             \end{itemize}
 
             \begin{table}[h]
@@ -792,7 +856,7 @@ Resolvemos el sistema:
                     \textbf{ninguna tarea} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
                     \textbf{primer día de la tarea A} & $0$ & $0$ & $a(1-b)$ & $b$ \\ \hline
                     \textbf{segundo día de la tarea A} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
-                    \textbf{tarea B} & $(1-a)(1-b)$ & $0$ & $0$ & $1$ \\ \hline
+                    \textbf{tarea B} & $(1-a)(1-b)$ & $0$ & $0$ & \hl{$0$}\\ \hline
                 \end{tabularx}
             \end{table}
 
@@ -841,7 +905,7 @@ Resolvemos el sistema:
 
         $P_{32}^{(3)}$ = $(0.128\cdot0.72) + (0.736\cdot0.744)$ = $0.09504 + 0.547584$ = $0.642624$
         
-        \item El proceso entre en el estado 2 exactamente una vez en las tres primeras transiciones.
+        \item El proceso entre en el estado 2 exactamente una vez en las tres primeras transiciones. \hl{Se refiere a con la matriz inicial o con la matriz desde la tercera transición?}
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\textwidth]{img/ejer42_2.png}
@@ -851,8 +915,7 @@ Resolvemos el sistema:
         $P_{2} = (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.2 \cdot 0.4) \\$
         $P_{2} = 0.44$
 
-        \item El proceso realice la transición $1\rightarrow2$ exactamente una vez en las tres primeras
-        transiciones.
+        \item El proceso realice la transición $1\rightarrow2$ exactamente una vez en las tres primeras transiciones. \hl{Se refiere a con la matriz inicial o con la matriz desde la tercera transición?}
 
         \begin{align*}
             P_{12} &= (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + (2 \rightarrow 1 \rightarrow 2 \rightarrow 3) + (2 \rightarrow 1 \rightarrow 2 \rightarrow 2) \\
@@ -875,9 +938,53 @@ Resolvemos el sistema:
         \item Hallar la distribución de probabilidad del estado estacionario
     \end{enumerate}
 
+\end{enumerate}
 
+\begin{enumerate}[label=\alph*)]
+    \item Planteamos la tabla de probabilidades:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            & \rotatebox{90}{\textbf{Llueve}} & \rotatebox{90}{\textbf{Buen tiempo}} \\ \hline
+            \textbf{Llueve} & 0.6 & 0.4 \\ \hline
+            \textbf{Buen tiempo} & 0.6 & 0.4 \\ \hline
+        \end{tabular}
+    \end{table}
+    Por lo que la matriz de probabilidades de transición es:
+    \begin{equation*}
+        P = 
+        \begin{pmatrix}
+            0.6 & 0.4 \\
+            0.6 & 0.4 \\
+        \end{pmatrix}
+    \end{equation*}
+    \item $\pi = \pi \cdot P$
+    \begin{align*}
+        \pi = (\pi_1, \pi_2) \cdot 
+        \begin{pmatrix}
+            0.6 & 0.4 \\
+            0.6 & 0.4 \\
+        \end{pmatrix}
+    \end{align*}
+    \begin{align*}
+        \pi_1 = 0.6\pi_1 + 0.6\pi_2\\
+        \pi_2 = 0.4\pi_1 + 0.4\pi_2
+    \end{align*}
+    Reemplazando la segunda ecuación:
+    \begin{align*}
+        \pi_1 = 0.6\pi_1 + 0.6\pi_2\\
+        \pi_1 + \pi_2 = 1
+    \end{align*}
+    Resolviendo el sistema:
+    \begin{align*}
+        \pi_1 = \frac{3}{5} ; \quad \pi_2 = \frac{2}{5}
+    \end{align*}
+\end{enumerate}
+
+\begin{enumerate}[start = 6]
     \newpage
-    \item - Determinar las clases de las siguientes cadenas de Markov y decir si son o no recurrentes
+    \item Determinar las clases de las siguientes cadenas de Markov y decir si son o no recurrentes
     \begin{enumerate}[label=\alph*)]
         \item 
         \[
@@ -888,6 +995,15 @@ Resolvemos el sistema:
             0 & 1 & 0 & 0 \\
         \end{pmatrix}
         \]
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.3\textwidth]{img/ejer5_2.png}
+        \end{figure}
+
+        \begin{align*}
+            C_1 &= \{1,2,3,4\}: \text{Recurrente Periódico.}
+        \end{align*}
         \item  
         \[
         P = \begin{pmatrix}
@@ -903,7 +1019,7 @@ Resolvemos el sistema:
         \end{figure}
 
         \begin{align*}
-            C_1 &= \{2,3\} \quad \text{Recurrente} \\
+            C_1 &= \{2,3\} \quad \text{Recurrente Aperiódico} \\
             C_2 &= \{1\} \quad \text{Absorbente} \\
             C_3 &= \{4\} \quad \text{Transiente} \\
         \end{align*}
@@ -993,7 +1109,7 @@ Resolvemos el sistema:
             \end{pmatrix} 
         \end{equation*}
 
-        \item $\vec{\pi} = \pi \cdot P$
+        \item \hl{$\vec{\pi} = \pi \cdot P$}
 
         \begin{equation*}
             \vec{\pi}= 
@@ -1043,7 +1159,7 @@ Resolvemos el sistema:
 
 \begin{enumerate}[resume, start=8]
     \newpage
-    \item Un bosque consta de dos tipos de árboles: jóvenes (entre 0 y 3 mts de altura) y adultos (más
+    \item \textcolor{red}{Un bosque consta de dos tipos de árboles: jóvenes (entre 0 y 3 mts de altura) y adultos (más
     de 3 mts). Cada año, el 30\% de los árboles jóvenes muere, el 10\% se vende por \$20 cada uno,
     el 20\% se mantiene entre 0 y 3 mts y el 40\% crece superando los 3 mts. Cada año, el 40\% de
     los árboles adultos se vende por \$50, el 20\% se vende por \$20, el 30\% permanece en el bosque
@@ -1051,7 +1167,53 @@ Resolvemos el sistema:
     \begin{enumerate}[label=\alph*)]
         \item ¿Cuál es la probabilidad de que un árbol joven muera antes de ser vendido?
         \item Si plantar un árbol joven cuesta \$5, ¿cuál es el beneficio esperado para cada árbol joven plantado?
-    \end{enumerate}
+    \end{enumerate}}
+
+\end{enumerate}
+
+Planteamos la tabla de probabilidades:
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+        \hline
+        & \rotatebox{90}{Joven} & \rotatebox{90}{Adulto}  & \rotatebox{90}{Vendido} & \rotatebox{90}{Muerto} & \rotatebox{90}{Permanece}\\ \hline
+        Joven & 0.2 & 0.4 & 0.1 & 0.3 & 0\\ 
+        Adulto & 0 & 0 & 0.6 & 0.1 & 0.3 \\ 
+        Vendido & 0 & 0 & 0 & 0 & 0 \\
+        Muerto & 0 & 0 & 0 & 0 & 0 \\   
+        Permanece & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabularx}
+\end{table}
+Por lo que la matriz de probabilidades de transición es:
+\begin{equation*}
+    P = 
+    \begin{pmatrix}
+        0.2 & 0.4 & 0.1 & 0.3 & 0\\
+        0 & 0 & 0.6 & 0.1 & 0.3 \\
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 \\
+    \end{pmatrix}
+\end{equation*}
+
+\begin{enumerate}[label=\alph*)]
+    \item La probabilidad de que un árbol joven muera antes de ser vendido es del 30\% como se señala en el enunciado. O en su defecto, tomando en cuenta mas posibilidades:
+    \begin{align*}
+        P &= P_{14} + (P_{12} \cdot P_{24}) + (P_{11} \cdot P_{14})\\
+        P &= 0.3 + (0.4 \cdot 0.1) + (0.2 \cdot 0.3)\\
+        P &= 0.3 + 0.04 + 0.06\\
+        P &= 0.4
+    \end{align*}
+    Por lo tanto la probabilidad de que un árbol joven muera antes de ser vendido es del 40\%.
+
+    \item Si plantar un árbol joven cuesta \$5, el beneficio esperado para cada árbol joven plantado es:
+    \begin{align*}
+        B &= (0.1 \cdot 20) + (0.3 \cdot 0) + (0.4 \cdot 0.6((0.4 \cdot 50)+(0.2 \cdot 20))) + (0.3 \cdot -5)\\
+        B &= 2 - 1.5\\
+        B &= 0.5
+    \end{align*}
+\end{enumerate}
+
+\begin{enumerate}[resume, start=9]
 
 
     \newpage
@@ -1140,6 +1302,142 @@ Resolvemos el sistema:
         \item Una cierta distribución porcentual de las profesiones que no cambie de una generación a otra.
     \end{enumerate}
 
+\end{enumerate}
+
+Primero planteamos la tabla de probabilidades:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        & \textbf{A} & \textbf{B} & \textbf{C} \\ \hline
+        \textbf{A} & 3/5 & 1/5 & 1/5 \\ 
+        \textbf{B} & 1/6 & 2/3 & 1/6 \\ 
+        \textbf{C} & 3/8 & 3/8 & 1/4 \\ \hline
+    \end{tabular}
+\end{table}
+Por lo tanto la matriz de probabilidades esta dada por:
+\begin{equation*}
+    P = 
+    \begin{pmatrix}
+        3/5 & 1/5 & 1/5 \\
+        1/6 & 2/3 & 1/6 \\
+        3/8 & 3/8 & 1/4 \\
+    \end{pmatrix}
+\end{equation*}
+
+\begin{enumerate}[label=\alph*)]
+    \item $\vec{\pi}_{(0)} = (0.2 \quad 0.3 \quad 0.5)$
+    
+    \begin{equation*}
+        \vec{\pi}_{(2)} = \vec{\pi}_{(0)} \cdot P^2
+    \end{equation*}
+
+    % \begin{equation*}
+    %     \vec{\pi}_{(1)} = 
+    %     \begin{pmatrix}
+    %         0.2 & 0.3 & 0.5
+    %     \end{pmatrix}
+    %     \cdot
+    %     \begin{pmatrix}
+    %         3/5 & 1/5 & 1/5 \\
+    %         1/6 & 2/3 & 1/6 \\
+    %         3/8 & 3/8 & 1/4 \\
+    %     \end{pmatrix}
+    % \end{equation*}
+    % \begin{align*}
+    %     \vec{\pi}_{(1)} = 
+    %     \begin{pmatrix}
+    %         0.3575 & 0.4275 & 0.215
+    %     \end{pmatrix}
+    % \end{align*}
+
+    \begin{equation*}
+        \vec{\pi}_{(2)} = 
+        \begin{pmatrix}
+            0.2 & 0.3 & 0.5
+        \end{pmatrix}
+        \cdot
+        \begin{pmatrix}
+            3/5 & 1/5 & 1/5 \\
+            1/6 & 2/3 & 1/6 \\
+            3/8 & 3/8 & 1/4 \\
+        \end{pmatrix}^2
+    \end{equation*}
+    \begin{equation*}
+        \vec{\pi}_{(2)} = 
+        \begin{pmatrix}
+            0.2 & 0.3 & 0.5
+        \end{pmatrix}
+        \cdot
+        \begin{pmatrix}
+            0.4683 & 0.3283 & 0.2033 \\
+            0.2736 & 0.5402 & 0.1861 \\
+            0.3812 & 0.4187 & 0.2 \\
+        \end{pmatrix}
+    \end{equation*}
+    \begin{equation*}
+        \vec{\pi}_{(2)} = 
+        \begin{pmatrix}
+            0.3663 & 0.4371 & 0.1965
+        \end{pmatrix}
+    \end{equation*}
+    % \begin{align*}
+    %     \vec{\pi}_{(1)} = 
+    %     \begin{pmatrix}
+    %         0.3575 & 0.4275 & 0.215
+    %     \end{pmatrix}
+    % \end{align*}
+
+    \item $\vec{\pi} = \vec{\pi} \cdot P$
+    \begin{align*}
+        \vec{\pi} = 
+        \begin{pmatrix}
+            \pi_1 & \pi_2 & \pi_3
+        \end{pmatrix} 
+        \cdot
+        \begin{pmatrix}
+            3/5 & 1/5 & 1/5 \\
+            1/6 & 2/3 & 1/6 \\
+            3/8 & 3/8 & 1/4 \\
+        \end{pmatrix}
+    \end{align*}
+    \begin{align*}
+        \pi_1 &= \frac{3}{5}\pi_1 + \frac{1}{6}\pi_2 + \frac{3}{8}\pi_3 \\
+        \pi_2 &= \frac{1}{5}\pi_1 + \frac{2}{3}\pi_2 + \frac{3}{8}\pi_3 \\
+        \pi_3 &= \frac{1}{5}\pi_1 + \frac{1}{6}\pi_2 + \frac{1}{4}\pi_3 \\
+    \end{align*}
+    Igualamos a 0:
+    \begin{align*}
+        0 &= \frac{2}{5}\pi_1 - \frac{1}{6}\pi_2 - \frac{3}{8}\pi_3 \\
+        0 &= -\frac{1}{5}\pi_1 + \frac{1}{3}\pi_2 - \frac{3}{8}\pi_3 \\
+        0 &= \frac{1}{5}\pi_1 - \frac{1}{6}\pi_2 + \frac{3}{4}\pi_3 \\
+    \end{align*}
+    Reemplazamos la tercera ecuación:
+    \begin{align*}
+        0 &= \frac{2}{5}\pi_1 - \frac{1}{6}\pi_2 - \frac{3}{8}\pi_3 \\
+        0 &= \frac{1}{5}\pi_1 + \frac{1}{3}\pi_2 - \frac{3}{8}\pi_3 \\
+        1 &= \pi_1 + \pi_2 + \pi_3 \\
+    \end{align*}
+    Resolviendo:
+    \begin{align*}
+        \pi_1 &= 15/41 = 0.365 \\
+        \pi_2 &= 18/41 = 0.439\\
+        \pi_3 &= 8/41 = 0.195\\  
+    \end{align*}
+
+    \item \hl{No estoy seguro de esta respuesta}
+        \begin{tcolorbox}[colback=yellow!20, colframe=yellow, boxrule=1pt, rounded corners]
+            Para que la distribución no cambie, necesitamos que las probabilidades de transición sean iguales a las probabilidades actuales. Es decir:
+            \begin{align*}
+                P(A|A) &= 0.20 \\
+                P(B|B) &= 0.30 \\
+                P(C|C) &= 0.50
+            \end{align*}
+        \end{tcolorbox}
+\end{enumerate}
+
+\begin{enumerate}[resume, start=11]
+
 
     \newpage
     \item En la urna 1 tenemos 9 bolas blancas y 1 bola negra. En la urna 2 tenemos 9 bolas
@@ -1153,6 +1451,21 @@ Resolvemos el sistema:
         \item Hallar distribución limite.
     \end{enumerate}
 
+\end{enumerate}
+
+Primero planteamos la tabla de probabilidades:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & \textbf{U1} & \textbf{U2} \\ \hline
+        \textbf{U1} & 0.1 & 0.9 \\ 
+        \textbf{U2} & 0.1 & 0.9 \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{enumerate}[label=\alph*)]
+    \item 
 \end{enumerate}
 
 \end{document}
