@@ -171,16 +171,17 @@
             $\Omega: {1,2,3}$ = Espacio muestral\\
         \end{center}
         \textit{Donde:}
-        1: Primer Año; 2: Segundo Año; 3: Tercer Año
+        1: Primer Año; 2: Segundo Año; 3: Tercer Año; T: Abandono.\\
 
         \begin{table}[h]
             \centering
-            \begin{tabular}{|r|c|c|c|}
+            \begin{tabular}{|r|c|c|c|c|}
             \hline
-                                 & \textbf{Pasa}   & \textbf{Abandona}  & \textbf{Repite} \\ \hline
-            \textbf{Primer Año } & 0.5             & 0.2                & 0.3 \\ 
-            \textbf{Segundo año} & 0.5             & 0.1                & 0.4 \\ 
-            \textbf{Tercer año } & 0               & 0.6                & 0.4 \\ \hline
+                                 & \textbf{1}   & \textbf{2}  & \textbf{3} & \textbf{T}\\ \hline
+            \textbf{1} & 0.3 & 0.5 & 0 & 0.2\\
+            \textbf{2} & 0 & 0.4 & 0.5 & 0.1\\
+            \textbf{3} & 0 & 0 & 0.4 & 0.6\\ 
+            \textbf{T} & 0 & 0 & 0 & 1\\ \hline
             \end{tabular}
         \end{table}
 
@@ -191,29 +192,14 @@
             \text{1} \\
             \text{2} \\
             \text{3} \\
+            \text{T} \\
             \end{array}
             \left(
-            \begin{array}{ccc}
-                P_{1p} & P_{1a} & P_{1r} \\
-                P_{2p} & P_{2a} & P_{2r} \\
-                P_{3p} & P_{3a} & P_{3r} \\
-            \end{array}
-            \right)
-            \]
-        \end{center}
-        \begin{center}
-            \[
-            P = 
-            \begin{array}{l}
-            \text{1} \\
-            \text{2} \\
-            \text{3} \\
-            \end{array}
-            \left(
-            \begin{array}{ccc}
-                0.5 & 0.2 & 0.3 \\
-                0.5 & 0.1 & 0.4 \\
-                0   & 0.6 & 0.4 \\
+            \begin{array}{cccc}
+                0.3 & 0.5 & 0 & 0.2 \\
+                0 & 0.4 & 0.5 & 0.1 \\
+                0 & 0 & 0.4 & 0.6 \\
+                0 & 0 & 0 & 1 \\
             \end{array}
             \right)
             \]
@@ -269,43 +255,46 @@
         % Por lo tanto al principio del tercer año tendremos 150 alumnos en tercer curso, 120 en segundo y 72 en primer curso.
         
         \begin{equation*}
-            \pi_0 = (1,0,0)\\
+            \pi_0 = (1 \quad 0 \quad 0 \quad 0)\\
         \end{equation*}
 
         \begin{equation*}
-            \pi_3 = \pi_0 P^3
+            \pi_3 = \pi_0 \cdot P^3
         \end{equation*}
 
         \begin{equation*}
-            \pi_3 = (1,0,0)
+            \pi_3 = (1 \quad 0 \quad 0 \quad 0)
             \cdot
             \begin{pmatrix}
-                0.5 & 0.2 & 0.3\\
-                0.5 & 0.1 & 0.4\\
-                0   & 0.6 & 0.4\\
+                0.3 & 0.5 & 0 & 0.2 \\
+                0 & 0.4 & 0.5 & 0.1 \\
+                0 & 0 & 0.4 & 0.6 \\
+                0 & 0 & 0 & 1 \\
             \end{pmatrix}^3
         \end{equation*}
         \begin{equation*}
-            \pi_3 = (1,0,0)
+            \pi_3 = (1 \quad 0 \quad 0 \quad 0)
             \cdot
             \begin{pmatrix}
-                0.325 & 0.31 & 0.365\\
-                0.325 & 0.305 & 0.37\\
-                0.3  & 0.33 & 0.37\\
+                27/1000	& 37/200 & 11/40 & 513/1000\\
+                0 & 8/125 & 6/25 & 87/125 \\
+                0 & 0 & 8/125 & 117/125 \\
+                0 & 0 & 0 & 1
             \end{pmatrix}
         \end{equation*}
 
         \begin{equation*}
-            \pi_3 = (0.325, 0.31, 0.365)
+            \pi_3 = (27/1000 \quad 37/200 \quad 11/40 \quad 513/1000)
         \end{equation*}
 
         \begin{itemize}
-            \item Primer curso: 600 * 0.325 = 195
-            \item Segundo curso: 600 * 0.31 = 186
-            \item Tercer curso: 600 * 0.365 = 219
+            \item Primer curso: 600 * 0.027 = 16.2
+            \item Segundo curso: 600 * 37/200 = 111
+            \item Tercer curso: 600 * 11/40 = 165
+            \item Abandono: 600 * 513/1000 = 308
         \end{itemize}
-        Por lo tanto al principio del tercer año tendremos 219 alumnos en tercer curso, 186 en segundo y 195 en primer curso.
-        
+        Por lo tanto al principio del tercer año tendremos 165 alumnos en tercer curso, 111 en segundo y 16.2 en primer curso.
+
         \item ¿Qué estados comunican entre sí?, ¿Es irreducible la cadena?, Indicar razonadamente qué estados son recurrentes y cuáles son transitorios.
         
         Según lo detallado en el siguiente grafo:
@@ -448,6 +437,9 @@
         \end{array}
         \right)
         \]
+
+
+
         \item
         \[
         P = \left(
@@ -474,6 +466,12 @@
         \end{itemize}
 
         \item \textbf{Grafo de la matriz:}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.3\textwidth]{img/ejer42.png}
+        \end{figure}
+        \textbf{Clasificación de cadenas:}
+
     \end{enumerate}
 
     \newpage
@@ -1247,8 +1245,8 @@ Resolvemos el sistema:
                 \item $P_{32}$ = Esta en 2do A y vuelve a 1er A: $a(1-b)$ (Llega una nueva Tarea A pero se prioriza B)
                 \item $P_{33}$ = Esta en 2do A y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 2do A)
                 \item $P_{34}$ = Esta en 2do A y llega B: $b$ (Llega B y se prioriza B)
-                \item $P_{41}$ = Si no llega nadie con B en primer dia: $0$ (No puede estar vació con B)
-                \item $P_{42}$ = Esta en B y llega un 1er A: $0$ (Llega una nueva Tarea A pero se prioriza B)
+                \item $P_{41}$ = Si no llega nadie con B en primer dia: $(1-a)(1-b)$ 
+                \item $P_{42}$ = Esta en B y llega un 1er A: $a(1-b)$ (Llega una nueva Tarea A pero se prioriza B)
                 \item $P_{43}$ = Esta en B y pasa a 2do A: $0$ (No puede pasar a 2do A estando en 1er B)
                 \item $P_{44}$ = Esta en B y llega un B: $0$ (No puede pasar a B cuando ya esta en B)
             \end{itemize}
@@ -1261,7 +1259,7 @@ Resolvemos el sistema:
                     \textbf{ninguna tarea} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
                     \textbf{primer día de la tarea A} & $0$ & $0$ & $a(1-b)$ & $b$ \\ \hline
                     \textbf{segundo día de la tarea A} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & $b$ \\ \hline
-                    \textbf{tarea B} & $0$ & $0$ & $0$ & \hl{$1$}\\ \hline
+                    \textbf{tarea B} & $(1-a)(1-b)$ & $a(1-b)$ & $0$ & \hl{$1$}\\ \hline
                 \end{tabularx}
             \end{table}
 
@@ -1326,11 +1324,11 @@ Resolvemos el sistema:
             \item 1-3-2-1
         \end{itemize}
 
-        $P_{2} = (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 2 \rightarrow 1 \rightarrow 3) + (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + 
+        $P_{\exists 2} = (1 \rightarrow 3 \rightarrow 3 \rightarrow 2) + (1 \rightarrow 2 \rightarrow 1 \rightarrow 3) + (1 \rightarrow 2 \rightarrow 3 \rightarrow 3) + 
         \\(1 \rightarrow 3 \rightarrow 2 \rightarrow 3) + (1 \rightarrow 3 \rightarrow 2 \rightarrow 1)\\$
-        $P_{2} = (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.4 \cdot 0.5) + (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.2 \cdot 0.6) + (0.5 \cdot 0.2 \cdot 0.4)\\$
-        $P_{2} = 0.08 + 0.1 + 0.24 + 0.06 + 0.04\\$
-        $P_{2} = 0.52$
+        $P_{\exists 2} = (0.5 \cdot 0.8 \cdot 0.2) + (0.5 \cdot 0.4 \cdot 0.5) + (0.5 \cdot 0.6 \cdot 0.8) + (0.5 \cdot 0.2 \cdot 0.6) + (0.5 \cdot 0.2 \cdot 0.4)\\$
+        $P_{\exists 2} = 0.08 + 0.1 + 0.24 + 0.06 + 0.04\\$
+        $P_{\exists 2} = 0.52$
 
         \item El proceso realice la transición $1\rightarrow2$ exactamente una vez en las tres primeras transiciones.
         \begin{align*}
@@ -1787,31 +1785,12 @@ Por lo tanto la matriz de probabilidades esta dada por:
     \item $\vec{\pi}_{(0)} = (0.2 \quad 0.3 \quad 0.5)$
     
     \begin{center}
-        $\vec{\pi}_{(2)} = \vec{\pi}_{(0)} \cdot$ \hl{$P^2$}    
+        $\vec{\pi}_{(1)} = \vec{\pi}_{(0)} \cdot$ $P$    
     \end{center}
     
 
-    % \begin{equation*}
-    %     \vec{\pi}_{(1)} = 
-    %     \begin{pmatrix}
-    %         0.2 & 0.3 & 0.5
-    %     \end{pmatrix}
-    %     \cdot
-    %     \begin{pmatrix}
-    %         3/5 & 1/5 & 1/5 \\
-    %         1/6 & 2/3 & 1/6 \\
-    %         3/8 & 3/8 & 1/4 \\
-    %     \end{pmatrix}
-    % \end{equation*}
-    % \begin{align*}
-    %     \vec{\pi}_{(1)} = 
-    %     \begin{pmatrix}
-    %         0.3575 & 0.4275 & 0.215
-    %     \end{pmatrix}
-    % \end{align*}
-
     \begin{equation*}
-        \vec{\pi}_{(2)} = 
+        \vec{\pi}_{(1)} = 
         \begin{pmatrix}
             0.2 & 0.3 & 0.5
         \end{pmatrix}
@@ -1820,26 +1799,45 @@ Por lo tanto la matriz de probabilidades esta dada por:
             3/5 & 1/5 & 1/5 \\
             1/6 & 2/3 & 1/6 \\
             3/8 & 3/8 & 1/4 \\
-        \end{pmatrix}^2
-    \end{equation*}
-    \begin{equation*}
-        \vec{\pi}_{(2)} = 
-        \begin{pmatrix}
-            0.2 & 0.3 & 0.5
-        \end{pmatrix}
-        \cdot
-        \begin{pmatrix}
-            0.4683 & 0.3283 & 0.2033 \\
-            0.2736 & 0.5402 & 0.1861 \\
-            0.3812 & 0.4187 & 0.2 \\
         \end{pmatrix}
     \end{equation*}
-    \begin{equation*}
-        \vec{\pi}_{(2)} = 
+    \begin{align*}
+        \vec{\pi}_{(1)} = 
         \begin{pmatrix}
-            0.3663 & 0.4371 & 0.1965
+            0.3575 & 0.4275 & 0.215
         \end{pmatrix}
-    \end{equation*}
+    \end{align*}
+
+    % \begin{equation*}
+    %     \vec{\pi}_{(2)} = 
+    %     \begin{pmatrix}
+    %         0.2 & 0.3 & 0.5
+    %     \end{pmatrix}
+    %     \cdot
+    %     \begin{pmatrix}
+    %         3/5 & 1/5 & 1/5 \\
+    %         1/6 & 2/3 & 1/6 \\
+    %         3/8 & 3/8 & 1/4 \\
+    %     \end{pmatrix}^2
+    % \end{equation*}
+    % \begin{equation*}
+    %     \vec{\pi}_{(2)} = 
+    %     \begin{pmatrix}
+    %         0.2 & 0.3 & 0.5
+    %     \end{pmatrix}
+    %     \cdot
+    %     \begin{pmatrix}
+    %         0.4683 & 0.3283 & 0.2033 \\
+    %         0.2736 & 0.5402 & 0.1861 \\
+    %         0.3812 & 0.4187 & 0.2 \\
+    %     \end{pmatrix}
+    % \end{equation*}
+    % \begin{equation*}
+    %     \vec{\pi}_{(2)} = 
+    %     \begin{pmatrix}
+    %         0.3663 & 0.4371 & 0.1965
+    %     \end{pmatrix}
+    % \end{equation*}
     % \begin{align*}
     %     \vec{\pi}_{(1)} = 
     %     \begin{pmatrix}
