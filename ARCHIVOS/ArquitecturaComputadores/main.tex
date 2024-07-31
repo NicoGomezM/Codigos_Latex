@@ -12,8 +12,30 @@
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage[table]{xcolor}
+\usepackage{listings}
+\usepackage{color} % Para definir colores
 
 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{gray!10}, % Color de fondo
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray},
+    stringstyle=\color{red},
+    basicstyle=\ttfamily\footnotesize, % Estilo básico del texto con tamaño grande
+    breakatwhitespace=false, % No romper en espacios en blanco
+    breaklines=true, % Romper líneas largas
+    captionpos=b, % Posición del título
+    keepspaces=true, % Mantener espacios
+    numbers=left, % Numeración a la izquierda
+    numbersep=5pt, % Separación de los números
+    showspaces=false, % No mostrar espacios
+    showstringspaces=false, % No mostrar espacios en cadenas
+    showtabs=false, % No mostrar tabulaciones
+    tabsize=2 % Tamaño de tabulación
+}
+
+\lstset{style=mystyle}
 
 \begin{document}
 \imagenlogoU{img/logoNGMFormal_sinF.png}
@@ -737,7 +759,7 @@ Por lo que la función lógica simplificada es:
 \end{tcolorbox}
 \newpage
 
-\section{Sistemas numéricos digitales}
+\section{\textcolor{green}{Sistemas numéricos digitales}}
 \subsection{Abstracción digital}
 \begin{itemize}
     \item La mayoría de las variables son \textbf{continuas}.
@@ -869,12 +891,386 @@ Por lo que la función lógica simplificada es:
     Nibble 2 & - & - & - & - & 1 & 0 & 1 & 0 \\
     \hline
     \end{tabular}
+
+    \begin{tcolorbox}[colback=green!10, colframe=green!80!black, title={Potencias de 2 importantes}]
+        \begin{itemize}
+            \item $2^{10}$ = 1 kilobyte (KB) = 1024 bytes.
+            \item 2$^{20}$ = 1 megabyte (MB) $\approx$ 1 millón de bytes.
+            \item 2$^{30}$ = 1 gigabyte (GB) $\approx$ 1 billón de bytes.
+            \item 2$^{40}$ = 1 terabyte (TB) $\approx$ 1 trillón de bytes.
+        \end{itemize}
+    \end{tcolorbox}
 \end{center}
 
 
+\subsection{Decimal (con decimales) a binario}
+\begin{itemize}
+    \item \textbf{Ejemplo:} Convertir el número decimal 0.6875 a binario.
+    \begin{itemize}
+        \item $0.6875 \times 2 = 1.375$ con parte entera $1$ y parte decimal $0.375$
+        \item $0.375 \times 2 = 0.75$ con parte entera $0$ y parte decimal $0.75$
+        \item $0.75 \times 2 = 1.5$ con parte entera $1$ y parte decimal $0.5$
+        \item $0.5 \times 2 = 1$ con parte entera $1$ y parte decimal $0$
+        \\\\Por lo tanto (0.6875)$_{10}$ = (0.1011)$_2$
+    \end{itemize}
+    \item \textbf{Ejemplo:} Convertir el número decimal 0.1 a binario.
+    \begin{itemize}
+        \item $0.1 \times 2 = 0.2$ con parte entera $0$ y parte decimal $0.2$
+        \item $0.2 \times 2 = 0.4$ con parte entera $0$ y parte decimal $0.4$
+        \item $0.4 \times 2 = 0.8$ con parte entera $0$ y parte decimal $0.8$
+        \item $0.8 \times 2 = 1.6$ con parte entera $1$ y parte decimal $0.6$
+        \item $0.6 \times 2 = 1.2$ con parte entera $1$ y parte decimal $0.2$
+        \item $0.2 \times 2 = 0.4$ con parte entera $0$ y parte decimal $0.4$
+        \item $0.4 \times 2 = 0.8$ con parte entera $0$ y parte decimal $0.8$
+        \item $0.8 \times 2 = 1.6$ con parte entera $1$ y parte decimal $0.6$
+        \item $0.6 \times 2 = 1.2$ con parte entera $1$ y parte decimal $0.2$
+        \item $0.2 \times 2 = 0.4$ con parte entera $0$ y parte decimal $0.4$
+        \item $0.4 \times 2 = 0.8$ con parte entera $0$ y parte decimal $0.8$
+        \item $0.8 \times 2 = 1.6$ con parte entera $1$ y parte decimal $0.6$
+        Por lo tanto (0.1)$_{10}$ = (0.0001100110011...)$_2$
+    \end{itemize}
+    \item \textbf{Ejemplo:} Convertir el número decimal 25.248 a binario.
+    \begin{itemize}
+        \item Parte entera: 25
+        \begin{itemize}
+            \item $25 \div 2 = 12$ con residuo $1$
+            \item $12 \div 2 = 6$ con residuo $0$
+            \item $6 \div 2 = 3$ con residuo $0$
+            \item $3 \div 2 = 1$ con residuo $1$
+            \item $1 \div 2 = 0$ con residuo $1$
+            \item Por lo tanto, la parte entera de 25 en binario es 11001.
+        \end{itemize}
+        \item Parte decimal: 0.248
+        \begin{itemize}
+            \item $0.248 \times 2 = 0.496$ con parte entera $0$ y parte decimal $0.496$
+            \item $0.496 \times 2 = 0.992$ con parte entera $0$ y parte decimal $0.992$
+            \item $0.992 \times 2 = 1.984$ con parte entera $1$ y parte decimal $0.984$
+            \item $0.984 \times 2 = 1.968$ con parte entera $1$ y parte decimal $0.968$
+            \item $0.968 \times 2 = 1.936$ con parte entera $1$ y parte decimal $0.936$
+            \item $0.936 \times 2 = 1.872$ con parte entera $1$ y parte decimal $0.872$
+            \item $0.872 \times 2 = 1.744$ con parte entera $1$ y parte decimal $0.744$
+            \item $0.744 \times 2 = 1.488$ con parte entera $1$ y parte decimal $0.488$
+            \item $0.488 \times 2 = 0.976$ con parte entera $0$ y parte decimal $0.976$
+            \item $0.976 \times 2 = 1.952$ con parte entera $1$ y parte decimal $0.952$
+            Por lo tanto, la parte decimal de 0.248 en binario es 0.001111101...
+        \end{itemize}
+    \end{itemize}
+    Por lo tanto, el número decimal 25.248 en binario es 11001.001111101...
+    \item \textbf{Ejemplo:} Convertir el número decimal 0.513 a octal de 3 dígitos.
+    \begin{itemize}
+        \item $0.513 \times 8 = 4.104$ con parte entera $4$ y parte decimal $0.104$
+        \item $0.104 \times 8 = 0.832$ con parte entera $0$ y parte decimal $0.832$
+        \item $0.832 \times 8 = 6.656$ con parte entera $6$ y parte decimal $0.656$
+        \item $0.656 \times 8 = 5.248$ con parte entera $5$ y parte decimal $0.248$
+        Por lo tanto, el número decimal 0.513 en octal es $(0.4065)_{10}$ $\approx$ $(0.407)_8$.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Números con signo}
+
+\begin{itemize}
+    \item \textbf{Signo y magnitud:} El bit más significativo (el mas a la izquierda) es el bit de signo (0 = positivo, 1 = negativo).
+    \begin{itemize}
+        \item \textbf{Ejemplo:} 6 y -6 en signo y magnitud.
+        \begin{itemize}
+            \item $6 = 0110$
+            \item $-6 = 1110$
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Rango de números con signo y magnitud:} [$-(2^{n-1} - 1)$ , $2^{n-1} - 1$].
+\end{itemize}
+
+\subsubsection{Complemento a 1 y Complemento a 2}
+\begin{itemize}
+    \item \textbf{Complemento a 1:} Invertir todos los bits de un número.
+    \item \textbf{Complemento a 2:} Complemento a 1 + 1.
+\end{itemize}
+
+\begin{tcolorbox}[colback=blue!10, colframe=blue!80!black, title={Ejemplo}]
+    \textbf{Invertir el signo de $12_{10}$ con complemento 2.}
+    \begin{itemize}
+        \item Transformar 12 a binario:
+        \begin{itemize}
+            \item $12 \div 2 = 6$ con residuo $0$
+            \item $6 \div 2 = 3$ con residuo $0$
+            \item $3 \div 2 = 1$ con residuo $1$
+            \item $1 \div 2 = 0$ con residuo $1$
+            \item Por lo tanto, 12 en binario es 1100.
+        \end{itemize}
+        \item Aplicar complemento a 1:
+        \begin{itemize}
+            \item Invertir los bits de 1100: 0011.
+        \end{itemize}
+        \item Aplicar complemento a 2:
+        \begin{itemize}
+            \item Sumar 1 al complemento a 1: 0011 + 1 = 0100.
+        \end{itemize}
+        Por lo tanto, -12 en binario es 0100.
+    \end{itemize}
+\end{tcolorbox}
+
+\subsubsection{Operaciones con complementos}
+Si realizamos cálculos de sumas o restas con complementos, debemos tener en cuenta que:
+\begin{itemize}
+    \item Si el resultado es mayor al rango de bits, se produce un \textbf{desbordamiento}.
+    \item Si el resultado es negativo, se produce un \textbf{subdesbordamiento}.
+\end{itemize}
+\begin{tcolorbox}[colback=blue!10, colframe=blue!80!black, title={Ejemplo}]
+    \textbf{Sumar 5 y -3 en binario con complemento a 2.}
+    \begin{itemize}
+        \item 5 en binario: 0101.
+        \item 3 en binario: 0011.
+        \item Obtener el complemento a 2 de -3:
+        \begin{itemize}
+            \item 0011 $\rightarrow$ Complemento a 1: 1100 $\rightarrow$ Complemento a 2: 1101.
+        \end{itemize}
+        \item Sumar 5 y -3:
+        \begin{itemize}
+            \item 0101 + 1101 = \textcolor{red}{1}0010.
+        \end{itemize}
+        Observamos un desbordamiento, ya que el resultado es 10 y solo tenemos 4 bits. Por lo que el resultado a tomar es 0010 = 2.
+    \end{itemize}
+    \textbf{Sumar 4 y -4 en binario con complemento a 2.}
+    \begin{itemize}
+        \item 4 en binario: 0100.
+        \item Obtener el complemento a 2 de -4:
+        \begin{itemize}
+            \item 0100 $\rightarrow$ Complemento a 1: 1011 $\rightarrow$ Complemento a 2: 1100.
+        \end{itemize}
+        \item Sumar 4 y -4:
+        \begin{itemize}
+            \item 0100 + 1100 = \textcolor{red}{1}0000.
+        \end{itemize}
+        Observamos un desbordamiento, ya que el resultado es 100 y solo tenemos 4 bits. Por lo que el resultado a tomar es 0000 = 0.
+    \end{itemize}
+\end{tcolorbox}
+
+
+
+\subsubsection{Multiplicacion}
+
+\begin{tcolorbox}[colback=blue!10, colframe=blue!80!black, title={Ejemplo}]
+\textbf{Ejemplo:} Multiplicar $101_2$ y $11_2$.
+\begin{center}
+    \begin{tabular}{c@{}c@{}c@{}c@{}c@{}c}
+        & & 1 & 0 & 1 & \\ % Primera fila
+        $\times$ & & & 1 & 1 &  \\ % Segunda fila
+        \hline
+        & & 1& 0 & 1& \\ % Tercera fila
+        + & 1 & 0 & 1 & & \\ % Cuarta fila
+        \hline
+        & 1 & 1 & 1 & 1 &  % Quinta fila
+    \end{tabular}
+    \\Por lo tanto $101_2$ (5$_{10}$) $\times$ $11_2$ (3$_{10}$) = $1111_2$ (15$_{10}$).
+\end{center}
+
+\textbf{Ejemplo:} Multiplicar $534_8$ y $24_8$.
+\begin{itemize}
+    \item $534_8 \times 4$:
+    \begin{itemize}
+        \item $4_8 \times 4_8 = 16_{10} = \textcolor{red}{2} \times 8_{10} + \textcolor{blue}{0} = \textcolor{red}{2}\textcolor{blue}{0}_8$. 
+        \item $4_8 \times 3_8 + \textcolor{red}{2} = 14_{10} = \textcolor{green}{1} \times 8_{10} + \textcolor{blue}{6} = \textcolor{green}{1}\textcolor{blue}{6}_8$.
+        \item $4_8 \times 5_8 + \textcolor{green}{1} = 21_{10} = \textcolor{blue}{2} \times 8_{10} + \textcolor{blue}{5} = \textcolor{blue}{2}\textcolor{blue}{5}_8$.
+    \end{itemize}
+    \item $534_8 \times 2_8$:
+    \begin{itemize}
+        \item $2_8 \times 4_8 = 8_{10} = \textcolor{red}{1} \times 8_{10} + \textcolor{blue}{0} = \textcolor{red}{1}\textcolor{blue}{0}_8$.
+        \item $2_8 \times 3_8 + \textcolor{red}{1} = 7_{10} = \textcolor{green}{0} \times 8_{10} + \textcolor{blue}{7} = \textcolor{blue}{7}_8$.
+        \item $2_8 \times 5_8 + \textcolor{green}{0} = 10_{10} = \textcolor{blue}{1} \times 8_{10} + \textcolor{blue}{2} = \textcolor{blue}{1}\textcolor{blue}{2}_8$.
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+    \begin{tabular}{c@{}c@{}c@{}c@{}c@{}c}
+        & & & 5 & 3 & 4  \\ % Primera fila
+        $\times$ & & & & 2 & 4   \\ % Segunda fila
+        \hline
+        & & 2& 5 & 6& 0\\ % Tercera fila
+        + & 1 & 2 & 7 & 0 & \\ % Cuarta fila
+        \hline
+        & 1  & 5 & 4 & 6 & 0 % Quinta fila
+    \end{tabular}
+\end{center}
+\end{tcolorbox}
+
+\subsection{Código ASCII}
+\noindent El código ASCII (American Standard Code for Information Interchange) es un código de caracteres que se utiliza para representar texto en dispositivos electrónicos. El código ASCII asigna un número a cada carácter, como letras, números, signos de puntuación y otros símbolos. Por ejemplo:
+\textbf{Tabla de caracteres y símbolos ASCII:}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+        \hline  
+        & \multicolumn{8}{|c|}{$B_7B_6B_5$} \\ % Unir columnas de la 1 a la 9
+        \hline
+        $B_4B_3B_2B_1$ & 000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\
+        \hline
+        0000 & NUL & DLE & SP & 0 & @ & P & ` & p \\
+        0001 & SOH & DC1 & ! & 1 & A & Q & a & q \\
+        0010 & STX & DC2 & " & 2 & B & R & b & r \\
+        0011 & ETX & DC3 & \# & 3 & C & S & c & s \\
+        0100 & EOT & DC4 & \$ & 4 & D & T & d & t \\
+        0101 & ENQ & NAK & \% & 5 & E & U & e & u \\
+        0110 & ACK & SYN & \& & 6 & F & V & f & v \\
+        0111 & BEL & ETB & ' & 7 & G & W & g & w \\
+        1000 & BS & CAN & ( & 8 & H & X & h & x \\
+        1001 & HT & EM & ) & 9 & I & Y & i & y \\
+        1010 & LF & SUB & * & : & J & Z & j & z \\
+        1011 & VT & ESC & + & ; & K & [ & k & \{ \\
+        1100 & FF & FS & , & < & L & $\backslash$ & l & | \\
+        1101 & CR & GS & - & = & M & ] & m & \} \\
+        1110 & SO & RS & . & > & N & \^{} & n & \_ \\
+        1111 & SI & US & / & ? & O & \_ & o & DEL \\
+        \hline
+    \end{tabular}   
+\end{table}
+
+\textbf{Caracteres de control ASCII:}
+\begin{table}[H]
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        NULL & Null & DLE & Data Link Escape \\
+        SOH & Start of Header (inicio cabeceo) & DC1 & Device Control 1 \\
+        STX & Start of Text (inicio texto)& DC2 & Device Control 2 \\
+        ETX & End of Text & DC3 & Device Control 3 \\
+        EOT & End of Transmission & DC4 & Device Control 4 \\
+        ENQ & Petición & NAK & No Acknowledge (Ackn. negativa)\\
+        ACK & Acknowledge (Confirmación) & SYN & Synchronous Idle (Espera sincrónica) \\
+        BEL & Bell (timbre) & ETB & End of Transmission Block \\
+        BS & Backspace (retroceso) & CAN & Cancel \\
+        HT & Horizontal Tab (tabulador horiz.) & EM & End of Medium \\
+        LF & Line Feed (avance de línea) & SUB & Substitute \\
+        VT & Vertical Tab (tabulador vertical) & ESC & Escape \\
+        FF & Form Feed (avance de página) & FS & File Separator \\
+        CR & Carriage Return (retorno de carro) & GS & Group Separator \\
+        SO & Shift Out & RS & Record Separator \\
+        SI & Shift In & US & Unit Separator \\
+        SP & Space & DEL & Delete \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \newpage
 \section{Assembler}
+\subsection{Introducción}
+\noindent \textbf{Lenguaje ensamblador (Assembly):} Instrucciones definidas en un formato legible por humanos que se traducen a instrucciones de máquina.\\
+\textbf{Lenguaje maquina:} Formato binario comprensible por la CPU.\\
+
+\noindent \textbf{Arquitectura MIPS (Microprocessor without Interlocked Pipeline Stages):} Arquitectura de computadora RISC (Reduced Instruction Set Computer) desarrollada por MIPS Technologies.
+
+\subsubsection{Principios de diseño de una arquitectura}
+\begin{enumerate}
+    \item Simplicidad favorece la regularidad.
+    \begin{itemize}
+        \item Formato de instrucción consistente
+        \item El mismo numero de Operandos (dos de origen y uno de destino)
+        \item Facilita la codificación y el manejo en el hardware
+    \end{itemize}
+    \item Hacer que el caso común sea rápido.
+    \begin{itemize}
+        \item MIPS incluye solo instrucciones simples y que son comúnmente usadas.
+        \item El hardware para decodificar y ejecutar las instrucciones debe ser simple, pequeño y rápido
+        \item Las instrucciones mas complejas (que son las menos comunes) son realizadas con múltiples instrucciones simples
+        \item MIPS es un \textit{\textbf{reduced instruction set computer}} (RISC), con un pequeño numero de instrucciones simples
+        \item Otras arquitecturas, tales como x86 de Intel, son \textit{\textbf{complex instruction set computers}} (CISC)
+    \end{itemize}
+    \item Mientras más pequeño, más rápido.
+    \begin{itemize}
+        \item MIPS incluye solo un pequeño numero de registros
+    \end{itemize}
+    \item Buen diseño demanda buen compromiso.
+\end{enumerate}
+
+\subsection{Instrucciones en lenguaje ensamblador}
+\subsubsection{Suma}
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!75!black, title={Código de ejemplo en C y ensamblador MIPS}]
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Código en C}
+        \begin{lstlisting}
+    a + b = c;
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Código ensamblador MIPS}
+        \begin{lstlisting}
+    add a, b, c
+        \end{lstlisting}
+    \end{minipage}
+\end{tcolorbox}
+
+\textbf{Donde:}
+\begin{itemize}
+    \item \textbf{add:} Instrucción que suma dos registros.
+    \item \textbf{a, b, c:} Registros donde se almacenan los valores.
+    \item \textbf{b,c:} Operandos de entrada.
+    \item \textbf{a:} Operando de salida.
+\end{itemize}
+
+\subsubsection{Resta}
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!75!black, title={Código de ejemplo en C y ensamblador MIPS}]
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Código en C}
+        \begin{lstlisting}
+    a - b = c;
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Código ensamblador MIPS}
+        \begin{lstlisting}
+    sub a, b, c
+        \end{lstlisting}
+    \end{minipage}
+\end{tcolorbox}
+\textbf{Donde:}
+\begin{itemize}
+    \item \textbf{sub:} Instrucción que resta dos registros.
+    \item \textbf{a, b, c:} Registros donde se almacenan los valores.
+    \item \textbf{b,c:} Operandos de entrada.
+    \item \textbf{a:} Operando de salida.
+\end{itemize}
+
+\subsubsection{Multiples instrucciones}
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!75!black, title={Código de ejemplo en C y ensamblador MIPS}]
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Código en C}
+        \begin{lstlisting}
+    a = b + c - d; 
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Código ensamblador MIPS}
+        \begin{lstlisting}
+    add t, b, c # t = b + c
+    sub a, t, d # a = t - d
+        \end{lstlisting}
+    \end{minipage}
+\end{tcolorbox}
+
+\noindent Un código de varias operaciones es manejado por varias instrucciones, como se observa en el ejemplo anterior.
+
+\subsection{Operandos}
+\noindent Los Operandos tienen como ubicaciones físicas en el computador las siguientes:
+\begin{itemize}
+    \item \textbf{Registros:} Ubicaciones de almacenamiento en la CPU.
+    \item \textbf{Memoria:} Ubicaciones de almacenamiento en la memoria principal.
+    \item \textbf{Constantes:} Valores constantes.
+\end{itemize}
+
+\subsubsection{Registros}
+\begin{itemize}
+    \item Los registros son mas rápidos que la memoria.
+    \item Se dice que MIPS es una ``arquitectura de 32-bit'' porque opera con datos de 32 bits.
+    \item \textbf{Registros MIPS:} 32 registros de 32 bits.
+    \begin{itemize}
+        \item \$0: Siempre tiene el valor 0.
+        \item \$31: Se utiliza para almacenar la dirección de retorno de una subrutina.
+    \end{itemize}
+    \item \textbf{Registros de uso general:} \$1 - \$25.
+    \item \textbf{Registros de punto flotante:} \$f0 - \$f31.
+\end{itemize}
+
 \subsection{Fases de ejecución de una instrucción}
 
 \begin{enumerate}
