@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "a:/nico/UBB/CODIGOS/Latex/ARCHIVOS/GestionEstrategica/Tareas/Tarea3",
-      "program": "a:/nico/UBB/CODIGOS/Latex/ARCHIVOS/GestionEstrategica/Tareas/Tarea3/build/Debug/outDebug",
+      "cwd": "a:/nico/Descargas",
+      "program": "a:/nico/Descargas/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+%\usepackage[english]{babel}
+\RequirePackage[spanish]{babel}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[pdftex,bookmarks,colorlinks,breaklinks]{hyperref}  % PDF hyperlinks, with coloured links
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{epstopdf}
+\usepackage{fullpage}
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage{lscape}
+\parskip 3ex % espacio entre parrafos.
+
+
+\begin{document}
+%%%%%%%%%%%%%%% PORTADA %%%%%%%%%%%%%%%%%%
+\pagestyle{empty}
+\begin{figure}
+   \centering
+   \includegraphics[scale=.5]{imgs/logo.png}
+\end{figure}
+
+\begin{center}
+Facultad de Ingeniería
+
+Escuela de Ingeniería en Bioinformática
+
+\bigskip\bigskip\bigskip\bigskip
+
+\rule{14cm}{0.5mm}
+
+\begin{Huge}\textbf{Informe laboratorio1}\end{Huge}
+
+\begin{Huge}\textbf{Base datos}\end{Huge}
+
+\rule{14cm}{0.5mm}
+
+\bigskip\bigskip\bigskip\bigskip
+\bigskip\bigskip\bigskip\bigskip
+\bigskip\bigskip\bigskip\bigskip
+\bigskip\bigskip\bigskip\bigskip
+\bigskip\bigskip\bigskip\bigskip
+
+\begin{tabular*}{14cm}{l@{\extracolsep{\fill}}r}
+\emph{Alumno:} & \emph{Profesor:}\\
+Nombre Alumno & Nombre Profesor\\
+Matrícula & \emph{Ayudantes:}\\
+E-mail & Nombre Ayudante1\\
+& Nombre Ayudante2
+\end{tabular*}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{plain}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\listoffigures 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Introducción}
+
+Aunque ya hace más de veinte años que el software libre existe, hasta los últimos tiempos no se ha perfilado como una alternativa válida para muchos usuarios, empresas y, cada vez más, instituciones y gobiernos. Actualmente, GNU/Linux es uno de los sistemas operativos más fiables y eficientes que podemos encontrar. Aunque su naturaleza de software libre creó inicialmente ciertas reticencias por parte de usuarios y empresas, GNU/Linux ha demostrado estar a la altura de cualquier otro sistema operativo existente.
+
+El objetivo de este curso es:
+
+\begin{enumerate}
+  \item Iniciarnos en el mundo del GNU/Linux.
+  \item En él obtendremos las claves para entender la filosofía del código libre, aprenderemos cómo usarlo y manipularlo a nuestro gusto y dispondremos de las herramientas necesarias para poder movernos fácilmente en este nuevo mundo. El documento tampoco pretende ser un manual de referencia imprescindible para administradores y/o usuarios; para ello ya existen centenares de manuales, HOWTOS y multitud de otras referencias que nos ocuparían millares de páginas. 
+  \item Aquí pretendemos aprender a dar los primeros pasos en esta tierra poco explorada aún para demasiados usuarios y administradores, a la vez que enseñaremos cómo plantear y resolver por nosotros mismos los problemas que puedan aparecer.
+\end{enumerate}
+
+\section{¿Qué es el GNU?}
+
+Para entender todo el movimiento del software libre ...
+\begin{itemize}
+  \item debemos situarnos a finales de la década de los sesenta, principios de los setenta.
+  \item En aquellos tiempos las grandes compañías de ordenadores no daban el valor que hoy día se da al software. En su gran mayoría eran fabricantes de ordenadores que obtenían sus principales ingresos vendiendo sus grandes máquinas, a las que incorporaban algún tipo de sistema operativo y aplicaciones. Las universidades tenían permiso  para coger y estudiar el código fuente del sistema operativo para fines docentes. Los mismos usuarios podían pedir el código fuente de drivers y programas para adaptarlos a sus necesidades. Se consideraba  que el software no tenía valor\footnote{lalalalal} por sí mismo si no estaba acompañado por el hardware que lo soportaba. En la figura \ref{fig1} se puede ver el logo de la Universidad de Talca\footnote{Universidad de Talca, Rergión del Maule \url{http://www.utalca.cl/}}.
+\end{itemize}
+
+\begin{figure}[!h]
+   \centering
+   \includegraphics[scale=.5]{imgs/logo.png}
+   \caption{Logo Universidad}{Mas detalles de la figura}
+   \label{fig1}
+\end{figure}
+
+En este entorno, los laboratorios Bell (AT\&T) crearon un sistema operativo llamado UNIX\cite{unix}, caracterizado por la buena gestión de los recursos del sistema, su estabilidad y su compatibilidad\cite{vbox} con el hardware de diferentes fabricantes (para homogeneizar todos sus sistemas). Este último hecho fue importantísimo (hasta entonces todos los fabricantes tenían sus propios operativos incompatibles con los otros), ya que devino el factor que le proporcionó mucha popularidad. El cuadro \ref{tabla1} muestra un resumen ....
+
+%\begin{landscape}
+\begin{table}[!h]
+\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|}\hline 
+
+\multicolumn{3}{|c|}{{\bf Multicolumna}}\\\hline 
+
+\cellcolor[gray]{0.9} \centering {\bf Acción(es) de Mejora} & 
+\cellcolor[gray]{0.9} \centering {\bf Plazo (inicio y término)} & 
+\cellcolor[gray]{0.9} \centering {\bf Necesidad de recursos y fuente de financiamiento} \tabularnewline
+
+\hline
+a & b & c\\\hline 
+d & e & f\\\hline 
+1 &2e & 3\\\hline 
+
+\end{tabular}
+\caption {Descripción tabla}
+\label{tabla1}
+\end{table}
+%\end{landscape}
+
+\subsection{¿Qué es el GNU/Linux?}
+
+En este contexto, y cuando la FSF todavía no tenía ningún núcleo estable para su sistema operativo, un profesor de la Universidad de Holanda, Andrew Tanenbaum, decidió escribir un sistema operativo para que sus estudiantes pudieran estudiarlo. Igual que Stallman, hasta el momento había podido utilizar el código fuente del UNIX de AT\&T para que sus alumnos aprendieran a diseñar sistemas operativos. Su idea era escribir un sistema operativo que pudiera ser estudiado y modificado por cualquiera que quisiera. En 1987 se puso manos a la obra y llamó a su proyecto mini UNIX dando lugar a {\bf MINIX}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusiones}
+Con este taller se termina el material didáctico del segundo módulo del máster. En él hemos aprendido a instalar el entorno gráfico al sistema, el cual, como ya vimos en su momento, no es una parte fundamental dentro del sistema operativo. Pero está clara su utilidad en muchos casos, y ha sido en este punto cuando muchos afirman que el sistema operativo que ha sido objeto de estudio en este módulo puede ser una alternativa seria a otros sistemas. 
+
+Por todo lo cual, los autores querríamos manifestar nuestro absoluto convencimiento de que GNU/Linux es un sistema operativo extraordinario, no sólo debido a su entorno gráfico, que es lo que quizás sorprenda más a primera vista, sino por un sinfín de argumentos, de entre los cuales podemos destacar su filosofía, robustez, adaptabilidad, potencia, niveles potenciales de seguridad, etc. Estamos convencidos de que este sistema operativo es una apuesta de futuro para la cual, si bien ya ha demostrado que es capaz de abrirse un espacio en el mundo de los sistemas operativos, sólo cabe esperar sorpresas positivas.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{thebibliography}{99}
+\bibitem{unix} Sistema operativo UNIX \url{http://en.wikipedia.org/wiki/Unix}
+\bibitem{vbox} Virrtualbox \url{http://en.wikipedia.org/wiki/Unix}
+\end{thebibliography}
+\end{document}

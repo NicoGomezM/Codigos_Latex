@@ -1,0 +1,133 @@
+\documentclass{templateNote}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{soul}
+\usepackage{circuitikz}
+\usepackage{comment}
+\usepackage{verbatim}
+
+
+\begin{document}
+\imagenlogoU{img/logoNGMFormal_sinF.png}
+\linklogoU{https://github.com/NicoGomezM} 
+% \imagenlogoD{img/logo-ubb-txt-face.png} 
+\titulo{Apunte 1}
+\asignatura{Legislación}
+\autor{
+    \indent
+    Nicolás {Gómez Morgado}
+}
+
+
+\portada
+\margenes 
+\tableofcontents
+\newpage
+
+
+\section{Importante}
+
+\begin{itemize}
+    \item Se sugiere tener instalada una distribución de Linux en el computador, en mayor medida Debian, ya que el Profesor trabaja con esta distribución.
+    \item Linux y Unix están orientados al multiuser, a diferencia de Windows que esta orientado al single user.
+    \item El S.O. es el intermediario entre el hardware y el usuario.
+    \item Linux es el núcleo del S.O. y las distribuciones son como se adorna/agrupa este mismo.
+    \item Para la tarea 1 se debe crear un programa con GNU GCC++ en Linux.
+    \item Para la tarea 2 se debe crear un programa.
+    \item \textbf{API:} Interfaz de programación de aplicaciones que permite a los programas comunicarse con el sistema operativo.
+\end{itemize}
+
+\newpage
+\section{Introducción}
+En principios de la computación no existía el software que comunicara el hardware con el usuario, por lo que se debía programar directa y físicamente en lenguaje maquina (tarjetas perforadas). La operación de estas computadoras era completamente manual.Tiempo de uso de la computadora demasiado alto, involucrando colocar tarjetas, imprimir respuestas, etc.
+
+Con el avance de la tecnología se separo el trabajo para operar la maquina, el operador se encargaba de insertar las tarjetas y el programador a crearlas/ordenarlas. A pesar de esta optimización la CPU seguía sin utilizarse cuando el trabajo se detenía, por lo cual se desarrollan mecanismos de Secuenciamiento automático de trabajos (primeros SO).
+
+Se implementa un monitor residente para transferir el control al trabajo siguiente. A pesar de estas mejoras aun existía tiempo muerto en la CPU debido a la diferencia de velocidades en los dispositivos de entrada/salida.
+
+\subsection*{E/S solapada}
+
+Solución para reducir el tiempo muerto en la CPU, se implementa un mecanismo de E/S solapada, donde la CPU puede ejecutar otro trabajo mientras se realiza una operación de E/S ya que se guarda la información (instrucciones de las tarjetas) en las cintas magnéticas para procesarse posteriormente.
+\\\textbf{Spooling:} Sistema de colas de trabajos, donde se almacenan los trabajos en una cola de entrada y se envían a la cola de salida para ser procesados por la CPU.
+
+\subsection*{Que es un SO?}
+Programa que actúa como intermediario entre el usuario y el hardware de la maquina cuyo propósito es proporcionar un entorno en el cual se puedan ejecutar programas de forma eficiente y controlada.
+
+
+\subsection*{Estructura de un Sistema informático}
+\noindent El SO es parte del sistema general.
+\begin{itemize}
+    \item Hardware: Conjunto de componentes físicos que componen la computadora.
+    \item Sistema Operativo
+    \item Programas de aplicación
+    \item Usuario: Persona, maquinas u otras computadoras que utiliza la computadora.
+\end{itemize}
+
+En ningún caso las aplicaciones que utiliza el usuario pasan directamente al hardware, por temas de seguridad y optimización. 
+\\Actualmente cualquier cosa que se haga en una computadoras se hace a trave del sistema operativo.
+
+\subsection*{Papel de un SO}
+\begin{itemize}
+    \item Punto de vista del usuario
+    \begin{itemize}
+        \item SO diseñado para maximizar trabajo
+        \item SO diseñado para maximizar recursos
+    \end{itemize}
+    \item Punto de vista del sistema
+    \begin{itemize}
+        \item SO es un asignador de recursos
+        \item SO es un Programa de control
+    \end{itemize}
+\end{itemize}
+
+\noindent\textbf{Interrupción:} Forma que tiene el SO para enterarse de que algo ha pasado en el sistema y como reaccionar ante esto.
+
+\subsection*{Iniciando una Computadora}
+\noindent\textbf{Bootstrap:} Programa de arranque que se encuentra en la memoria ROM de la computadora, este programa se encarga de cargar el SO en la memoria RAM.
+El programa de arranque se localiza y se carga el kernel a través del \textbf{GRUB} (Grand Unified Boatload) que es un gestor de arranque que permite elegir entre varios sistemas operativos.
+\\\\
+\noindent\textbf{Llamada a sistema:} Puente entre las aplicaciones y el SO, permite a las aplicaciones solicitar servicios al SO.
+\\\\
+\noindent\textbf{Controladores de dispositivos:} El hardware sabe como comunicarse con estos dispositivos de e/s gracias a estos controladores.
+\\El sistema guarda los tipos de interrupciones y sus significados por lo que esa es su forma de saber como reaccionar ante estas mismas.
+\\\\
+\noindent\textbf{DMA:} Permite a los dispositivos de e/s acceder a la memoria sin pasar por la CPU.
+
+\subsection*{Almacenamiento}
+
+\begin{itemize}
+    \item HDD
+    \item NVM
+    \begin{itemize}
+        \item SSD
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Caching}
+Información es copiada desde almacenamientos lentos a almacenamientos rápidos para mejorar la velocidad de acceso a la información.
+
+\subsection*{Sistema multiprocessor}
+Dos o mas procesadores que comparten el bus del computador, estos procesadores pueden compartir la memoria y los dispositivos de e/s.
+
+\subsection*{Sistemas NUMA (Non-Uniform Memory Access)}
+Division no uniforme de acceso a la memoria
+
+\subsection*{Cluster}
+Varios nodos donde cada uno puede tener uno o varios procesadores.
+\begin{itemize}
+    \item Asimétrico: Sistema en modo de espera y monitorea a la activa.
+    \item Simétrico: Todos los sistemas activos y se monitorear entre significados
+\end{itemize}
+
+\subsection*{Multiprogramación}
+Organiza los trabajos para que la CPU no este ociosa, se ejecutan varios trabajos a la vez. CUando el trabajo en ejecución tiene que esperar el sistema cambia a otro trabajo.
+
+\subsection*{Tiempo compartido}
+Asigna tiempos (menos de 1 seg) entre tareas de manera equitativa, conmutando entre programas.
+\\
+\noindent\textbf{Swapping:} Mecanismo que permite mover procesos entre la memoria principal y la secundaria.
+
+
+\end{document}
