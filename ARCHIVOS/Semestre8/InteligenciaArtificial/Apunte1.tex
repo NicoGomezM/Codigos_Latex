@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{soul}
 \usepackage{circuitikz}
+\usepackage{comment}
 
 
 \lstdefinestyle{mystyle}{
@@ -23,18 +24,39 @@
     showspaces=false, % No mostrar espacios
     showstringspaces=false, % No mostrar espacios en cadenas
     showtabs=false, % No mostrar tabulaciones
-    tabsize=2 % Tamaño de tabulación
+    tabsize=2, % Tamaño de tabulación
+    literate=%
+        {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+        {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+        {ñ}{{\~n}}1 {Ñ}{{\~N}}1
 }
 
 \lstset{style=mystyle}
 
-% \textbf{Código ensamblador MIPS}
-%     \begin{lstlisting}
-% add t, b, c # t = b + c
-% sub a, t, d # a = t - d
-%     \end{lstlisting}
+\begin{comment}
+\textbf{Código ensamblador MIPS}
+    \begin{lstlisting}
+add t, b, c # t = b + c
+sub a, t, d # a = t - d
+    \end{lstlisting}
 
+\noindent\textbf{Código Python para importar y usar librerías:}
+\begin{lstlisting}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
 
+# Cargar datos
+data = pd.read_csv('data.csv')
+
+# Visualizar datos
+print(data.head())
+
+# Graficar datos
+plt.plot(data['x'], data['y'])
+\end{lstlisting}
+\end{comment}
+    
 \begin{document}
 \imagenlogoU{img/logoNGMFormal_sinF.png}
 \linklogoU{https://github.com/NicoGomezM} 
@@ -121,21 +143,243 @@ Tiene como objetivo desarrollar algoritmos que permitan a las maquinas aprender 
 \end{itemize}
 
 
-\noindent\textbf{Código Python para importar y usar librerías:}
+\subsection{Python}
+Python es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Es un lenguaje muy versátil y fácil de aprender, por lo que es muy utilizado en el desarrollo de aplicaciones web, en la ciencia de datos, en la inteligencia artificial, entre otros. Python es un lenguaje de programación muy popular en la actualidad, por lo que es muy probable que ya hayas escuchado hablar de él.
+
+\subsubsection*{Librerías de Python}
+Python cuenta con una gran cantidad de librerías que facilitan el desarrollo de aplicaciones en diferentes áreas. La forma de importar una librería en Python es la siguiente:
 \begin{lstlisting}
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt 
-
-# Cargar datos
-data = pd.read_csv('data.csv')
-
-# Visualizar datos
-print(data.head())
-
-# Graficar datos
-plt.plot(data['x'], data['y'])
+    import numpy as np
+    import pandas as pd
 \end{lstlisting}
+
+\subsubsection*{Uso de tipos de datos}
+Python es un lenguaje de programación que cuenta con varios tipos de datos, como enteros, flotantes, cadenas, booleanos, entre otros. A continuación se muestra un ejemplo de cómo se pueden utilizar estos tipos de datos en Python:
+\begin{lstlisting}
+    x = 29
+    s = "hola"
+    f = 15.9
+    x = False
+
+    print(x)
+    print(s)
+    print(f)
+
+    print(s+str(f))
+    print(s,f)
+
+    # Variables y Operadores
+    a = 10
+    b = 5
+    suma = a + b
+    print(f"La suma es: {suma}")  # Output: La suma es: 15
+
+    # Ciclos y condiciones
+    for i in range(5):
+        if i % 2 == 0:
+            print(f"{i} es par")
+        else:
+            print(f"{i} es impar")
+
+    a = 45.7875454
+    print("El valor es {:.3f}".format(a))
+\end{lstlisting}
+
+\subsubsection*{Funciones y uso de parámetros opcionales}
+En python se pueden definir funciones de las cuales existen dos tipos de parámetros, los obligatorios y los opcionales. Los parámetros opcionales son aquellos que tienen un valor por defecto y no es necesario pasarlos al llamar la función. A continuación se muestra un ejemplo de cómo se pueden definir funciones en Python:
+\begin{lstlisting}
+    # Definiendo una función
+    def saludo(nombre):
+        return f"Hola, {nombre}!"
+    
+    print(saludo("Jazna"))  # Output: Hola, Jazna!
+
+    # Función con parámetro opcional
+    def f(x, y = 4):
+        return x + y
+
+    print(f(2))
+    print(f(2,8))
+
+    # Función con multiples parámetros opcionales
+    def f(x, y = 4, z = 5):
+        return x + y + z
+
+    f(3) # Un parámetro de entrada
+    f(7, z = 9) # Dos parámetros de entrada con uno opcional (x)
+\end{lstlisting}
+
+\subsubsection*{Colecciones de datos}
+En python a los arrays se les llama listas, ademas de estos existen los diccionarios y las comprensiones de listas. A continuación se muestra un ejemplo de cómo se pueden utilizar estas colecciones de datos en Python:
+\begin{lstlisting}
+    # Listas
+    lista = [1, 2, 3, 4, 5]
+    print(lista[0])  # Output: 1
+
+    # Diccionarios: Colección de datos que se almacenan 
+    # en pares clave-valor
+    diccionario = {'nombre': 'Ana', 'edad': 25}
+    print(diccionario['nombre'])  # Output: Ana
+
+    # Comprensiones de listas: Forma concisa de crear listas al usar []
+    cuadrados = [x**2 for x in lista] # Elevar al cuadrado cada elemento 
+    print(cuadrados)  # Output: [1, 4, 9, 16, 25]
+\end{lstlisting}
+
+\subsubsection*{Bibliotecas para ciencias de datos}
+
+\begin{lstlisting}
+    ## Numpy
+
+    lista = [15,20,60,89,45,78,30]
+    print("El promedio es {:.2f}".format(np.mean(lista)))
+    print("La desviacion estandar es {:.2f}".format(np.std(lista)))
+    print("La mediana es {:.2f}".format(np.median(lista)))
+    print(f"El valor maximo es {np.max(lista)} y esta en el indice 
+    {np.argmax(lista)}")
+    print(f"El valor minimo es {np.min(lista)} y esta en el indice 
+    {np.argmin(lista)}")
+
+    # Crear un array
+    arreglo = np.array([1, 2, 3, 4, 5])
+    print(arreglo * 2)  # Output: [ 2  4  6  8 10]
+
+    # Operaciones matematicas
+    matriz = np.array([[1, 2], [3, 4]])
+    print(np.dot(matriz, matriz)) # Output: [[7 10] [15 22]]
+
+
+    ## Pandas
+
+    # Crear un DataFrame
+    datos = {'Nombre': ['Ana', 'Luis', 'Marta'], 'Edad': [25, 32, 22]}
+    df = pd.DataFrame(datos)
+    print(df) # Output: Nombre Edad 0 Ana 25 1 Luis 32 2 ... (tabla)
+
+    # Filtrar datos
+    mayores_25 = df[df['Edad'] > 25]
+    print(mayores_25) # Output: Nombre Edad 1 Luis 32 (tabla)
+
+
+    ## Matplotlib
+    import matplotlib.pyplot as plt
+
+    # Grafico simple
+    x = [1, 2, 3, 4, 5]
+    y = [2, 4, 6, 8, 10]
+    plt.plot(x, y)
+    plt.title('Grafico de ejemplo', fontsize=16, fontweight="bold")
+    plt.xlabel('x', fontsize=14, fontweight="bold")
+    plt.ylabel('y', fontsize=14, fontweight="bold")
+    plt.show() # Output: Grafico de ejemplo 
+\end{lstlisting}
+
+\newpage
+\subsubsection*{Manipulación de datos}
+
+\noindent → Preprocesamiento: Hace referencia a la limpieza y transformación de los datos para que puedan ser utilizados por los algoritmos de aprendizaje automático.
+\begin{lstlisting}
+    from sklearn.preprocessing import StandardScaler
+
+    # Datos de ejemplo
+
+    datos = [[1, 2], [3, 4], [5, 6]]
+    scaler = StandardScaler()
+    datos_normalizados = scaler.fit_transform(datos)
+    print(datos_normalizados)
+\end{lstlisting}
+
+\begin{center}
+    \textbf{Estandarización}
+    \begin{equation*}
+        \textnormal{Valor estandarizado} = \frac{\textnormal{Original} - \bar{x}}{\textnormal{STD}} 
+    \end{equation*}
+\end{center}
+ 
+\noindent → Ingeniería de características: Consiste en la creación de nuevas características a partir de las características existentes para mejorar el rendimiento de los algoritmos de aprendizaje automático (machine learning).
+\begin{lstlisting}
+    from sklearn.preprocessing import PolynomialFeatures
+
+    # Crear caracteristicas polinomicas
+    poly = PolynomialFeatures(degree=2) # Grado 2 para el polinomio
+    datos = [[2, 3]]
+    print(poly.fit_transform(datos))  # Output: [[1. 2. 3. 4. 6. 9.]]
+\end{lstlisting}
+\begin{align*}
+    \textnormal{Características polinómicas} = [\textnormal{bias}, x_1, x_2, {x_1}^2, x_1 \cdot x_2, {x_2}^2]
+\end{align*}
+
+\subsubsection*{Algebra lineal}
+
+\noindent → Producto cruz entre vectores
+\begin{lstlisting}
+    # Definir dos vectores
+    x_vector = np.array([1, 2, 3])
+    y_vector = np.array([4, 5, 6])
+    
+    # Calcular el producto punto
+    producto_punto = np.dot(x_vector, y_vector)
+    
+    print("Producto Punto:", producto_punto)
+\end{lstlisting}
+
+\noindent → Multiplicación entre matrices: Las redes neuronales utilizan la multiplicación de matrices para realizar operaciones matemáticas.
+\begin{lstlisting}
+    # Definir dos matrices
+    matriz_a = np.array([[1, 2, 3],
+                         [4, 5, 6]])
+    matriz_b = np.array([[7, 8],
+                         [9, 10],
+                         [11, 12]])
+    
+    # Calcular la multiplicacion de matrices
+    resultado = np.dot(matriz_a, matriz_b)
+    
+    print("Multiplicacion de Matrices:\n", resultado)
+\end{lstlisting}
+
+\noindent → Descomposición en valores singulares: Reducción de la dimensionalidad para utilizarse en métodos como PCA y tratamientos de datos de la IA. Su uso es mas común en Deep Learning.
+\begin{lstlisting}
+    # Crear una matriz
+    matriz = np.array([[1, 2, 3],
+                       [4, 5, 6],
+                       [7, 8, 9]])
+
+    # Aplicar SVD
+    U, S, Vt = np.linalg.svd(matriz)
+
+    print("Matriz U:\n", U)
+    print("Valores singulares S:\n", S)
+    print("Matriz V traspuesta:\n", Vt)
+\end{lstlisting}
+
+\noindent → Tensores y escalares: 
+\begin{lstlisting}
+    # Escalar (Tensor de rango 0)
+    escalar = 29
+
+    # Vector (Tensor de rango 1)
+    vector = np.array([1, 2, 3])
+    print("Vector\n", vector)
+
+    # Matriz (Tensor de rango 2)
+    matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    print("Matriz\n", matriz)
+
+    # Tensor de rango 3
+    tensor_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]], 
+                          [[9, 10], [11, 12]]])
+    print("Tensor 3D\n", tensor_3d)
+\end{lstlisting}
+
+\noindent → Operaciones entre vectores: 
+
+\noindent → Funciones unviersales:
+
+\noindent → Manipulacion de forma:
+
+
+
 
 \newpage
 \section{Matemáticas aplicadas a la IA}

@@ -6,6 +6,23 @@
 \usepackage{soul}
 \usepackage{circuitikz}
 \usepackage{enumitem}
+\usepackage{comment}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing} % Para el corchete decorado
+\usepackage[absolute,overlay]{textpos}
+
+
+\begin{comment}
+    \begin{textblock}{5}(10, 10)
+        \begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Valor actual neto (VAN)]
+            \begin{center}
+                \begin{equation*}
+                    VAN = \sum_{t=0}^{n} \frac{F_t}{(1+i)^t} - I_0
+                \end{equation*}
+            \end{center}
+        \end{tcolorbox}
+    \end{textblock}
+\end{comment}
 
 
 \begin{document}
@@ -42,11 +59,155 @@
 
 \newpage
 \section{Criterios para evaluar inversiones}
-\subsection*{Método de evaluación inicial}
+\subsection{Método de evaluación inicial}
 \begin{enumerate}[label=\alph*)]
     \item Incluir \textbf{todos los flujos de caja} que ocurren durante la vida del proyecto.
-    \item Considerar el \textbf{valor del dinero} en el tiempo. Esto se refiere a que el dinero hoy vale más que el dinero en el futuro.
-    \item Incorporar la \textbf{tasa de retorno requerida} en el proyecto.
+    \begin{center}
+        \begin{tikzpicture}
+            % Línea de tiempo
+            \draw[-] (0,0) -- (10,0);
+        
+            % Etiquetas
+            \node at (0,0.5) {Cuna};
+            \node at (10,0.5) {Tumba};
+        
+            % Marcadores
+            \draw (0,0.1) -- (0,-0.1);
+            \draw (10,0.1) -- (10,-0.1);
+        \end{tikzpicture}
+    \end{center}
+    \item Considerar el \textbf{valor del dinero} en el tiempo. \\
+    Esto se refiere a que el dinero hoy vale más que el dinero en el futuro. Este termino se relaciona casi por completo con el costo de oportunidad.
+    \item Incorporar la \textbf{tasa de retorno requerida} en el proyecto.\\
+    Se refiere a que el rendimiento económico que promete el proyecto supere mínimamente al rendimiento que generalmente se ofrece por el mercado (métodos de inversion en banca).
 \end{enumerate}
+
+\subsection{Criterios comúnmente usados}
+
+\subsubsection{Periodos de recuperacion de inversion (\textit{Payback})}
+\begin{itemize}
+    \item Numero de años que se requieren para recuperar la inversión inicial.
+    \item Tiempo que le toma al proyecto generar suficientes ingresos para autofinanciarse.
+    \item Depende de la naturaleza del proyecto y del criterio de los inversionistas determinar si el periodo de recuperación es aceptable. 
+\end{itemize}
+\textbf{Debilidades:}
+\begin{itemize}
+    \item \hl{Subjetivo}.
+    \item No considera el valor del dinero en el tiempo.
+    \item No considera la tasa de retorno requerida.
+    \item No considera los flujos de caja después del periodo de recuperación.
+\end{itemize}
+
+\subsubsection{Periodo de recuperacion de inversion descontado (\textit{Payback descontado})}
+\begin{itemize}
+    \item Se calcula descontando los flujos de caja futuros a una tasa de descuento.
+    \item Periodo de recuperación se calcula con los flujos netos.
+\end{itemize}
+\textbf{Debilidades:}
+\begin{itemize}
+    \item Dependen del criterio del inversionista.
+\end{itemize}
+
+\newpage
+
+\begin{tcolorbox}
+    \begin{center}
+        \begin{tikzpicture}
+            % Lista de métodos
+            \node[anchor=west] (van) at (0,0) {\textbf{• VAN}};
+            \node[anchor=west] (ir) at (0,-0.5) {\textbf{• IR}};
+            \node[anchor=west] (tir) at (0,-1) {\textbf{• TIR}};
+        
+            % Corchete
+            \draw[decorate,decoration={brace,amplitude=10pt,mirror,raise=5pt},yshift=0pt] (3,0.5) -- (3,-1.5) node [black,midway,xshift=0.8cm] {};
+        
+            % Características
+            \node[anchor=west] at (2.5,-0.5) {
+                \begin{minipage}{0.65\textwidth}
+                    \begin{itemize}
+                        \item Considera todos los flujos de caja del proyecto.
+                        \item Considera el valor del dinero en el tiempo.
+                        \item Considera la tasa de retorno requerida.
+                    \end{itemize}
+                \end{minipage}
+            };
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+
+
+\subsubsection{Valor actual neto (VAN)}
+
+\begin{align*}
+    VAN &= \sum_{t=0}^{n} \frac{\textnormal{FCA}_t}{(1+k)^t} - I_0
+\end{align*}
+
+\textbf{Criterios de decisión:}
+\begin{itemize}
+    \item Si $VAN > 0$, el proyecto es \textbf{aceptable}.
+    \item Si $VAN < 0$, el proyecto es \textbf{rechazable}.
+\end{itemize}
+
+\subsubsection{Indice de Rentabilidad (IR)}
+
+\begin{align*}
+    IR &= \sum_{t=0}^{n} \frac{\textnormal{FCA}_t}{(1+k)^t}/I_0
+\end{align*}
+
+\textbf{Criterios de decisión:}
+\begin{itemize}
+    \item Si $IR \geq 1$, el proyecto es \textbf{aceptable}.
+    \item Si $IR < 1$, el proyecto es \textbf{rechazable}.
+\end{itemize}
+
+\subsubsection{Tasa interna de retorno (TIR)}
+
+\begin{align*}
+    I_0 &= \sum_{t=0}^{n} \frac{\textnormal{FCA}_t}{(1+TIR)^t}
+\end{align*}
+
+\textbf{Criterios de decisión:}
+\begin{itemize}
+    \item Si $TIR > k$, el proyecto es \textbf{aceptable}.
+    \item Si $TIR < k$, el proyecto es \textbf{rechazable}.
+\end{itemize}
+
+\newpage
+\textbf{Ejemplo 1:} Una empresa estudia la posibilidad de emprender un proyecto de inversión de dos años de duración. El proyecto exige la compra de un activo con un desembolso inicial de \$86.000 . Con la actividad que genera dicho activo se esperan unos flujos de caja de \$45.000 el primer año y \$51.000 el segundo año. Se sabe que el tipo de interés del capital o coste del capital es del 6\% anual. Se pide:
+\begin{enumerate}[label=\alph*)]
+    \item Calcule la Tasa Interna de Retorno (TIR) de la inversión.
+    \begin{align*}
+        \frac{45000}{(1+TIR)} + \frac{51000}{(1+TIR)^2} &= 86000 \\
+        86000 - \frac{45000}{(1+TIR)} - \frac{51000}{(1+TIR)^2} &= 0 \\
+        \frac{86000(1+TIR)^2 - 45000(1+TIR) - 51000}{(1+TIR)^2} &= 0 \\
+        \frac{86000(1+TIR)^2 - 45000 - 45000TIR - 51000}{(1+TIR)^2} &= 0 \\
+        \frac{86000(1+2TIR+{TIR}^2)-45000TIR-96000}{(1+TIR)^2} &= 0 \\
+        -10000 + 127000TIR + 86000{TIR}^2 &= 0 \\
+        86000{TIR}^2 + 127000TIR - 10000 &= 0 \\
+        86{TIR}^2 + 127TIR - 10 &= 0 
+    \end{align*}
+        \textbf{Resolviendo la ecuación cuadrática:}
+    \begin{align*}
+        TIR &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+        TIR &= \frac{-127 \pm \sqrt{127^2 - 4(86)(-10)}}{2(86)} \\
+        TIR &= \frac{-127 \pm \sqrt{16129 + 3440}}{172} \\
+        TIR &= \frac{-127 \pm \sqrt{19569}}{172} \\
+        TIR &= \frac{12.8892}{172} = 0.07493 \wedge TIR = \frac{-265.8892}{172} = -1,5458 \\
+        TIR &= 0.07493
+    \end{align*}
+    Por lo tanto la TIR es de 7.493\%.
+    \item Calcule el VAN.
+    \begin{align*}
+        VAN &= \frac{45000}{(1+0.06)} + \frac{51000}{(1+0.06)^2} - 86000 \\
+        VAN &= \frac{45000}{1.06} + \frac{51000}{1.1236} - 86000 \\
+        VAN &= 42452.8301 + 45389.8184 - 86000 \\
+        VAN &= 87842.6485 - 86000 \\
+        VAN &= 1842.6485
+    \end{align*}
+    \item Explique si la inversión es aceptable según ambos criterios.
+    Por lo tanto la inversion es aceptable ya que el VAN es positivo y la TIR es mayor al costo de oportunidad.
+\end{enumerate}
+
+
 
 \end{document}
