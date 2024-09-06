@@ -6,6 +6,7 @@
 \usepackage{soul}
 \usepackage{circuitikz}
 \usepackage{comment}
+\usepackage{parskip}
 
 
 \lstdefinestyle{mystyle}{
@@ -40,7 +41,7 @@ add t, b, c # t = b + c
 sub a, t, d # a = t - d
     \end{lstlisting}
 
-\noindent\textbf{Código Python para importar y usar librerías:}
+\textbf{Código Python para importar y usar librerías:}
 \begin{lstlisting}
 import numpy as np
 import pandas as pd
@@ -77,7 +78,7 @@ plt.plot(data['x'], data['y'])
 
 
 \section{Importante}
-\noindent Evaluaciones 2,3 y 4 en grupos (máximo 2-3 personas), 1 individual.
+Evaluaciones 2,3 y 4 en grupos (máximo 2-3 personas), 1 individual.
 
 \begin{enumerate}
     \item 13 sept
@@ -94,7 +95,7 @@ plt.plot(data['x'], data['y'])
     \end{itemize}
 \end{itemize}
 
-\noindent\textbf{Tensor:} Vector con otro nombre.
+\textbf{Tensor:} Vector con otro nombre.
 
 \newpage
 \section{Inteligencia Artificial}
@@ -103,13 +104,13 @@ La inteligencia artificial es una rama de la informática que se encarga de desa
 
 \subsection{Conceptos fundamentales}
 Tiene como objetivo desarrollar algoritmos que permitan a las maquinas aprender de la experiencia y mejorar su rendimiento en tareas específicas. Para esto se utilizan técnicas de aprendizaje automático, que son un subconjunto de la inteligencia artificial.
-\\\\\noindent
+\\\\
 \textbf{Tipos de inteligencia artificial:}
 \begin{itemize}
     \item \textbf{IA débil:} Realiza tareas especificas y limitadas.
     \item \textbf{IA fuerte:} Realiza tareas generales y complejas mas asociadas al pensar humano.
 \end{itemize}
-\noindent
+
 \textbf{Ética en la IA:} Que tipos de datos se utilizan, como se utilizan, que impacto tiene en la sociedad, etc. El objetivo es que la IA sea ética y presente algún tipo de sensibilidad social. A pesar de que la IA no tiene conciencia, si puede tener un impacto en la sociedad y siempre va a presentar errores, por lo que es importante tener en cuenta la ética en la IA.
 
 \begin{center}
@@ -130,10 +131,10 @@ Tiene como objetivo desarrollar algoritmos que permitan a las maquinas aprender 
 \end{center}
 
 \begin{tcolorbox}[colback=gray!5!yellow!40,colframe=gray!75!black]
-    \noindent\textbf{Primeras ''Inteligencias Artificiales'' a crear van a estar enfocadas en Machine Learning.}
+    \textbf{Primeras ''Inteligencias Artificiales'' a crear van a estar enfocadas en Machine Learning.}
 \end{tcolorbox}
 
-\noindent
+
 \textbf{Elementos para el aprendizaje de la IA:} La IA requiere de fuentes de datos para entrenarse a si misma. Algunas fuentes de datos son:
 
 \begin{itemize}
@@ -277,7 +278,7 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
 \newpage
 \subsubsection*{Manipulación de datos}
 
-\noindent → Preprocesamiento: Hace referencia a la limpieza y transformación de los datos para que puedan ser utilizados por los algoritmos de aprendizaje automático.
+ → Preprocesamiento: Hace referencia a la limpieza y transformación de los datos para que puedan ser utilizados por los algoritmos de aprendizaje automático.
 \begin{lstlisting}
     from sklearn.preprocessing import StandardScaler
 
@@ -296,7 +297,7 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     \end{equation*}
 \end{center}
  
-\noindent → Ingeniería de características: Consiste en la creación de nuevas características a partir de las características existentes para mejorar el rendimiento de los algoritmos de aprendizaje automático (machine learning).
+ → Ingeniería de características: Consiste en la creación de nuevas características a partir de las características existentes para mejorar el rendimiento de los algoritmos de aprendizaje automático (machine learning).
 \begin{lstlisting}
     from sklearn.preprocessing import PolynomialFeatures
 
@@ -311,7 +312,7 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
 
 \subsubsection*{Algebra lineal}
 
-\noindent → Producto cruz entre vectores
+ → Producto cruz entre vectores
 \begin{lstlisting}
     # Definir dos vectores
     x_vector = np.array([1, 2, 3])
@@ -323,7 +324,7 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     print("Producto Punto:", producto_punto)
 \end{lstlisting}
 
-\noindent → Multiplicación entre matrices: Las redes neuronales utilizan la multiplicación de matrices para realizar operaciones matemáticas.
+ → Multiplicación entre matrices: Las redes neuronales utilizan la multiplicación de matrices para realizar operaciones matemáticas.
 \begin{lstlisting}
     # Definir dos matrices
     matriz_a = np.array([[1, 2, 3],
@@ -338,7 +339,7 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     print("Multiplicacion de Matrices:\n", resultado)
 \end{lstlisting}
 
-\noindent → Descomposición en valores singulares: Reducción de la dimensionalidad para utilizarse en métodos como PCA y tratamientos de datos de la IA. Su uso es mas común en Deep Learning.
+ → Descomposición en valores singulares: Reducción de la dimensionalidad para utilizarse en métodos como PCA y tratamientos de datos de la IA. Su uso es mas común en Deep Learning.
 \begin{lstlisting}
     # Crear una matriz
     matriz = np.array([[1, 2, 3],
@@ -353,7 +354,15 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     print("Matriz V traspuesta:\n", Vt)
 \end{lstlisting}
 
-\noindent → Tensores y escalares: 
+ → Tensores y escalares: Nombre técnico de los vectores y matrices en el mundo de la IA. 
+\begin{itemize}
+    \item Manejo de datos en varias dimensiones.
+    \item Reconocimiento de imágenes (3 canales de colores=3dimensiones).
+    \item Tensor de rango 0: Escalar.
+    \item Tensor de rango 1: Vector.
+    \item Tensor de rango 2: Matriz.
+    \item Tensor de rango 3: Tensor 3D (hablamos de profundidad).
+\end{itemize}
 \begin{lstlisting}
     # Escalar (Tensor de rango 0)
     escalar = 29
@@ -372,11 +381,118 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     print("Tensor 3D\n", tensor_3d)
 \end{lstlisting}
 
-\noindent → Operaciones entre vectores: 
+ → Operaciones entre vectores(tensores de rango 1):
+\begin{itemize}
+    \item Se pueden sumar, restar, multiplicar y dividir.
+    \item Se pueden realizar cálculos con escalares(tensores de rango 0).
+\end{itemize} 
 
-\noindent → Funciones unviersales:
+ → Funciones universales: Funciones que se aplican a todos los elementos de un tensor.
+\begin{itemize}
+    \item \textbf{np.exp(tensor)}: Calcula el exponencial de cada elemento del tensor.
+    \item \textbf{np.log(tensor)}: Calcula el logaritmo natural de cada elemento del tensor.
+    \item \textbf{np.sin(tensor)}: Calcula el seno de cada elemento del tensor.
+    \item \textbf{np.cos(tensor)}: Calcula el coseno de cada elemento del tensor.
+    \item \textbf{np.tan(tensor)}: Calcula la tangente de cada elemento del tensor.
+    \item \textbf{np.sqrt(tensor)}: Calcula la raíz cuadrada de cada elemento del tensor.
+    \item \textbf{np.abs(tensor)}: Calcula el valor absoluto de cada elemento del tensor.
+    \item \textbf{np.sum(tensor)}: Suma todos los elementos del tensor.
+    \item \textbf{np.sum(tensor, axis= n)}: Suma los elementos de cada \textbf{columna n} del tensor.
+    \item \textbf{np.mean(tensor)}: Calcula el promedio de todos los elementos del tensor.
+    \item \textbf{np.std(tensor)}: Calcula la desviación estándar de todos los elementos del tensor.
+    \item \textbf{np.max(tensor)}: Encuentra el valor máximo del tensor.
+    \item \textbf{np.min(tensor)}: Encuentra el valor mínimo del tensor.
+    \item \textbf{np.argmax(tensor)}: Encuentra el índice del valor máximo del tensor.
+    \item \textbf{np.argmin(tensor)}: Encuentra el índice del valor mínimo del tensor.
+    \item Y asi muchas otras funciones.
+\end{itemize}
 
-\noindent → Manipulacion de forma:
+ → Manipulación de forma: 
+\begin{itemize}
+    \item \textbf{np.shape}: Retorna los valores de la cantidad de filas y columnas en una tupla.
+    \item \textbf{np.reshape(tensor, (filas, columnas))}: Cambia la forma de un tensor. (fila = n , columna = m para cambiar las cantidades).
+    \item \textbf{np.transpose(tensor)}: Transpone un tensor.
+    \item \textbf{np.flattern(tensor)}: Convierte un tensor de cualquier rango en un vector (tensor de rango 0).
+\end{itemize}
+
+ → Indexación y selección: 
+\begin{itemize}
+    \item Un tensor de rango 1 no puede ser indexado como un tensor de rango 2 siempre que la cantidad de elementos sea prima.
+    \item \textbf{tensor[0]}: Retorna el primer elemento del tensor.
+    \item \textbf{tensor[-1]}: Retorna el último elemento del tensor.
+    \item \textbf{tensor[0:3]}: Retorna los elementos desde el índice 0 hasta el 2 (uno menos el ultimo).
+    \item \textbf{tensor[2:]}: Retorna los elementos desde el índice 2 hasta el final.
+    \item \textbf{tensor[:3]}: Retorna los elementos desde el inicio hasta el índice 2.
+    \item \textbf{tensor[1,2]}: Retorna el elemento en la fila 1 y columna 2.
+    \item \textbf{tensor[tensor = 5]}: Retorna los elementos que cumplen con la condición (iguales a 5).
+\end{itemize}
+
+\subsubsection*{Probabilidad}
+
+ → Distribución normal: Técnica de probabilidad que describe la distribución de los datos.
+
+\begin{itemize}
+    \item Campana de Gauss.
+\end{itemize}
+
+
+ → Teorema de Bayes: Clasificación de datos en base a la probabilidad de que ocurran ciertos eventos basándose en otros eventos.
+
+\begin{itemize}
+    \item \textbf{P(A|B)}: Probabilidad de que ocurra el evento A dado que ocurrió el evento B.
+    \item \textbf{P(B|A)}: Probabilidad de que ocurra el evento B dado que ocurrió el evento A.
+    \item \textbf{P(A)}: Probabilidad de que ocurra el evento A.
+    \item \textbf{P(B)}: Probabilidad de que ocurra el evento B.
+\end{itemize}
+
+\textbf{Capítulos del libro a estudiar ():}  
+
+\hl{HASTA AQUI LA EVALUACION DEL 13 DE SEPTIEMBRE + CAPITULOS DEL LIBRO}
+
+\subsubsection*{Medidas de tendencia central}
+
+Nos ayuda a entender lo que tenemos para crear modelos de calidad.
+
+→ Promedio o media aritmética: Es la suma de todos los valores dividida por la cantidad de valores.
+
+\begin{align*}
+    \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
+\end{align*}
+
+\begin{itemize}
+    \item Es una medida sensible a los valores atípicos (outlayers).
+    \item Paradoja de Bil Gates: Si Bill Gates entra a un bar, el promedio de riqueza de los presentes aumenta. 
+    \item Valores atípicos (outlayers): Valores que se alejan mucho de la media o de los datos en general.
+    \item Para casos con valores atípicos es preferible utilizar la mediana para describir los datos.
+\end{itemize}
+
+→ Varianza: Es la media de los cuadrados de las diferencias entre cada valor y la media.
+
+\begin{align*}
+    \textnormal{Población:} \quad \sigma^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n} \\
+    \textnormal{Muestra:} \quad s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}
+\end{align*}
+
+→ Desviación estándar: Es la raíz cuadrada de la varianza.
+
+\begin{align*}
+    \textnormal{Población:} \quad \sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}} = \sqrt{{\sigma}^2} \\
+    \textnormal{Muestra:} \quad s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}} = \sqrt{{s}^2}
+\end{align*}
+
+\begin{itemize}
+    \item \textbf{np.mean(tensor)}: Calcula el promedio (valor mas común) de todos los elementos del tensor.
+    \item \textbf{np.median(tensor)}: Calcula la mediana (valor central) de todos los elementos del tensor.
+    \item \textbf{np.varimuestra(tensor)}: Calcula la varianza de todos los elementos del tensor.
+    \item \textbf{np.std(tensor)}: Calcula la desviación estándar de todos los elementos del tensor.
+    \item \textbf{np.sqrt(np.varimuestra(tensor))}: Calcula la desviación estándar de todos los elementos del tensor.
+    \item En una situación perfecta para una gráfica de gauss la media y la mediana son iguales. En otro caso el gráfico se sesga.
+    \item $\mu - \Sigma$ = Media - Desviación estándar = 68\% de los datos.
+    \item $\mu + \Sigma$ = Media + Desviación estándar = 68\% de los datos.
+    % \item \left[ \mu - \sigma, \mu + \sigma \right] = Acotación de los datos. TODO: 
+\end{itemize}
+
+\subsubsection*{Medidas de posición}
 
 
 
