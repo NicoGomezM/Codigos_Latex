@@ -8,6 +8,7 @@
 \usepackage{enumitem}
 \usepackage{comment}
 \usepackage{tikz}
+\usepackage{parskip}
 \usetikzlibrary{decorations.pathreplacing} % Para el corchete decorado
 \usepackage[absolute,overlay]{textpos}
 
@@ -205,9 +206,202 @@
         VAN &= 1842.6485
     \end{align*}
     \item Explique si la inversión es aceptable según ambos criterios.
-    Por lo tanto la inversion es aceptable ya que el VAN es positivo y la TIR es mayor al costo de oportunidad.
+    \\Por lo tanto la inversion es aceptable ya que el VAN es positivo y la TIR es mayor al costo de oportunidad.
 \end{enumerate}
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black,title=Importante]
+    \begin{itemize}
+        \item La TIR es buena herramienta siempre que los flujos sean convencionales. (-+++++...+)
+        \item Con multiples cambios de signos se presentan varias TIR. (-++-++-+...+)
+        \item La TIR \textbf{solo se usa} con flujos convencionales, en caso contrario se usa el \textbf{VAN}.
+    \end{itemize}
+\end{tcolorbox}
 
+\textbf{Ejemplo:} Para una empresa con intereses del 15\% anual y con flujos de caja:
+
+\begin{center}
+    \begin{tikzpicture}
+        % Línea de tiempo
+        \draw[->] (0,0) -- (12,0) node[right] {Tiempo};
+    
+        % % Puntos de tiempo (espaciados más)
+        % \foreach \x in {0, 2, 4, 6, 8, 10}
+        %     \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+    
+        % Flujos de caja (ajustados a los nuevos puntos de tiempo)
+        \draw (0,0) -- (0,-0.5) node[below] {(900)};
+        \draw (2,0) -- (2,0.5) node[above] {300};
+        \draw (4,0) -- (4,0.5) node[above] {400};
+        \draw (6,0) -- (6,0.5) node[above] {400};
+        \draw (8,0) -- (8,0.5) node[above] {500};
+        \draw (10,0) -- (10,0.5) node[above] {600};
+    \end{tikzpicture}
+\end{center}
+Calcular:
+\begin{enumerate}[label=\alph*)]
+    \item TIR
+    \item VAN
+    \item IR
+\end{enumerate}
+
+\begin{align*}
+    900 &= \frac{300}{1-TIR} + \frac{400}{(1-TIR)^2} + \frac{400}{(1-TIR)^3} + \frac{500}{(1-TIR)^4} + \frac{600}{(1-TIR)^5} \\
+    &\textnormal{\textit{Calculo en excel:}}\\
+    TIR &= 34,372\%
+\end{align*}
+Por lo tanto el TIR equivale a 34,372\%.
+
+\begin{align*}
+    VAN &= \frac{300}{(1+0.15)} + \frac{400}{(1+0.15)^2} + \frac{400}{(1+0.15)^3} + \frac{500}{(1+0.15)^4} + \frac{600}{(1+0.15)^5} - 900 \\
+    &\textnormal{\textit{Calculo en excel:}}\\
+    VAN &= 510,5161
+\end{align*}
+Por lo tanto el VAN equivale a 510,5161.
+
+\begin{align*}
+    IR &= (\frac{300}{(1+0.15)} + \frac{400}{(1+0.15)^2} + \frac{400}{(1+0.15)^3} + \frac{500}{(1+0.15)^4} + \frac{600}{(1+0.15)^5})/900 \\
+    &\textnormal{\textit{Calculo en excel:}}\\
+    IR &= 1,5672
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/EjemploCalculo.png}
+\end{figure}
+
+
+\subsubsection{Tasa promedio de rendimiento (TPR)}
+
+\begin{itemize}
+    \item No considera flujos de caja.
+    \item No considera el valor del dinero en el tiempo.
+    \item Se basa en la utilidad contable promedio.
+    \item Se usa porque es \textbf{fácil de calcular}.
+\end{itemize}
+
+\begin{align*}
+    TPR &= \frac{\textnormal{Utilidad media}}{\textnormal{Inversión}} * 100
+\end{align*}
+
+\begin{tcolorbox}
+    \begin{em}
+        \begin{center}
+            \begin{tabular}{l l}
+                Ingresos por ventas & ~ \\
+                Costo de ventas & \textcolor{red}{Deprec. y amortiz.} \\
+            \end{tabular}
+            \rule{11cm}{0.2 mm} \\[0.1 cm]
+            \begin{tabular}{l l}
+                Margen bruto & ~ \\
+                Gastos de adm. y ventas & \textcolor{red}{Deprec. y amortiz.} \\
+            \end{tabular}
+            \rule{11cm}{0.2 mm} \\[0.1 cm]
+            \begin{tabular}{l l}
+                Resultado operacional & ~ \\
+                Gastos financieros & ~ \\
+            \end{tabular}
+            \rule{11cm}{0.2 mm} \\[0.1 cm]
+            \begin{tabular}{l l}
+                Resultados antes de impuestos & ~ \\
+                Impuestos a la renta & ~ \\
+            \end{tabular}
+            \rule{11cm}{0.2 mm} \\[0.1 cm]
+            \begin{tabular}{l l}
+                Resultado neto & ~ \\
+                \textcolor{red}{+ Depreciación y amortización} & ~ \\
+            \end{tabular}
+            \rule{11cm}{0.2 mm} \\[0.1 cm]
+            \begin{tabular}{l l}
+                Flujo de caja & ~ \\
+            \end{tabular}
+        \end{center}
+    \end{em}
+\end{tcolorbox}
+
+\textbf{Ejemplo:} Para una empresa que invierte \$900 y tiene los mismos flujos de caja que el ejercicio anterior, si esta inversion se deprecia en partes iguales en todos los periodos, calcular la TPR.
+
+\begin{align*}
+    TPR &= \frac{\frac{(300-(900/5)) + (400-(900/5)) + (400 -(900/5)) + (500 -(900/5)) + (600 -(900/5))}{5}}{900} \\
+    TPR &= \frac{\frac{300-180 + 400-180 + 400-180 + 500-180 + 600-180}{5}}{900} \\
+    TPR &= \frac{\frac{120 + 220 + 220 + 320 + 420}{5}}{900} \\
+    TPR &= \frac{1300}{5*900} \\
+    TPR &= \frac{1300}{4500} \\
+    TPR &= 0.2888
+\end{align*}
+
+Por lo tanto la TPR es de 28,$\overline{88}$\%.
+
+\rule{\linewidth}{0.1 mm}
+
+\textbf{Ejercicio:} Una empresa tiene \$35000 dispuestos para inversiones, para las inversiones presentadas en la tabla, seleccionar los proyectos que se deben realizar basándose en su costo y VAN proporcionados.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Proyecto & Costo & VAN \\
+        \hline
+        A & 3600 & 380 \\
+        B & 2100 & 500 \\
+        C & 5800 & 1100 \\
+        D & 7200 & 1060 \\
+        E & 1060 & 320 \\
+        F & 4490 & 1660 \\
+        G & 2391 & 1010 \\
+        H & 9810 & 2800 \\
+        I & 6580 & 650 \\
+        J & 1270 & 230 \\
+        K & 1290 & 780 \\
+        L & 5690 & 1270 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Conociendo el dinero enfocado en inversiones, se deben seleccionar los proyectos que se deben realizar basándose en su costo y VAN proporcionados. Se debe seleccionar los proyectos que tengan un VAN positivo y que no superen el monto total de la inversión, para hacer esto vamos a calcular el IR de cada proyecto.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Proyecto & Costo & VAN & IR \\
+        \hline
+        A & 3600 & 380 & 0.1055 \\
+        B & 2100 & 500 & 0.2380 \\
+        C & 5800 & 1100 & 0.1896 \\
+        D & 7200 & 1060 & 0.1472 \\
+        E & 1060 & 320 & 0.3018 \\
+        F & 4490 & 1660 & 0.3704 \\
+        G & 2391 & 1010 & 0.4223 \\
+        H & 9810 & 2800 & 0.2853 \\
+        I & 6580 & 650 & 0.0987 \\
+        J & 1270 & 230 & 0.1811 \\
+        K & 1290 & 780 & 0.6047 \\
+        L & 5690 & 1270 & 0.2233 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Ahora con estos datos ordenaremos los proyectos de mayor a meno IR e iremos sumando sus costos para ver hasta que proyecto podemos llegar.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Proyecto & Costo & VAN & IR & Costo Acumulado\\
+        \hline
+        K & 1290 & 780 & 0.6047 & 1290 \\   
+        G & 2391 & 1010 & 0.4223 & 3681 \\
+        F & 4490 & 1660 & 0.3704 & 8171 \\
+        E & 1060 & 320 & 0.3018 & 9231 \\
+        H & 9810 & 2800 & 0.2853 & 19041 \\
+        B & 2100 & 500 & 0.2380 & 21141 \\
+        L & 5690 & 1270 & 0.2233 & 26831 \\
+        C & 5800 & 1100 & 0.1896 & 32631 \\
+        J & 1270 & 230 & 0.1811 & 33901 \\
+        D & 7200 & 1060 & 0.1472 & 41101 \\
+        A & 3600 & 380 & 0.1055 & 44701 \\
+        I & 6580 & 650 & 0.0987 & 51281 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Por lo tanto los proyectos que se deben realizar son: K, G, F, E, H, B, L, C, J. No se utilizo el total de la inversion ya que para ninguno de los proyectos que quedaban alcanzaba el presupuesto.
 
 \end{document}
