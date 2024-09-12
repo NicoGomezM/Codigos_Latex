@@ -310,9 +310,9 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     \textnormal{Características polinómicas} = [\textnormal{bias}, x_1, x_2, {x_1}^2, x_1 \cdot x_2, {x_2}^2]
 \end{align*}
 
-\subsubsection*{Algebra lineal}
+\subsection{Algebra lineal en Python}
 
- → Producto cruz entre vectores
+→ Producto punto entre vectores: El producto punto (o producto escalar) es una operación fundamental en álgebra lineal y se usa en muchos algoritmos de IA, como en redes neuronales y en métodos de optimización.
 \begin{lstlisting}
     # Definir dos vectores
     x_vector = np.array([1, 2, 3])
@@ -324,7 +324,7 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     print("Producto Punto:", producto_punto)
 \end{lstlisting}
 
- → Multiplicación entre matrices: Las redes neuronales utilizan la multiplicación de matrices para realizar operaciones matemáticas.
+→ Multiplicación entre matrices: Las redes neuronales utilizan la multiplicación de matriz para realizar operaciones matemáticas. Es esencial también debido a la propagación hacia adelante y hacia atrás en redes neuronales.
 \begin{lstlisting}
     # Definir dos matrices
     matriz_a = np.array([[1, 2, 3],
@@ -339,7 +339,33 @@ En python a los arrays se les llama listas, ademas de estos existen los dicciona
     print("Multiplicacion de Matrices:\n", resultado)
 \end{lstlisting}
 
- → Descomposición en valores singulares: Reducción de la dimensionalidad para utilizarse en métodos como PCA y tratamientos de datos de la IA. Su uso es mas común en Deep Learning.
+→ Vector ortogonal: Dos vectores se consideran ortogonales si su producto punto (producto escalar) es igual a cero. En otras palabras si el ángulo entre ellos es de 90 grados.
+
+
+→ Matriz ortogonal: Una matriz cuadrada es ortogonal si su transpuesta es igual a su inversa:
+\begin{align*}
+    A^T \cdot A = 1
+\end{align*}
+
+→ Vector propio: Un vector propio (o autovector) de una matriz es un vector no nulo que cambia de magnitud pero no de dirección cuando se aplica la matriz a él. Es decir, si se tiene una matriz \( \mathbf{A} \) y un vector \( \mathbf{v} \), el vector \( \mathbf{v} \) es un vector propio de \( \mathbf{A} \) si cumple con la siguiente ecuación:
+
+\begin{align*}
+\mathbf{A} \mathbf{v} = \lambda \mathbf{v}
+\end{align*}
+
+donde:
+
+\begin{itemize}
+    \item \( \mathbf{A} \) es una matriz cuadrada.
+    \item \( \mathbf{v} \) es el vector propio.
+    \item \( \lambda \) es un valor propio (o autovalor), que es un escalar.
+\end{itemize}
+
+El valor propio asociado a un vector propio indica en qué medida se escala el vector propio cuando se aplica la matriz \( \mathbf{A} \).
+
+
+
+→ Descomposición en valores singulares: Reducción de la dimensionality para utilizarse en métodos como PCA y tratamientos de datos de la IA. Su uso es mas común en Deep Learning.
 \begin{lstlisting}
     # Crear una matriz
     matriz = np.array([[1, 2, 3],
