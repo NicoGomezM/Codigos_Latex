@@ -57,10 +57,88 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "cSpell.words": [
+    "Apropiativa",
+    "apropiativos",
+    "asignador",
+    "atomicamente",
+    "bloqueante",
     "colab",
+    "Compartición",
+    "concurrentemente",
+    "Deseconomías",
+    "dinámicamente",
+    "econométricos",
+    "Escalabilidad",
+    "evaluables",
+    "Evitación",
+    "expropiativo",
+    "FCFS",
+    "Financista",
+    "FSFS",
     "Heterónomas",
+    "Imprescindencia",
+    "institucionalidad",
+    "Institucionalidad",
+    "Internalización",
+    "interprocesos",
+    "Interprocess",
+    "IRIX",
     "maximización",
+    "Microkernel",
+    "modularidad",
+    "Modularidad",
+    "modularización",
+    "monitorea",
+    "monohebra",
+    "mononúcleo",
+    "monoprocesadores",
+    "multihebra",
+    "multihebras",
+    "multinivel",
+    "multinúcleo",
+    "multiprocesador",
+    "multiprogramación",
+    "Multiprogramación",
+    "multiuser",
     "Neumann",
-    "Phyton"
-  ]
+    "NUMA",
+    "ojecutandose",
+    "Phyton",
+    "POSIX",
+    "postergación",
+    "Prefactibilidad",
+    "Preinversión",
+    "programacion",
+    "pthread",
+    "Pthreads",
+    "secuenciamiento",
+    "SSOO"
+  ],
+  "workbench.colorTheme": "Material Theme Ocean",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#a77924" // Cambiar color de los comentarios
+        }
+      },
+      {
+        "scope": "punctuation.definition.comment.json.comments",
+        "settings": {
+          "foreground": "#a77924b2" // Cambiar color de los delimitadores de comentarios 
+        }
+      },{
+        "scope": "punctuation.definition.comment.tex",
+        "settings": {
+          "foreground": "#a77924b2" // Cambiar color de los delimitadores de comentarios 
+        }
+      },{
+        "scope": "punctuation.definition.comment",
+        "settings": {
+          "foreground": "#a77924b2" // Cambiar color de los delimitadores de comentarios 
+        }
+      }
+    ]
+  }
 }

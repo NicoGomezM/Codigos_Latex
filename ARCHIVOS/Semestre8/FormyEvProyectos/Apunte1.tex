@@ -9,6 +9,11 @@
 \usepackage{comment}
 \usepackage{tikz}
 \usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{forest}
 \usetikzlibrary{decorations.pathreplacing} % Para el corchete decorado
 \usepackage[absolute,overlay]{textpos}
 
@@ -25,12 +30,14 @@
     \end{textblock}
 \end{comment}
 
+\definecolor{darkorange}{rgb}{0.8, 0.4, 0.0}
+
 
 \begin{document}
 \imagenlogoU{img/logoNGMFormal_sinF.png}
 \linklogoU{https://github.com/NicoGomezM} 
 % \imagenlogoD{img/logo-ubb-txt-face.png} 
-\titulo{Apunte 1}
+\titulo{Apunte}
 \asignatura{Formulación y Evaluación de Proyectos}
 \autor{
     \indent
@@ -43,14 +50,14 @@
 \tableofcontents
 \newpage
 
-\section{Importante}
+\section*{Importante}
 
 \begin{itemize}
     \item Es necesario saber calcular porcentajes y tasas de interés, asi como también saber calcular el valor presente y futuro de una inversión.
     \item Es necesario saber calcular el Reajuste dados los valores que se nos entregan.
 \end{itemize}
 
-\subsection{Conceptos clave}
+\subsection*{Conceptos clave}
 
 \begin{itemize}
     \item \textbf{Proyectos:} Conjunto de actividades interrelacionadas que se realizan para alcanzar un objetivo.
@@ -403,5 +410,667 @@ Ahora con estos datos ordenaremos los proyectos de mayor a meno IR e iremos suma
 \end{center}
 
 Por lo tanto los proyectos que se deben realizar son: K, G, F, E, H, B, L, C, J. No se utilizo el total de la inversion ya que para ninguno de los proyectos que quedaban alcanzaba el presupuesto.
+
+\newpage
+\section{Aspectos propios de un proyecto informático}
+Dentro del desarrollo de proyectos informáticos, se deben considerar ciertos aspectos que son propios de este tipo de proyectos, los cuales son:
+
+\subsection{Tipología de proyectos informáticos}
+Los proyectos informáticos pueden ser clasificados en varios tipos dentro de los cuales están:
+
+\begin{itemize}
+    \item \textbf{Proyecto de desarrollo de aplicaciones:} Crear y poner en marcha programas o sistemas informáticos.
+    \item \textbf{Proyectos de equipamiento:} Adquirir por primera vez equipos, dentro de estos incluyendo tanto HW como SW básico utilitario.
+    \item \textbf{Proyectos de mejoramiento, ampliación o reposición:} Aumentar la capacidad y/o calidad de los servicios existentes.
+\end{itemize}
+
+\subsection{Ciclo de proyectos informáticos}
+Guarda relación con el ciclo de vida de un proyecto, tomando en cuenta secciones utilizadas en el ciclo de vida tradicional (CVT):
+
+\begin{itemize}
+    \item \textbf{Diseño lógico:} Se define que tipo de sistemas se desarrollaran, que información es relevante para los sistemas, que procesaran los sistemas, etc.
+    \item \textbf{Diseño físico:} Se define que tipos de archivos se utilizaran, que tipo de accesos, que tipo de lenguajes, etc.
+    \item \textbf{Construcción:} Una vez diseñado el sistema, se procede a construirlo.
+    \item \textbf{Implementación:} Se realizan pruebas, poblamiento de datos, marcha blanca y puesta en marcha.
+    \item \textbf{Operación y mantenimiento:} Se mantiene el sistema en funcionamiento y se realizan las mejoras necesarias.
+\end{itemize}
+
+\subsection{Preparación de proyectos informáticos}
+Para desarrollar un proyecto informático se debe tener en consideración ciertos puntos:
+
+\begin{itemize}
+    \item Identificación y definición del problema a resolver.
+    \item Diagnostico de la situación actual.
+    \item Descripción general de requerimientos.
+    \item Programacion de actividades para la etapa de diseño.
+    \item Requerimientos de personal para la etapa de diseño.
+    \item Estimación de beneficios.
+    \item Estimación de costos de inversion, operación y mantenimiento para la etapa de ejecución.
+    \item Análisis de requerimientos para el diseño lógico.
+    \item Alternativas de solución.
+    \begin{itemize}
+        \item Restricciones de cada alternativa.
+        \item Producto o servicio de cada alternativa.
+    \end{itemize}
+    \item Evaluación y selección de alternativas.
+    \item Atributos relevantes.
+    \begin{itemize}
+        \item Atributos imprescindibles (Atributos que deben cumplir todas las alternativas).
+        \item Atributos evaluables (Atributos deseables y muy deseables).
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Atributos imprescindibles}
+Son aquellos atributos que deben cumplirse obligatoriamente en su totalidad. A lo menos deben considerarse:
+\begin{itemize}
+    \item La alternativa de solución esta de acuerdo con la política informática de la entidad.
+    \item La institución cuenta con las capacidad es técnicas y administrativas para soportar la solución (HW, SW, personal, etc).
+\end{itemize}
+
+\subsubsection{Atributos evaluables}
+Son aquellos medibles y que permiten evaluar las alternativas de solución y discriminar entre ellas, puesto que debe existir variabilidad y complejidad en las alternativas de solución. 
+
+La clasificación de deseables y muy deseables debe formularse con base en el plan informático de la institución.
+
+Se espera que los atributos hagan hincapié en la información (eficiencia, eficacia, confiabilidad, seguridad, etc).
+
+\newpage
+\subsubsection{Evaluacion de los atributos}
+\begin{itemize}
+    \item \textbf{Efectividad:} Capacidad de la alternativa para cumplir con los objetivos.
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|>{\centering\arraybackslash}m{6cm}|c|c|c|c|}
+            \hline
+            \textbf{Funcionalidades del Sistema} & \textbf{Alt. 1} & \textbf{Alt. 2} & \textbf{  ...  } & \textbf{Alt. N} \\
+            \hline
+            \textcolor{darkorange}{\textbf{\textit{Muy deseables}}} & 100\% & 50\% & & 100\% \\
+            Información en línea & 1 & 1 & & 1 \\
+            Interfaces gráficas & 1 & 0 & & 1 \\
+            \hline
+            \textcolor{darkorange}{\textbf{\textit{Deseables}}} & 33\% & 100\% & & 33\% \\
+            Emisión de cartas & 0 & 1 & & 0 \\
+            Control de cambios & 1 & 1 & & 1 \\
+            Otros atributos menores & 0 & 1 & & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \item \textbf{Plataforma tecnológica:} Capacidad de la alternativa para soportar la solución.
+    \begin{itemize}
+        \item Confidencialidad.
+        \item Integridad.
+        \item Disponibilidad.
+        \item Confiabilidad de la información.
+        \item Información externa:
+        \item la información debe ser apropiada para satisfacer los requerimientos de otras instituciones.
+    \end{itemize}
+    \item \textbf{Calidad técnica de la solución:} Capacidad de la alternativa para cumplir con los requerimientos técnicos.
+    \begin{itemize}
+        \item Seguridad.
+        \item Disponibilidad.
+        \item Portabilidad.
+        \item Accesibilidad.
+        \item Escalabilidad.
+    \end{itemize}
+    \item \textbf{Ahorro de costos operaciones:} Capacidad de la alternativa para reducir los costos operacionales.
+    \begin{itemize}
+        \item Variable muy importante para elegir entre las alternativas.
+        \item Analizar partidas que generen ahorros.
+        \item Lo importante es que sean objetivamente cuantificables.
+        \item Deben expresarse en términos absolutos y relativos.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Situación sin proyecto}
+Para poder desarrollar un proyecto informático, es necesario saber de antemano:
+\begin{itemize}
+    \item Descripción de la organización o entorno afectado por el proyecto.
+    \item Descripción de la unidad o departamento.
+    \item Presentación de la solución informática actual.
+    \item Descripción de los procesos.
+    \item Diagrama de flujo de datos que represente la situación actual.
+\end{itemize}
+
+\subsection{Mayores razones por las que un proyecto informático falla}\label{sec:razones-falla}
+
+
+\begin{itemize}
+    \item \textbf{Higher than expected maintenance fees (Mayor costo de mantenimiento al esperado):} El costo de mantenimiento es mayor al esperado.
+    \item \textbf{Lack of governance (Falta de gobernanza):} No se tiene un plan de como desarrollar el proyecto.
+    \item \textbf{Internal politics (Política interna):} Problemas respectivos a la política de la empresa que impiden la realización del proyecto.
+    \item \textbf{Poor communication between business and IT(Comunicación pobre entre el negocio y la TI):} Falta de comunicación entre los departamentos de informática y negocios de la empresa.
+    \item \textbf{Unclear expectations (Expectativas poco claras):} Las expectativas de lo que se espera que logre el proyecto no están bien definidas.
+    \item \textbf{Lack of fact-based analysis (Falta de análisis basado en hechos):} No se tiene un análisis basado en hechos para la realización del proyecto.
+    \item \textbf{Lack of input from users (Falta de aportes de los usuarios):} No hay suficiente apoyo de los usuarios a los que va dirigido el sistema para la población de datos o el desarrollo del proyecto.
+    \item \textbf{Changes in project size, budget and scope (Cambios en el tamaño, presupuesto y alcance del proyecto):} Cambios en el proyecto que impiden que avance o alcance un punto de finalización.
+    \item \textbf{Change in key personal (Cambio en personal clave):} Cambios en el personal clave del proyecto que son clave para el desarrollo del proyecto ya que manejan información que el personal nuevo no tiene.
+    \item \textbf{Schedule overruns (Retrasos en el cronograma):} Debido a los problemas anteriores o la falta de planificación, el proyecto se retrasa.
+\end{itemize}
+
+\newpage
+\section{Etapas de formulación y evaluación de un proyecto}
+
+\subsection{Proyecto}
+Se entiende por proyecto todo plan y disposición para ejecutar una inversion. El concepto anterior abarca desde el reemplazo de un activo hasta la creación de nuevos negocios.
+
+En otras palabras un proyecto es una \textbf{actividad económica que busca acrecentar la riqueza de sus inversionistas}.
+
+\subsection{Proyecto informático}
+Plan que consiste en materializar una idea relacionada con equipamientos de hardware, software o comunicaciones (o combinaciones entre estos), con el fin de obtener un cierto resultado en un sistema de información.
+
+\subsubsection{Objetivos de un proyecto informático}
+\begin{itemize}
+    \item \textbf{De servicio:} Lo que se espera del sistema del punto de vista del \textit{cliente/usuario}.
+    \item \textbf{De producción:} Lo que se espera del sistema del punto de vista del \textit{departamento de informática} (costo, plazo, calidad, rendimiento, etc).
+    \item \textbf{Estratégicos:} Lo que se espera del sistema del punto de vista de la \textit{dirección superior de la entidad}. Estos objetivos son de largo plazo y afectan a todas las areas (cobertura, integración, imagen, migración, etc.).
+\end{itemize}
+
+\subsection{Necesidad de evaluación de proyectos}
+La evaluación de un proyecto surge de la necesidad de anticipar si generará pérdidas o ganancias y en qué medida. Esto permite determinar si es rentable asignarle recursos o si existen alternativas más favorables para su inversión.
+
+Las evaluaciones de proyectos permiten identificar los flujos de caja esperados que con mayor probabilidad generara el proyecto.
+
+\subsection{Evaluación de proyectos}
+Pretende la medición objetiva de ciertas magnitudes cuantitativas resultantes del estudio del proyecto. Lo importante radica en que las premisas y supuestos que se hayan realizado se hayan sometido a convalidaron a traves de mecanismos y técnicas. Mientras mas precisas la estimación de ingresos y egresos, ademas del horizonte de vida del proyecto, más acertada sera su evaluación.
+
+\subsubsection{Evaluacion social de proyectos}
+En este tipo de evaluación se comparan los beneficios y costos que una inversion pueda significarle a la comunidad local, regional o nacional.
+
+Mientras que \textbf{evaluación privada} utiliza precios de mercado, la \textbf{evaluación social} utiliza precios sociales. 
+
+\subsection{Tipos de proyectos (según la finalidad de la inversión)}
+\begin{itemize}
+    \item Pra crear una nueva empresa.
+    \item Para modernizar una empresa existente.
+    \item Para evaluar gastos de mantenimiento.
+    \item Para introducir mejoras (aumentar ingresos / ahorrar costos).
+    \item Para ampliar la capacidad actual.
+    \item Para lanzar nuevos productos.
+    \item Para cumplir con las leyes y normativas vigentes.
+\end{itemize}
+
+\subsubsection{Magnitud de un proyecto informatico}
+\begin{itemize}
+    \item \textbf{Mantenimiento de programas:} Involucra solucionar fallas menores en un sistema, por omisiones en el diseño o errores en la programación.
+    \item \textbf{Modificaciones en programas:} Cambios en la estructura de los programas.
+    \item \textbf{Mejoramiento de sistemas:} Agregar nuevas funciones a un sistema existente.
+    \item \textbf{Creación o reemplazo de sistemas:} Crear un nuevo sistema o reemplazar uno existente.
+\end{itemize}
+
+\subsection{Componentes de decisión de inversion}
+\begin{itemize}
+    \item \textbf{Desisor:} Persona que toma la decisión de invertir.
+    \begin{itemize}
+        \item Inversionista.
+        \item Gerente.
+        \item Financista.
+        \item Evaluador.
+    \end{itemize}
+    \item \textbf{Variables controladas.}
+    \item \textbf{Variables incontrolables.}
+    \item \textbf{Opciones.}
+\end{itemize}
+
+\subsection{Razones de falla de un proyecto (enfoque de la evaluación)}
+\begin{itemize}
+    \item Imposibilidad de la predicción perfecta.
+    \item Deficiente gestión.
+    \item Procedimientos erróneos en la evaluación.
+\end{itemize}
+
+\subsection{Razones de falla de un proyecto informático (extras a las razones definidas en la sección \hyperref[sec:razones-falla]{sección 2.5})}
+En la \hyperref[sec:razones-falla]{sección 2.5} se discuten las mayores razones por las que un proyecto informático falla, aquí se discuten otras no necesariamente relacionadas a la evaluación de proyectos informáticos:
+\begin{itemize}
+    \item Por la simple razón de ser un proyecto; una misión compartida por un grupo de personas.
+    \item Recorte disimulado de recursos.
+    \item Se vuelve imposible coordinar esfuerzos, especialmente al estar involucrados proveedores externos.
+    \item Aparecen obstáculos artificiales. Se bloquean iniciativas, no se deja trabajar a los informáticos, se imponen demasiadas restricciones. En su mayor parte esto se da por razones políticas o de orgullo personal.
+\end{itemize}
+
+\subsection{Imposibilidad de la predicción perfecta}
+\begin{itemize}
+    \item \textbf{Tecnología:} A pesar de los avances tecnológicos aun no se nos permite predecir el futuro, ademas que la tecnología esta en un constante cambio lo cual altera los resultados en los ámbitos de las predicciones.
+    \item \textbf{Institucionalidad/Cambios politico-económicos:} Cambios en la institucionalidad, en la economía y/o en la política afectan directamente a los resultados de la evaluación.
+    \item \textbf{Economía:} La economía es un factor que no se puede predecir, ya que esta en constante cambio a nivel mundial.
+    \item \textbf{Relaciones internacionales:} Las relaciones internacionales son un factor que puede permanecer estable por años y de un momento a otro cambiar.
+    \item \textbf{Naturaleza:} La naturaleza en sus cambios climáticos y geológicos afecta a los resultados que se esperan de un proyecto.
+    \item \textbf{Legislación:} Las leyes y normativas están en ciclos de constante cambio y creación, y aunque algunas no afecten directamente al proyecto, otras pueden hacerlo.
+    \item \textbf{Competencia imprevista:} Tal como lo dice su nombre, en cualquier momento puede surgir competencia que oblique a cambiar el rumbo del proyecto.
+\end{itemize}
+
+\subsection{Estudios de viabilidad}
+\begin{itemize}
+    \item Viabilidad técnica.
+    \item Viabilidad económica.
+    \item Viabilidad legal.
+    \item Viabilidad de gestión.
+    \item Viabilidad política.
+    \item Viabilidad ambiental.
+\end{itemize}
+
+\subsection{Tipología de proyectos (enfoque general)}
+
+\begin{adjustbox}{max width=\textwidth}
+\begin{forest}
+for tree={
+    grow=south,
+    draw,
+    rounded corners,
+    align=center,
+    edge={-latex},
+    anchor=north,
+    parent anchor=south,
+    child anchor=north,
+    s sep=8pt, % ajusta el espacio vertical entre nodos
+    l=5.5cm, % ajusta el tamaño horizontal de los nodos
+    minimum width=2.5cm, % ancho mínimo de los nodos
+    minimum height=1cm, % altura mínima de los nodos
+    font=\huge  % tamaño de fuente
+}
+[Tipología de proyectos
+    [Según la finalidad del estudio
+        [Rentabilidad del proyecto]
+        [Rentabilidad del inversionista]
+        [Capacidad de pago]
+    ]
+    [Según el objeto de la inversión
+        [Creación de un nuevo negocio]
+        [Proyecto de modernización
+            [Outsourcing]
+            [\hl{Internalización}]
+            [\hl{Reemplazo}]
+            [\hl{Ampliación}]
+            [\hl{Abandono}]
+        ]
+    ]
+]
+\end{forest}
+\end{adjustbox}
+
+\subsubsection{Proyectos de reemplazo}
+
+\begin{itemize}
+    \item Capacidad insuficiente de los equipos existentes.
+    \item Aumento en los costos de operación y mantenimiento asociados a la antigüedad de los equipos.
+    \item Productividad decreciente por el aumento en las horas de detención por reparaciones o mejoras.
+    \item Obsolescencia comparativa derivada de los cambios tecnológicos.
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Tipología de proyectos de reemplazo:}
+    \begin{itemize}
+        \item Sustitución de activos sin cambios en los niveles de operación ni ingresos.
+        \item Sustitución de activos con cambios en los niveles de producción, ventas e ingresos.
+        \item Imprescindencia de la sustitución de un activo con o sin cambio en el nivel de operación.
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Proyectos de ampliación}
+
+\begin{itemize}
+    \item \textbf{Opciones}
+    \begin{itemize}
+        \item Por sustitución de activos.
+        \item Por complemento de activos.
+    \end{itemize}
+    \item \textbf{Efectos}
+    \begin{itemize}
+        \item Economías de escala.
+        \item Deseconomías de escala.
+        \item Capital de trabajo.
+        \item \textcolor{green}{Aumento} en el valor de desecho.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Proyectos de abandono}
+
+\begin{itemize}
+\item \textbf{Opciones}
+    \begin{itemize}
+        \item Eliminación de área de negocio no rentable.
+        \item Liberar recursos para invertir en proyectos mas rentables.
+    \end{itemize}
+    \item \textbf{Efectos}
+    \begin{itemize}
+        \item Economías de escala.
+        \item Deseconomías de escala.
+        \item Capital de trabajo.
+        \item \textcolor{red}{Disminución} en el valor de desecho.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Proyectos de internalización}
+\begin{itemize}
+    \item Aumento de productividad
+    \begin{itemize}
+        \item Reducción de costos mediante la disminución de recursos, manteniendo los niveles de operación.
+        \item Aumento en nivel de actividad disminuyendo las capacidades ociosas sin incrementar los recursos.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Etapas de un proyecto}
+\begin{itemize}
+    \item Idea.
+    \item Preinversión.
+    \begin{itemize}
+        \item Perfil.
+        \item Prefactibilidad.
+        \item Factibilidad.
+    \end{itemize}
+    \item Inversión.
+    \item Operación
+\end{itemize}
+
+\subsection{Flujo normal de ideas de un proyecto de inversion}
+
+\begin{center}
+    \begin{tikzpicture}[
+        box/.style={draw, rounded corners, align=center, minimum width=3.5cm, minimum height=1cm, thick},
+        arrow/.style={->, thick}
+    ]
+    % Nodos
+    \node[box] (gerenteDivision) at (0, 3) {Gerente de \\ División};
+    \node[box] (gerentePlanta) at (0, 0) {Gerente de \\ la Planta};
+    \node[box] (investigacion) at (-4, 0) {Investigación \\ y Desarrollo};
+    \node[box] (planificacion) at (4, 0) {Planificación \\ Estratégica};
+    \node[box] (superintendencia) at (0, -3) {Superintendencia \\ de Producción};
+    % Flechas
+    \draw[arrow] (gerenteDivision) -- (gerentePlanta);
+    \draw[arrow] (gerenteDivision) -- (investigacion);
+    \draw[arrow] (gerenteDivision) -- (planificacion);
+
+    \draw[arrow] (gerentePlanta) -- (gerenteDivision);
+    \draw[arrow] (gerentePlanta) -- (superintendencia);
+    \draw[arrow] (gerentePlanta) -- (investigacion);
+    \draw[arrow] (gerentePlanta) -- (planificacion);
+
+    \draw[arrow] (investigacion) -- (gerentePlanta);
+    \draw[arrow] (investigacion) -- (gerenteDivision);
+
+    \draw[arrow] (planificacion) -- (gerentePlanta);
+    \draw[arrow] (planificacion) -- (gerenteDivision);
+
+    \draw[arrow] (superintendencia) -- (gerentePlanta);
+
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Perfil de un proyecto}
+\begin{itemize}
+    \item Etapa mas preliminar de un proyecto.
+    \item Análisis incluidos en esta etapa son de tipo estático.
+    \item Se basa en información secundaria, generalmente, de tipo cualitativo (cifras estimativas y opiniones de expertos).
+    \item Objetivo básico es \textbf{determinar si existen antecedentes que justifiquen abandonar el proyecto sin efectuar gastos futuros en estudios que buscan mayor y mejor profundidad.}
+\end{itemize}
+
+\subsection{Estudio de Prefactibilidad}
+
+Se hacen proyecciones de costos y beneficios sobre la base decretorios cuantitativos. Esta es una etapa dinámica, ya que incorpora el factor del tiempo. Los beneficios y costos esperados para la vida del proyecto se estructuran en forma de flujos de caja.
+
+\subsection{\hl{Resumen Evaluación del proyecto}}
+\begin{enumerate}
+    \item Se afinan los cálculos.
+    \item Se incluye el equipamiento administrativo.
+    \item Se incorpora la dotación del personal.
+    \item Se define la capital de trabajo y se calcula el valor de desecho.
+    \item Se incorporan todos los ingresos y egresos de caja atribuidos a la vida del proyecto.
+    \item Se aplican las técnicas de evaluación que se consideren apropiadas.
+\end{enumerate}
+
+\subsection{Sensibilidad del proyecto}
+Ya que es imposible predecir el futuro con 100\% de certeza, lo mas probable es que las variables consideradas en al evaluación registren cambios durante el desarrollo del proyecto.
+Como complemento a la evaluación de un proyecto, se elaboran estudios de sensibilidad, estos consisten en mostrar el grado de variabilidad que puede resistir el proyecto.
+
+Una de las formas de hacerlo es analizar que pasa con el VAN cuando se modifica alguna variable que pueda variar durante el periodo a evaluar. Teóricamente, se pueden hacer innumerables flujos, pero en la practica solo se confeccionan \textbf{tres}:
+\begin{itemize}
+    \item \textbf{Flujo inicial/normal:} Se basa en los datos originales.
+    \item \textbf{Flujo optimista:} Se basa en los datos mas favorables.
+    \item \textbf{Flujo pesimista:} Se basa en los datos menos favorables.
+\end{itemize}
+Todos estos flujos se realizan con valores en rangos realistas.
+
+Otra de las maneras consiste en ver que tanto se puede modificar el valor de una variable considerada para la situación normal para que el proyecto mantenga su atractivo hacia el inversionista. A esto se le denomina \textbf{Modelo unidimensional}.
+
+\subsubsection{Análisis de sensibilidad}
+\begin{itemize}
+    \item Modelos: Unidimensional, multidimensional.
+    \begin{itemize}
+        \item \textbf{Unidimensional:} Calcula el valor limite que puede tomar una variable, es decir, aquel que hace que el VAN sea igual a cero.
+        \item \textbf{Hertz o multidimensional:} Mide que pasa con el van si cambia una o mas variables.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Sistema de evaluación de proyectos}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Ajusta este valor para cambiar la altura de las filas
+    \begin{adjustbox}{max width=\textwidth}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \multicolumn{5}{|c|}{\textbf{VIABILIDAD ECONÓMICA}} \\ \hline
+            \multicolumn{4}{|c|}{\textbf{Formulación y preparación}} & \multicolumn{1}{c|}{\textbf{Evaluación}} \\ \hline
+            \multicolumn{3}{|c|}{Obtención y creación de información} & {Flujo de caja} & {Evaluación Sensibilización} \\ \hline
+            {Estudio mercado} & {Estudio organizacional} & {Estudio técnico} & \multicolumn{2}{c|}{Estudio financiero} \\ \hline
+        \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+\newpage
+\section{Estudio de mercado}
+
+\subsection{Mercado competidor}
+\begin{itemize}
+    \item Precios que se cobran.
+    \item Condiciones de crédito ofrecidas.
+    \item Publicidad que se habrá que enfrentar.
+    \item Diversidad de tamaño y tipos de envases.
+    \item Promociones y regalos adicionales.
+    \item Formas de llegar al consumidor.
+    \item Competencia indirecta.
+\end{itemize}
+
+\textbf{Mercado competidor:}
+\begin{itemize}
+    \item \textbf{Indirecto:}
+    \begin{itemize}
+        \item \textbf{Compite por un proveedor o distribuidor.}
+    \end{itemize}
+    \item \textbf{Directo:}
+    \begin{itemize}
+        \item \textbf{Estrategia comercial.}
+        \begin{itemize}
+            \item Producto.
+            \item Precio.
+            \item Promoción.
+            \item Plaza.
+        \end{itemize}
+        \item \textbf{Evolución del mercado.}
+        \item \textbf{Éxitos y fracasos.}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Mercado proveedor}
+\begin{itemize}
+    \item Disponibilidad actual y potencial de insumos.
+    \item Precios actuales y esperados.
+    \item Condiciones de crédito de los proveedores.
+    \item Políticas de descuento y plazo de entrega.
+    \item Productos sustitutos.
+    \item Características físicas que requiere el almacenamiento.
+    \item Porcentaje del mercado que abarcara el proyecto.
+\end{itemize}
+
+\textbf{Mercado proveedor:}
+\begin{itemize}
+    \item \textbf{Precios.}
+    \begin{itemize}
+        \item Valor.
+        \item Condiciones de crédito.
+        \item Políticas de descuento.
+    \end{itemize}
+    \item \textbf{Disponibilidad.}
+    \item \textbf{Calidad y especificaciones técnicas.}
+\end{itemize}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=green!75!black]
+    Suponga que proveedores locales venden un insumo a \$5.000 la unidad y existe la posibilidad de comprar a otro proveedor de otra localidad, que vende al mismo precio, pero el flete hace que el costo suba a \$5.500 por unidad. ¿Qué valor debe considerarse en el proyecto?
+
+    \textbf{Respuesta:} Se debe considerar el valor de \$5.500, ya que es el valor real que se pagará por el insumo.
+\end{tcolorbox}
+
+\subsection{Mercado distribuidor}
+
+\begin{itemize}
+    \item Esta constituido por intermediarios.
+    \item Costos de comercialización.
+    \item Calidad del servicio
+\end{itemize}
+
+\textbf{Mercado proveedor:}
+\begin{itemize}
+    \item \textbf{Costo de intermediación.}
+    \item \textbf{Calidad de servicio.}
+    \item \textbf{Distribución propia o con intermediarios.}
+\end{itemize}
+
+\subsection{Mercado consumidor}
+\begin{itemize}
+    \item Consumidores actuales y potenciales de los productos del proyecto o de la competencia.
+    \item El cliente emocional.
+    \item Distorsiones en proyección de la demanda.
+\end{itemize}
+
+\subsubsection{Tecnicas de proyeccion de demanda}
+\vspace{0.5cm}
+\begin{center}
+    \begin{minipage}[H]{0.45\textwidth}
+        \begin{itemize}
+            \item \textbf{Métodos cualitativos} 
+            \begin{itemize}
+                \item Opiniones de expertos.
+                \item Investigación de mercados.
+                \begin{itemize}
+                    \item Encuestas de intenciones de compra.
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}[H]{0.45\textwidth}
+        \begin{itemize}
+            \item \textbf{Modelos de series temporales}
+            \begin{itemize}
+                \item Regresión f(t).
+                \item Promedios móviles.
+            \end{itemize}
+            \item \textbf{Métodos causales}
+            \begin{itemize}
+                \item Regresión f(v).
+                \item Modelos econométricos.
+            \end{itemize} 
+        \end{itemize}
+    \end{minipage}
+\end{center}
+
+\subsection{Regresión simple}
+Este es de los métodos mas utilizados para proyectar la demanda, ya que es fácil de entender y aplicar. Su formula es:
+\begin{equation*}
+    y = a + bx
+\end{equation*}
+
+\textit{Donde:}
+
+\begin{align*}
+    b = \frac{n(\sum xy) - (\sum x)(\sum y)}{n(\sum x^2) - (\sum x)^2} \\
+\end{align*}
+
+\textit{y:}
+
+\begin{equation*}
+    a = \overline{y} - b\overline{x}
+\end{equation*}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=blue!75!black]
+    Considere la siguiente tabla de datos;
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Observac. & Pobl. Infantil (miles) x & Ventas (y) \\\hline
+            1 & 14.68 & 3,845 \\\hline
+            2 & 22.93 & 5,450 \\\hline
+            3 & 16.65 & 5,099 \\\hline
+            4 & 35.99 & 8,890 \\\hline
+            5 & 32.48 & 6,681 \\\hline
+            6 & 38.77 & 9,678 \\\hline
+            7 & 10.03 & 4,542 \\\hline
+            8 & 24.26 & 4,557 \\\hline
+            9 & 52.46 & 13,289 \\\hline
+            10 & 36.80 & 10,506 \\\hline
+            11 & 17.34 & 5,134 \\\hline
+            12 & 43.69 & 9,066 \\\hline
+        \end{tabular}
+    \end{table}
+
+    Calcule el nivel de ventas que habría si la población infantil fuera de 45.000 habitantes.
+
+    \textbf{Respuesta:} Para calcular el nivel de ventas, primero se debe calcular el valor de $a$ y $b$.
+
+    \begin{align*}
+        % \sum xy &= (14,66*3845) + (22,93*5450) + (16,65 * 5099) + (35,99*8890) + (32,48 * 6681) + (38,77 * 9678) + (10,03 * 4542) + (24,26 * 4557) + (52,46 * 13289) + (36,80 * 10506) + (17,34 * 5134) + (43,69 * 9066) = 2903388,51 \\
+        \sum xy &= (14,66*3845) + (22,93*5450) + \cdots + (43,69 * 9066) = 2903388,51 \\
+        % \sum x &= 14.68+22.93+16.65+35.99+32.48+38.77+10.03+24.26+52.46+36.80+17.34+43.69 = 346,08 \\
+        \sum x &= 14.68+22.93+16.65+\cdots+43.69 = 346,08 \\
+        % \sum x^2 &= 14.68^2 + 22.93^2 + 16.65^2 + 35.99^2 + 32.48^2 + 38.77^2 + 10.03^2 + 24.26^2 + 52.46^2 + 36.80^2 + 17.34^2 + 43.69^2 = 11876,785 \\
+        \sum x^2 &= 14.68^2 + 22.93^2 + \cdots + 43.69^2 = 11876,785 \\
+        % \sum y &= 3845+5450+5099+8890+6681+9678+4542+4557+13289+10506+5134+9066 = 86737 \\
+        \sum y &= 3845+5450+\cdots+9066 = 86737 \\
+        \\
+        b &= \frac{12(2903388,51)- (346,08)(86737)}{12(11876,785) - (346,08)^2}\\
+        b &= 211,987243\\
+        \\
+        a &= \frac{86737}{12} - 211,987243 * \frac{346,08}{12} \\
+        a &= 1114,371245
+    \end{align*}
+    Por lo tanto, las ventas estimadas para una población de 45.000 habitantes son:
+    \begin{align*}
+        y &= 1114,371245 + 211,987243 * 45 \\
+        y &= 10653,79718 \\
+        y &\approx \$10653,80
+    \end{align*}   
+\end{tcolorbox}
+
+\subsection{El mercado del proyecto}
+\vspace{1.5cm}
+\begin{center}
+    \begin{tikzpicture}
+        % Proveedor
+        \node[draw, rectangle, minimum width=1cm, minimum height=1cm, text width=2cm, align=center] (proveedor) at (0,0) {Proveedor};
+        
+        % Proyecto
+        \node[draw, rectangle, minimum width=2cm, minimum height=1cm, text width=2cm, align=center] (proyecto) at (5,1) {Proyecto};
+        
+        % Competidor
+        \node[draw, rectangle, minimum width=2cm, minimum height=1cm, text width=2cm, align=center] (competidor) at (5,-1) {Competidor};
+        
+        % Distribuidor
+        \node[draw, rectangle, minimum width=1cm, minimum height=1cm, text width=1.5cm, align=center] (distrib) at (9,0) {Distrib.};
+        
+        % Consumidor
+        \node[draw, rectangle, minimum width=1cm, minimum height=4cm, text width=2cm, align=center] (consumidor) at (12,0) {Consumidor};
+        
+        % Arrows
+        \draw[->] (proveedor.east) -- (proyecto.west);
+        \draw[->] (proveedor.east) -- (competidor.west);
+        \draw[->] (proyecto.east) -- (distrib.north);
+        \draw[->] (proyecto.east) -- (consumidor.north);
+        \draw[->] (competidor.east) -- (distrib.south);
+        \draw[->] (competidor.east) -- (consumidor.south);
+        \draw[->] (distrib.east) -- (consumidor.west);
+    \end{tikzpicture}
+\end{center}
 
 \end{document}
