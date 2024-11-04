@@ -9,10 +9,13 @@
 \usepackage{comment}
 \usepackage{tikz}
 \usepackage{parskip}
-\usepackage{xcolor}
 \usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \usepackage{array}
-\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+% \usepackage[table,xcdraw]{xcolor}
 \usepackage{forest}
 \usetikzlibrary{decorations.pathreplacing} % Para el corchete decorado
 \usepackage[absolute,overlay]{textpos}
@@ -859,9 +862,9 @@ Otra de las maneras consiste en ver que tanto se puede modificar el valor de una
 \end{table}
 
 \newpage
-\section{Estudio de mercado}
+\subsection{Estudio de mercado}
 
-\subsection{Mercado competidor}
+\subsubsection{Mercado competidor}
 \begin{itemize}
     \item Precios que se cobran.
     \item Condiciones de crédito ofrecidas.
@@ -892,7 +895,7 @@ Otra de las maneras consiste en ver que tanto se puede modificar el valor de una
     \end{itemize}
 \end{itemize}
 
-\subsection{Mercado proveedor}
+\subsubsection{Mercado proveedor}
 \begin{itemize}
     \item Disponibilidad actual y potencial de insumos.
     \item Precios actuales y esperados.
@@ -921,7 +924,7 @@ Otra de las maneras consiste en ver que tanto se puede modificar el valor de una
     \textbf{Respuesta:} Se debe considerar el valor de \$5.500, ya que es el valor real que se pagará por el insumo.
 \end{tcolorbox}
 
-\subsection{Mercado distribuidor}
+\subsubsection{Mercado distribuidor}
 
 \begin{itemize}
     \item Esta constituido por intermediarios.
@@ -936,7 +939,7 @@ Otra de las maneras consiste en ver que tanto se puede modificar el valor de una
     \item \textbf{Distribución propia o con intermediarios.}
 \end{itemize}
 
-\subsection{Mercado consumidor}
+\subsubsection{Mercado consumidor}
 \begin{itemize}
     \item Consumidores actuales y potenciales de los productos del proyecto o de la competencia.
     \item El cliente emocional.
@@ -958,6 +961,7 @@ Otra de las maneras consiste en ver que tanto se puede modificar el valor de una
             \end{itemize}
         \end{itemize}
     \end{minipage}
+    \hfill
     \begin{minipage}[H]{0.45\textwidth}
         \begin{itemize}
             \item \textbf{Modelos de series temporales}
@@ -974,7 +978,7 @@ Otra de las maneras consiste en ver que tanto se puede modificar el valor de una
     \end{minipage}
 \end{center}
 
-\subsection{Regresión simple}
+\subsubsection{Regresión simple}
 Este es de los métodos mas utilizados para proyectar la demanda, ya que es fácil de entender y aplicar. Su formula es:
 \begin{equation*}
     y = a + bx
@@ -1043,7 +1047,7 @@ Este es de los métodos mas utilizados para proyectar la demanda, ya que es fác
     \end{align*}   
 \end{tcolorbox}
 
-\subsection{El mercado del proyecto}
+\subsubsection{El mercado del proyecto}
 \vspace{1.5cm}
 \begin{center}
     \begin{tikzpicture}
@@ -1072,5 +1076,380 @@ Este es de los métodos mas utilizados para proyectar la demanda, ya que es fác
         \draw[->] (distrib.east) -- (consumidor.west);
     \end{tikzpicture}
 \end{center}
+
+\subsubsection{Objetivos del estudio de mercado}
+El estudio de marcado se hace para cumplir con una variedad de objetivos, dentro de los cuales están:
+\begin{itemize}
+    \item Confirmar la existencia de una necesidad insatisfecha en el mercado o la necesidad de ofrecer un mejor servicio.
+    \item Determinar la cantidad de bienes-servicios adicionales que la comunidad estaría dispuesta a adquirir, dado un precio.
+    \item Conocer los medios para llegar al consumidor o usuario.
+    \item Obtener una idea sobre el riesgo de que el bien o servicio no sea aceptado en el mercado.
+\end{itemize}
+
+\subsubsection{Resultados del estudio de mercado}
+\begin{itemize}
+    \item Análisis de la oferta.
+    \item Análisis de la demanda.
+    \item Análisis de los precios.
+    \item Análisis de la comercialización.
+    \item Conclusiones del estudio de mercado.
+\end{itemize}
+
+\subsection{Proyectos de Outsourcing (Profesor Sapag) [Resumen]}
+
+Los proyectos de \textit{outsourcing} han ganado relevancia en los últimos años, ya que permiten a las empresas mejorar la rentabilidad de su gestión mediante la externalización de actividades no esenciales. Entre las principales ventajas del \textit{outsourcing} se incluyen:
+\begin{itemize}
+    \item Focalización en el giro principal de la empresa.
+    \item Mitigación de riesgos compartiendo inversiones con proveedores externos.
+    \item Liberación de recursos para otras actividades rentables.
+    \item Mejora en la eficiencia al transferir tareas especializadas a expertos.
+    \item Acceso a tecnologías avanzadas sin necesidad de grandes inversiones.
+    \item Apoyo en estrategias de crecimiento al suplir deficiencias en servicios.
+\end{itemize}
+
+El \textit{outsourcing} también contribuye a reducir distracciones operativas, permitiendo a las empresas concentrarse en mejorar la calidad, rapidez y precisión de sus procesos.
+
+Sin embargo, presenta desventajas como:
+\begin{itemize}
+    \item Pérdida de control sobre actividades externalizadas.
+    \item Dependencia de terceros y riesgo en la transferencia de información.
+    \item Posibles costos externos elevados debido a utilidades y transportes.
+    \item Pérdida de talentos internos especializados.
+\end{itemize}
+
+Para una correcta evaluación, se deben considerar no solo los costos contables, sino también los costos reales y los efectos fiscales, de depreciación y de gestión. Además, los flujos de caja deben reflejar tanto los ingresos por la venta de activos como los efectos impositivos asociados.
+
+\subsection*{Ejemplo de Evaluación de Proyecto de Outsourcing}
+
+La empresa XYZ está evaluando la conveniencia de externalizar el servicio de mantenimiento de su maquinaria. Actualmente, este servicio tiene un costo de \$14,000 anuales. La externalización implicaría un costo de \$18,200 anuales al proveedor externo, pero permitiría vender la maquinaria hoy en \$13,000, cuyo valor en libros es de \$12,000 y con dos años restantes de depreciación. Sin externalización, la maquinaria podría usarse durante cuatro años más y venderse en \$6,000 al final de ese periodo. Se considera una tasa de impuesto a las utilidades del 17\% y una tasa de descuento del 12\%.
+
+\subsubsection*{Flujo de Caja del Outsourcing}
+
+El flujo de caja incremental para la opción de outsourcing incluye:
+
+\begin{itemize}
+    \item Costo de servicio anual de outsourcing: \$18,200.
+    \item Venta del activo en el momento inicial (momento 0): \$13,000.
+    \item Valor en libros del activo: \$12,000.
+    \item Valor de desecho en cuatro años (sin outsourcing): \$6,000.
+    \item Tasa de impuesto: 17\%.
+\end{itemize}
+
+\subsubsection*{Cálculo de Depreciación y Efecto Tributario}
+
+La depreciación anual restante del activo es:
+\[
+\text{Depreciación Anual} = \frac{12,000}{2} = 6,000
+\]
+El ahorro fiscal por depreciación en caso de mantener el activo internamente sería:
+\[
+\text{Ahorro Tributario} = 6,000 \times 0.17 = 1,020
+\]
+
+\subsubsection*{Flujo de Caja Incremental del Outsourcing}
+
+\begin{table}[H]
+    \centering
+        \begin{tabular}{lrrr}
+            \toprule
+            \textbf{Concepto} & \textbf{Año 0} & \textbf{Años 1-3} & \textbf{Año 4} \\
+            \midrule
+            Costo del servicio de outsourcing &  & -18,200 & -18,200 \\
+            Venta del activo & 13,000 &  & -6,000 \\
+            Ahorro por depreciación &  & 1,020 &  \\
+            Efecto impositivo sobre venta (valor contable: \$12,000) & 170 &  &  \\
+            \midrule
+            \textbf{Flujo de Caja} & 13,170 & -17,180 & -24,200 \\
+            \bottomrule
+        \end{tabular}
+    \caption{Flujo de Caja Incremental con Outsourcing}
+\end{table}
+
+\subsubsection*{Cálculo del VAN}
+
+El VAN se calcula descontando los flujos de caja a una tasa del 12\%.
+
+\[
+\text{VAN} = \frac{13,170}{(1 + 0.12)^0} + \frac{-17,180}{(1 + 0.12)^1} + \frac{-17,180}{(1 + 0.12)^2} + \frac{-24,200}{(1 + 0.12)^3}
+\]
+
+Calculando cada término:
+
+\[
+\text{VAN} = 13,170 - 15,339.29 - 13,697.00 - 17,541.02 = -2,752.31
+\]
+
+\subsubsection*{Conclusión}
+
+Dado que el VAN es negativo (\$-2,752.31), no es conveniente externalizar el servicio de mantenimiento de maquinaria.
+
+\subsection{Determining the Right Price for a Product or Service [Resumen]}
+
+\subsubsection*{Introducción}
+La fijación de precios es fundamental tanto en los aspectos financieros como en los de marketing. El precio de un producto o servicio debe cubrir costos, generar beneficios y evitar precios excesivos que puedan alienar a los clientes. Este artículo aborda consideraciones clave al establecer precios.
+
+\subsubsection*{Elementos Clave en la Determinación del Precio}
+
+\begin{itemize}
+    \item \textbf{Calculo de costos}: Se debe calcular el costo mínimo unitario y luego investigar el precio máximo que el mercado podría aceptar, estableciendo el precio final entre ambos.
+    \item \textbf{Comparación con la competencia}: Bajar el precio no siempre es la mejor estrategia para ganar mercado. Las pequeñas empresas pueden destacar con un mejor servicio, calidad o entrega rápida.
+    \item \textbf{Ajustes de precios}: En ocasiones, se requiere un aumento de precio para cubrir costos adicionales. Es importante comunicar estos cambios a los clientes para mantener una buena relación.
+    \item \textbf{Flexibilidad de precios}: La posibilidad de ajustar precios depende de la estrategia del producto en el mercado. Una estrategia de diferenciación permite una mayor flexibilidad que una de liderazgo en costos.
+    \item \textbf{Ofrecimiento gratuito}: Proporcionar muestras gratuitas puede atraer clientes, especialmente si se pueden diferenciar los productos de la competencia.
+\end{itemize}
+
+\subsubsection*{Estrategias de Precios}
+
+\begin{itemize}
+    \item \textbf{Precios basados en costos}: Se calcula el costo total y se agrega un margen de beneficio.
+    \item \textbf{Precios de desnatado}: Precio inicial alto para recuperar costos rápidamente, bajando el precio si entran competidores.
+    \item \textbf{Precios negociados}: El precio se ajusta según las cantidades compradas.
+    \item \textbf{Precio esperado}: Basado en la percepción del cliente de que el producto es “el mejor”.
+    \item \textbf{Precios diferenciales}: Ofrecer distintos precios a distintos segmentos de mercado, como descuentos a clientes leales o precios especiales en temporadas bajas.
+    \item \textbf{Precio de por vida}: Se justifica un precio inicial más alto demostrando menores costos de mantenimiento a largo plazo.
+\end{itemize}
+
+\subsubsection*{Errores Comunes}
+
+\begin{itemize}
+    \item \textbf{Precios demasiado bajos}: Competir solo en precio es riesgoso, especialmente para las pequeñas empresas. La diferenciación es clave.
+    \item \textbf{Precios altos sin suficiente volumen de ventas}: El precio debe cubrir los costos y generar ganancias. Si no se alcanzan los volúmenes proyectados, deben tomarse medidas correctivas.
+    \item \textbf{Estructuras de precios demasiado simples}: El precio debe formar parte de una estrategia de marketing bien investigada, que incluya un análisis del mercado y de la competencia.
+\end{itemize}
+
+\begin{tcolorbox}[title=Lecturas Adicionales]
+    \begin{itemize}
+        \item \textbf{Libro}: Mohammed, Rafi. \textit{The Art of Pricing: How to Find the Hidden Profits to Grow Your Business}. Nueva York: Crown, 2005.
+        \item \textbf{Sitio Web}: \textit{Professional Pricing Society}: \href{www.pricingsociety.com}{www.pricingsociety.com}
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection{Estudio técnico}
+Algunos evaluadores consideran esta como la etapa mas simple en la evaluación de proyectos, ya que entienden que la responsabilidad es de los técnicos e ingenieros, sin embargo, parta obtener un resultado viable, un buen evaluador debe tener la capacidad de compenetrarse con los aspectos técnicos del proyecto.
+
+Se debe tomar en cuenta que existen ocasiones en que algunos técnicos, con el fin de que se aprueben sus proyectos, omitan o minimicen ciertos aspectos relevantes relacionados a su rama.
+
+Teniendo todo esto en cuenta, el evaluador puede cumplir con su obligación de buscar soluciones alternativas que mejoren los resultados financieros del proyecto.
+\begin{itemize}
+    \item Inversiones en obras físicas.
+    \item inversiones en equipamiento.
+    \item Aspectos técnicos propios del proyecto.
+    \item Costos de operación.
+    \begin{itemize}
+        \item Materias primas, insumos y materiales.
+        \item Recursos humanos.
+        \item Servicios.
+        \item Curva de aprendizaje.
+        \item Uso de estándares.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Inversiones en obras físicas}
+\vspace{0.5cm}
+\begin{minipage}[H]{0.45\textwidth}
+    \begin{itemize}
+        \item Terrenos.
+        \item Metros de edificación.
+        \item Tipo de construcción.
+        \item Instalaciones adicionales (1).
+        \begin{itemize}
+            \item Accesos y estacionamientos.
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.45\textwidth}
+    \begin{itemize}
+        \item Instalaciones adicionales (2).
+        \begin{itemize}
+            \item Romanas para los caminos.
+            \item Disposición de desechos.
+        \end{itemize}
+        \item Costos de mantención.
+        \begin{itemize}
+            \item Despejes periódicos.
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+
+
+\subsubsection{Inversiones en equipamiento}
+\vspace{0.5cm}
+\begin{minipage}[H]{0.45\textwidth}
+    \begin{itemize}
+        \item Listado de maquinarias y equipos.
+        \begin{itemize}
+            \item Grúas y montacargas.
+            \item Pesómetros, flujómetros, etc.
+        \end{itemize}
+        \item Mobiliario.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.45\textwidth}
+    \begin{itemize}
+        \item Equipos de oficina.
+        \begin{itemize}
+            \item Aire acondicionado.
+            \item PC's, copiadoras, etc.
+        \end{itemize}
+        \item Vehículos.
+    \end{itemize}
+\end{minipage}
+
+En estas inversiones existen algunos aspectos que se deben considerar, como:
+\begin{itemize}
+    \item El costo debe justificarse, de preferencia, con cotizaciones.
+    \item Se debe considerar la depreciación de los equipos, con el fin de establecer programas de reemplazo y para correcto cómputo de depreciación.
+    \item Precio de venta de los equipos que se reemplazan.
+    \item Costos de mantención de los equipos. 
+\end{itemize}
+
+\subsubsection*{Inversiones}
+\vspace{0.5cm}
+\begin{minipage}[H]{0.45\textwidth}
+    \begin{itemize}
+        \item \textbf{Previas a la puesta en marcha.}
+        \begin{itemize}
+            \item Construcciones.
+            \item Equipamiento.
+            \item \textcolor{blue}{Promoción.}
+            \item \textcolor{blue}{Sistemas de información.}
+            \item \textcolor{orange}{Estudios.}
+            \item \textcolor{orange}{Gastos.}
+            \item \textcolor{orange}{Capital de trabajo.}
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[H]{0.45\textwidth}
+    \begin{itemize}
+        \item \textbf{Durante la operación.}
+        \begin{itemize}
+            \item Por ampliación.
+            \item Por reemplazo.
+        \end{itemize}
+    \end{itemize}
+\end{minipage}
+
+\subsubsection*{Vida util de los activos}
+\vspace{0.5cm}
+\begin{center}
+    \begin{minipage}[H]{0.5\textwidth}
+        \begin{itemize}
+            \item Contable.
+            \item Técnica.
+            \item Comercial.
+            \item Económica.
+        \end{itemize}
+    \end{minipage}
+\end{center}
+
+\subsubsection{Costos de operación}
+El estudio técnico genera información importante y relevante para determinar los costos que existirán en la operación del proyecto. De estos costos es básico determinar cuales serán \textbf{fijos} y cuales serán \textbf{variables}.
+
+Durante el proceso es normal que se presenter perdidas, sin embargo, estas deben ser consideradas como parte del proceso de aprendizaje y no como un fracaso. Estas perdidas se conocen como \textit{perdidas de insumos} que representan evaporaciones, descartes o filtraciones.
+
+\subsubsection*{Costos de recursos humanos}
+\begin{itemize}
+    \item Por cada área productiva.
+    \item Por cada área administrativa.
+    \item Por cada área de comercialización.
+    \item La idea es predeterminar el gasto que se tendrá por concepto de remuneraciones y costos anexos.
+    \item \hl{¿De donde se obtiene el dato de sueldos por cada cargo?} 
+\end{itemize}
+\subsubsection*{Costos de los servicios}
+\begin{itemize}
+    \item Arriendo de camiones.
+    \item Arriendo de maquinaria y equipos.
+    \item Arriendo de vehículos.
+    \item Movimiento de tierras.
+    \item Casino.
+    \item Servicios de seguridad y medioambientales.
+    \item Transporte de carga.
+    \item Transporte de personal.
+\end{itemize}
+
+\subsubsection{Objetivos del estudio técnico}
+Dentro de los objetivos de este estudio se encuentra el \textbf{verificar la posibilidad técnica de la fabricación del producto que se pretende elaborar}. 
+Ademas de esto se busca \textbf{analizar y determinar}: localización optima, tamaño optimo, equipos necesarios, instalaciones y organización requeridos para realizar la producción. 
+
+\subsubsection{Contenido del estudio técnico}
+\begin{itemize}
+    \item Localización óptima de la planta.
+    \item Determinación de la capacidad instalada y óptima de la planta.
+    \item Descripción del proceso productivo.
+    \item Selección de equipos y maquinarias.
+    \item Cálculo de la mano de obra necesaria.
+    \item Justificación de la cantidad de equipo requerida.
+    \item Pruebas de control de calidad.
+    \item Mantenimiento que se aplicará.
+    \item Determinación de las áreas de trabajo necesarias.
+    \item Análisis de la disponibilidad y el costo de materias primas, materiales e insumos.
+    \item Distribución de planta.
+    \item Costos.
+    \item Conclusiones del estudio técnico.
+\end{itemize}
+
+\newpage
+\subsection{Valor del desecho (Profesor Sapag) [Resumen]}
+
+\subsubsection*{Introducción}
+La evaluación de proyectos no debe considerarse simplemente como una técnica de toma de decisiones, sino como una herramienta informativa para apoyar dicho proceso. Con frecuencia, una misma evaluación puede llevar a decisiones opuestas dependiendo del inversionista y sus circunstancias individuales, tales como sus estrategias de negocio, expectativas o su percepción sobre la validez de los datos provistos.
+
+\subsubsection*{La Responsabilidad del Evaluador}
+El papel del evaluador es fundamental para la precisión del análisis. Un uso inadecuado de conceptos o técnicas puede llevar a decisiones incorrectas. Existen prácticas comúnmente aceptadas sin cuestionar su validez en casos específicos, como la recuperación del capital de trabajo al final del horizonte de evaluación o la reposición de activos que coinciden con dicho horizonte.
+
+\subsubsection*{Métodos de Cálculo del Valor de Desecho}
+El valor de desecho o remanente al final del horizonte de evaluación puede calcularse mediante tres métodos distintos:
+
+\begin{itemize}
+    \item \textbf{Valor Contable}: Basado en el valor en libros, donde los activos se deprecian según el sistema contable.
+    \item \textbf{Valor Comercial}: Determinado por el valor de mercado de los activos.
+    \item \textbf{Valor Económico o Flujo Perpetuo}: Calcula el valor actual de los flujos que los activos pueden generar indefinidamente, restando una reserva para la reposición de activos.
+\end{itemize}
+
+\textbf{Flujos Perpetuos:}
+El cálculo del flujo perpetuo adecuado es esencial en proyectos productivos. La fórmula clásica para una perpetuidad en finanzas es:
+
+\begin{equation}
+    VA = \frac{F}{r}
+\end{equation}
+
+sin embargo, esta ecuación no es aplicable en proyectos productivos, donde es necesario considerar una reserva de reposición. La fórmula adecuada es:
+
+\begin{equation}
+    VA = \frac{F - RR}{r}
+\end{equation}
+
+donde $RR$ es la reserva de reposición, calculada como la depreciación real o contable de los activos.
+
+\subsubsection*{Prácticas de Evaluación en el Flujo de Caja}
+Dos prácticas en la construcción de flujos de caja dependen del método de cálculo del valor de desecho:
+
+\textbf{Reposición de Activos al Final del Horizonte de Evaluación:}
+Al finalizar el horizonte, la reposición debe incluirse para mantener la capacidad productiva, particularmente si se emplea el método económico. En los métodos de valoración de activos, esta reposición es indiferente.
+
+\textbf{Recuperación del Capital de Trabajo:}
+En el valor contable y comercial, la recuperación del capital de trabajo siempre debe incluirse, pues es un activo del inversionista. En el valor de flujo, esta recuperación no debe incluirse ya que el capital de trabajo es necesario para generar flujos futuros.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Ajusta este valor para cambiar la altura de las filas
+    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+        \hline
+        \textbf{} & \textbf{Recuperación del Capital de Trabajo} & \textbf{Reposición de Activos al Final del Horizonte de Evaluación} \\
+        \hline
+        \textbf{Valor de los Activos} & \textcolor{darkorange}{\textbf{SIEMPRE}} debe incluirse la recuperación al final del horizonte de evaluación porque es un activo más de propiedad del inversionista. & Es \textcolor{darkorange}{\textbf{INDIFERENTE}} incluir o no la reposición al final del horizonte de evaluación, porque el mayor valor de desecho se anula con el valor de la inversión. \\
+        \hline
+        \textbf{Valor del Flujo} & \textcolor{darkorange}{\textbf{NUNCA}} debe incluirse la recuperación al final del horizonte de evaluación porque es necesario disponer de él para generar los flujos futuros. & \textcolor{darkorange}{\textbf{SIEMPRE}} debe incluirse la reposición al final del horizonte de evaluación, para permitir seguir generando los flujos futuros. \\
+        \hline
+    \end{tabularx}
+    \caption{Consideraciones para la Recuperación del Capital de Trabajo y la Reposición de Activos}
+\end{table}
+
+\subsubsection*{Conclusión}
+La discusión sobre estos temas evidencia la importancia de aplicar criterios específicos y evaluar cada elemento del flujo de caja de acuerdo con las particularidades del proyecto. La teoría debe ser adaptada al contexto específico para evitar errores en la toma de decisiones de inversión.
+
 
 \end{document}

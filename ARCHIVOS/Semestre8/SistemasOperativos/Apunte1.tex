@@ -1168,5 +1168,64 @@ Consiste en quitar sucesivamente los recursos a los procesos y asignárselos a o
     \item Inanición: Asegurarse que el proceso al que se le expropian recursos no sea el mismo siempre.
 \end{itemize}
 
+\newpage
+\section{Memoria principal (MP)}
+
+\subsection{Fundamentos}
+Para entender la gestión de la memoria principal es necesario conocer los siguientes conceptos:
+\begin{itemize}
+    \item Los programas deben estar cargados en MP para ser ejecutados.
+    \item La MP y los registros integrados del procesador son las únicas áreas de almacenamiento al que la CPU puede acceder directamente.
+    \item La MP es un arreglo de bytes identificados por direcciones únicas.
+    \item La interacción con la MP se logra mediante secuencias de lecturas o escrituras de direcciones especificas de la memoria.
+    \item El caché es la memoria más rápida entre la MP y la CPU y se utiliza para resolver problemas de velocidades.
+    \item Se requiere garantizar la correcta operación que proteja al SO y los procesos de usuarios de accesos indebidos (registros base y limite). 
+\end{itemize}
+
+\subsection{Registros base y límite}
+El par de registros base y limite \textbf{definen el espacio de direcciones para cada proceso}. De manera mas especifica el registro base \textbf{almacena la dirección de memoria física legal mas pequeña}, mientras que el registro limite  \textbf{especifica el tamaño del rango}.
+
+La protección de espacio realizada por estos registros se logra haciendo que el HW de la CPU compare las direcciones generadas modo usuario con el contenido de estos registros.
+
+Cualquier acceso ilegal (fuera del rango) provoca una interrupción hacia el SO.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/baseylimite.png}
+\end{figure}
+
+\subsection{Reasignación de direcciones}
+Es necesario que los programas de usuario recorran varias etapas antes de ser ejecutados, donde las direcciones pueden representarse de diferentes formas.
+\begin{itemize}
+    \item Programa fuente, las direcciones son simbólicas (la variable "suma").
+    \item Luego, el compilador reasignará tal dirección simbólica a reubicables (14 bytes a partir de este modulo).
+    \item El cargador reasignará la dirección reubicable a direcciones absolutas (74014).
+\end{itemize}
+\textbf{Cada operación de Reasignación constituye una relación de un espacio de direcciones a otro}.
+
+La Reasignación de direcciones se puede realizar en cualquiera de estas etapas:
+\begin{itemize}
+    \item \textbf{Tiempo de compilación}: Si se conoce donde va a residir el proceso al momento de compilar, el compilador puede generar un \textbf{código absoluto}. Si se cambia la ubicación, se hace necesario recompilar el programa (programas .COM de MS-DOS).
+    \item \textbf{Tiempo de carga}: Si no se conoce la ubicación del proceso al momento de compilar, se genera un \textbf{código reubicable}. La Reasignación final se ralentiza hasta el momento de la carga. Luego si cambia la ubicación, solo es necesario cargar el código del usuario.
+    \item \textbf{Tiempo de ejecución}: Si el proceso puede moverse durante su ejecución desde un segmento de memoria a otro, se retarda la Reasignación final hasta el instante de la ejecución. Requiere de un HW especial (MMU - Memory Management Unit). La memoria de los SSOO de propósito general utilizan este método.
+\end{itemize}
+
+\subsection{Etapas para la ejecución de un programa}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.325\textwidth]{img/cargaprograma.png}
+\end{figure}
+
+\subsection{Espacio de direcciones lógicas y físicas}
+\begin{itemize}
+    \item \textbf{Dirección lógica}: Dirección generada por la CPU, vista por el proceso.
+    \item \textbf{Dirección física}: Dirección recibida por la unidad de memoria y que puede ser eventualmente distinta a la dirección lógica.
+    \item \textbf{Espacio de direcciones lógicas}
+    \item \textbf{Espacio de direcciones físicas}
+\end{itemize}
+
+
+
+
 
 \end{document}
