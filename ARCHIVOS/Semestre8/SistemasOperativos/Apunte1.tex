@@ -1171,21 +1171,21 @@ Consiste en quitar sucesivamente los recursos a los procesos y asignárselos a o
 \newpage
 \section{Memoria principal (MP)}
 
-\subsection{Fundamentos}
+\subsection*{Fundamentos}
 Para entender la gestión de la memoria principal es necesario conocer los siguientes conceptos:
 \begin{itemize}
     \item Los programas deben estar cargados en MP para ser ejecutados.
     \item La MP y los registros integrados del procesador son las únicas áreas de almacenamiento al que la CPU puede acceder directamente.
     \item La MP es un arreglo de bytes identificados por direcciones únicas.
     \item La interacción con la MP se logra mediante secuencias de lecturas o escrituras de direcciones especificas de la memoria.
-    \item El caché es la memoria más rápida entre la MP y la CPU y se utiliza para resolver problemas de velocidades.
+    \item El caché es la memoria más rápida entre la MP y la CPU y se utiliza para resolver problemas de velocidades. 
     \item Se requiere garantizar la correcta operación que proteja al SO y los procesos de usuarios de accesos indebidos (registros base y limite). 
 \end{itemize}
 
-\subsection{Registros base y límite}
+\subsection*{Registros base y límite}
 El par de registros base y limite \textbf{definen el espacio de direcciones para cada proceso}. De manera mas especifica el registro base \textbf{almacena la dirección de memoria física legal mas pequeña}, mientras que el registro limite  \textbf{especifica el tamaño del rango}.
 
-La protección de espacio realizada por estos registros se logra haciendo que el HW de la CPU compare las direcciones generadas modo usuario con el contenido de estos registros.
+La protección de espacio realizada por estos registros se logra haciendo que el HW de la CPU compare las direcciones generadas en modo usuario con el contenido de estos registros. SI el proceso busca ver una dirección fuera de sus limites se gatilla la protección.
 
 Cualquier acceso ilegal (fuera del rango) provoca una interrupción hacia el SO.
 
@@ -1194,36 +1194,212 @@ Cualquier acceso ilegal (fuera del rango) provoca una interrupción hacia el SO.
     \includegraphics[width=0.45\textwidth]{img/baseylimite.png}
 \end{figure}
 
-\subsection{Reasignación de direcciones}
+\subsection*{Reasignación de direcciones}
 Es necesario que los programas de usuario recorran varias etapas antes de ser ejecutados, donde las direcciones pueden representarse de diferentes formas.
-\begin{itemize}
-    \item Programa fuente, las direcciones son simbólicas (la variable "suma").
-    \item Luego, el compilador reasignará tal dirección simbólica a reubicables (14 bytes a partir de este modulo).
-    \item El cargador reasignará la dirección reubicable a direcciones absolutas (74014).
-\end{itemize}
+\begin{enumerate}
+    \item Programa fuente, las direcciones son simbólicas (la variable "suma", "contador", etc.).
+    \item Luego, el compilador reasignará tal dirección simbólica a reubicables (14 bytes a partir de este modulo). (simbólica $\rightarrow$ reubicable)
+    \item El cargador reasignará la dirección reubicable a direcciones absolutas (74014). (reubicable $\rightarrow$ absoluta)
+\end{enumerate}
 \textbf{Cada operación de Reasignación constituye una relación de un espacio de direcciones a otro}.
 
-La Reasignación de direcciones se puede realizar en cualquiera de estas etapas:
+La Reasignación de direcciones \textbf{se puede realizar en cualquiera de estas etapas}:
 \begin{itemize}
     \item \textbf{Tiempo de compilación}: Si se conoce donde va a residir el proceso al momento de compilar, el compilador puede generar un \textbf{código absoluto}. Si se cambia la ubicación, se hace necesario recompilar el programa (programas .COM de MS-DOS).
     \item \textbf{Tiempo de carga}: Si no se conoce la ubicación del proceso al momento de compilar, se genera un \textbf{código reubicable}. La Reasignación final se ralentiza hasta el momento de la carga. Luego si cambia la ubicación, solo es necesario cargar el código del usuario.
     \item \textbf{Tiempo de ejecución}: Si el proceso puede moverse durante su ejecución desde un segmento de memoria a otro, se retarda la Reasignación final hasta el instante de la ejecución. Requiere de un HW especial (MMU - Memory Management Unit). La memoria de los SSOO de propósito general utilizan este método.
 \end{itemize}
 
-\subsection{Etapas para la ejecución de un programa}
+\subsection*{Etapas para la ejecución de un programa}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.325\textwidth]{img/cargaprograma.png}
 \end{figure}
-
-\subsection{Espacio de direcciones lógicas y físicas}
+Define:
 \begin{itemize}
-    \item \textbf{Dirección lógica}: Dirección generada por la CPU, vista por el proceso.
-    \item \textbf{Dirección física}: Dirección recibida por la unidad de memoria y que puede ser eventualmente distinta a la dirección lógica.
-    \item \textbf{Espacio de direcciones lógicas}
-    \item \textbf{Espacio de direcciones físicas}
+    \item Tiempo de carga: Donde se aloja el proceso en la MP. (Obsoleto)
+    \item Tiempo de ejecución: Una vez en memoria no se mueve. (No muy común)
+    \item Tiempo de compilación: Se mueve entre segmentos de memoria. (Más común)
 \end{itemize}
 
+\subsection*{Espacio de direcciones lógicas y físicas}
+\begin{itemize}
+    \item \textbf{Dirección lógica}: Dirección generada por la CPU, vista por el proceso.
+    \item \textbf{Dirección física}: Dirección recibida por la unidad de memoria y que puede ser eventualmente distinta a la dirección lógica. (puede que exista la dirección lógica o no).
+    \item \textbf{Espacio de direcciones lógicas}: Conjunto de direcciones generadas por un programa.
+    \item \textbf{Espacio de direcciones físicas}: Conjunto de direcciones físicas correspondientes a un conjunto de direcciones lógicas.
+    \item Cuando la Reasignación se hace en:
+    \begin{itemize}
+        \item Tiempo de ejecución - carga : direcciones lógicas = direcciones físicas.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection*{MMU}
+
+Registro base $\rightarrow$ registro de dirección.
+
+Apunta a las verdaderas direcciones físicas. La MMU se encarga de la traducción de direcciones lógicas a físicas.
+
+
+\subsubsection*{Carga dinámica}
+
+Tamaño del proceso limitado a la cantidad de memoria física disponible. 
+
+\textbf{Carga dinámica}: No es necesario tener en memoria todo el código, sino que solo una parte del el. A medida que se van necesitando las rutinas se van cargando.
+\begin{itemize}
+    \item Rutinas de control de errores no siempre se usan asi que solo se cargan en memoria cuando son necesarias. 
+    \item Depende de como se diseñen los programas, no tanto del HW.
+\end{itemize}
+
+\subsubsection*{Montaje dinámico y bibliotecas compartidas}
+Algunos SO solo permiten \textbf{montaje estático}, es decir las al momento de la compilación se incluyen todas las librerías necesarias. Dando pie a programas muy grandes y poco eficientes.
+
+\begin{itemize}
+    \item \textbf{Montaje dinámico}: incluye un stub en la imagen binaria para las rutinas que se necesitan de la librería.
+    \item \textbf{Stub}: pequeño fragmento de código que indica donde se encuentra la rutina necesaria. Es reemplazado por la dirección de la rutina y se ejecuta (acceso directo).
+\end{itemize}
+
+\noindent Este mecanismo también es conocido como \textbf{Bibliotecas compartidas}.
+
+\subsection*{Swapping-Intercambio}
+
+Dependiendo de la orientación de procesos (CPU, E/S) se hacen mixes para que la memoria sea utilizada de manera eficiente.
+
+\subsection*{Asignación memoria contigua}
+
+Este proceso se realiza a traves de la division de la memoria en particiones, una para almacenar el SO y otra para los procesos de usuario.
+
+Cada proceso esta en una única sección de memoria contigua, cada proceso en un rango limitado.
+
+\subsubsection*{Mapeo y protección}
+Valida los limites del registros y suma los registros de reubicación a la dirección física.
+
+\subsubsection*{MFT}
+Division de memoria en particiones fijas, cada partición puede contener un solo proceso.
+Ya no se usa ya que para procesos muy pequeños se desperdicia mucha memoria.
+
+
+\subsubsection*{MVT}
+Tamaño de particiones variables, se asigna la partición mas pequeña que se ajuste al proceso.
+Existen bloques de memoria para asignar los procesos.
+
+\subsubsection*{Asignación dinámica}
+
+
+Puede provocar fragmentaciones:
+\begin{itemize}
+    \item \textbf{Fragmentación externa}: Espacio desperdiciado fuera de los bloques asignados. Existe espacio total para una solicitud pero no es contiguo.
+    \begin{itemize}
+        \item Solución: Mover los espacios libres existentes para crear un bloque contiguo. A esto se le llama \textbf{compactación}.
+    \end{itemize}
+    \item \textbf{Fragmentación interna}: Espacio desperdiciado dentro de un bloque asignado. Existe espacio que no utiliza el proceso, le sobra.
+\end{itemize}
+
+\subsubsection*{Paginación}
+\begin{itemize}
+    \item Asignación no contigua.
+    \item Proceso esta alojado en varias partes de la memoria, a estas partes se les llama \textbf{páginas}.
+    \item La memoria se divide en bloques de tamaño fijo llamados \textbf{marcos de página}.
+    \item Puede provocar Fragmentación interna.
+    \item La fragmentación externa no existe.
+    \item Memoria caché también esta presente aquí para mejorar las velocidades.
+\end{itemize}
+
+\subsubsection*{Segmentación}
+\begin{itemize}
+    \item Considera la lógica del procesos por lo tanto divide en segmentos lógicos (código, datos, pila).
+    \item Puede provocar fragmentaciones.
+\end{itemize}
+
+\subsubsection*{Segmentación paginada}
+\begin{itemize}
+    \item Aprovecha lo mejor de la segmentación y la Paginación.
+    \item Programa se divide en segmentos y cada segmento en paginas.
+\end{itemize}
+
+
+\section{Sistemas de almacenamiento masivo}
+
+\textbf{RAID}
+
+\subsection*{Cintas magnéticas}
+Tipo de almacenamiento secundario utilizado para realizar respaldos de información. Es un medio de almacenamiento secuencial, por lo que acceder a un dato en particular puede ser lento.
+Se bobinan y rebobinan para acceder a la información a través de un cabezal de lectura/escritura.
+Antiguamente utilizado como medio de almacenamiento secundario.
+
+\subsection*{Discos magnéticos (HDD)}
+Tipo de almacenamiento secundario que utiliza discos magnéticos para almacenar la información. Es un medio de almacenamiento aleatorio, por lo que acceder a un dato en particular es rápido.
+Los discos magnéticos están compuestos por platos, cabezales de lectura/escritura y un motor que hace girar los platos.
+Conectados por bus E/S:
+\begin{itemize}
+    \item EIDE, ATA, SATA, USB, etc.
+\end{itemize}
+Permiten un acceso directo a los datos. 
+Pueden ser removibles.
+
+\subsection*{Non-Volatile Memory (NVM)}
+Dispositivos eléctricos organizados en celdas. Puede ser mas fiable que un HDD pero es mas caro por MB.
+No presenta piezas móviles por lo que no hay tiempo de búsqueda ni de latencia de rotación.
+
+\subsection*{Acceso a los datos}
+las computadoras acceden a los datos de 2 formas:
+\begin{itemize}
+    \item Alma conectado al host: Puertos locales.
+    \item Alma conectado en red: NAS, sistema de almacenamiento accesible de forma remota.
+\end{itemize}
+
+\subsubsection*{NAS}
+Almacenamiento en red y no conexión local (bus).
+Protocolos como NFS (UNIX) y CIFS (Windows).
+Comparte la red de datos lo que puede causar problemas.
+
+\subsubsection*{SAN}
+Comúnmente utilizado en entornos de almacenamientos grandes.
+No utiliza la misma red de datos para obtener o compartir archivos.
+Protocolos de almacenamiento en red.
+
+
+\subsection*{Array de almacenamiento}
+Rack de discos
+
+\subsection*{Planificación de un HDD}
+Puede tener una lista de solicitudes pendientes, por lo que se hace necesario tener algún tipo de criterio para selección de elementos.
+
+\subsection*{Tiempo de acceso de datos}
+\begin{itemize}
+    Tiempo de:
+    \item Búsqueda
+    \item latencia
+    \item transferencia
+\end{itemize}
+\textbf{TAcceso = TBúsqueda + TLatencia + TTransferencia.}
+
+\subsection*{Planificación de disco}
+Cola de solicitudes.
+
+\subsubsection*{FCFS}
+Primero en llegar, primero en salir
+
+\subsubsection*{SSTF}
+Atiende primero la solicitud que necesite el menor desplazamiento primero.
+
+\subsubsection*{SCAN}
+Algoritmo del ascensor, parte de un extremo del disco y va hacia el otro extremo atendiendo todo lo que encuentra, primero en un sentido y después en el otro.
+
+\subsubsection*{C-SCAN}
+Al llegar a un extremo, vuelve al inicio para seguir atendiendo.
+
+\subsubsection*{C-LOOK}
+Al llegar a la ultima petición del sentido vuelve a la primera petición del extremo inicial.
+
+\subsection*{Planificación de disco NVM}
+Solo funciona la política de FCFS solamente ya que son tan rápidos que no ha sido necesario buscar otros.
+
+\subsection*{Gestión de disco}
+Cosas que se hacen al inicio del montaje del disco duro. 
+Formateo lógico define el sistema de archivos ue se utilizan.
+Establece una zona predefinida con el programa de arranque del computador.
 
 
 
